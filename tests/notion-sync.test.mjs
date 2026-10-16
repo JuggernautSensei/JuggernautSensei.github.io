@@ -36,6 +36,16 @@ test("sync reads public profile, bookmark URLs, changed project title and body",
   assert.equal(result.snapshot.pages.stable.pinned, true);
 });
 
+test("social links remain configured when Notion bookmarks are replaced by an embed", async () => {
+  const f = fixture();
+  f.config.contactBlocks = {};
+  delete f.root.block.github;
+  const profile = { github: "https://github.com/JuggernautSensei", blog: "https://example.notion.site/blog" };
+  const result = await collectPortfolio(f.config, profile, catalog, f.client, async () => "/assets/face.png");
+  assert.equal(result.profile.github, profile.github);
+  assert.equal(result.profile.blog, profile.blog);
+});
+
 test("catalog preserves source order and overlapping tags; new IDs get stable URLs", () => {
   const page = (id, tags) => row({ id, type: "page", parent_id: "c", parent_table: "collection", properties: { ...title(id), tags: [[tags]] } });
   const map = { block: { old: page("old", "Project,Library"), newer: page("newer", "Study,Game"), removed: row({ id: "removed", alive: false }) } };

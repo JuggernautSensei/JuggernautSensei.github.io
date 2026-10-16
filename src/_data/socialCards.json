@@ -1,0 +1,32 @@
+[
+  {
+    "label": "GITHUB",
+    "title": "JuggernautSensei",
+    "description": "게임·그래픽스·라이브러리 소스 코드",
+    "url": "https://github.com/JuggernautSensei",
+    "domain": "github.com",
+    "image": "/assets/media/portrait.png",
+    "alt": "안지우 프로필 사진",
+    "position": "center 24%"
+  },
+  {
+    "label": "BLOG",
+    "title": "Jiwoo’s Blog",
+    "description": "프로그래밍 공부와 개발 기록을 정리하는 기술 블로그",
+    "url": "https://juggernautsensei.notion.site/Jiwoo-s-Blog-c19c3fb6c02f82aa82be815072f54811",
+    "domain": "notion.site",
+    "image": "/assets/media/blog-card.png",
+    "alt": "프로그래밍 노트 아이콘",
+    "position": "center"
+  },
+  {
+    "label": "PORTFOLIO",
+    "title": "프로그래머 안지우",
+    "description": "직접 만든 프로젝트와 기술 문서",
+    "url": "https://juggernautsensei.github.io/",
+    "domain": "juggernautsensei.github.io",
+    "image": "/assets/media/raytracing.png",
+    "alt": "레이트레이싱으로 렌더링한 구체 장면",
+    "position": "65% center"
+  }
+]
