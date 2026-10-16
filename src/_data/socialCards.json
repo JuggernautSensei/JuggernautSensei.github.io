@@ -2,7 +2,7 @@
   {
     "label": "GITHUB",
     "title": "JuggernautSensei",
-    "description": "게임·그래픽스·라이브러리 소스 코드",
+    "description": "진행한 프로젝트의 소스 코드",
     "url": "https://github.com/JuggernautSensei",
     "domain": "github.com",
     "image": "/assets/media/portrait.png",
@@ -11,8 +11,8 @@
   },
   {
     "label": "BLOG",
-    "title": "Jiwoo’s Blog",
-    "description": "프로그래밍 공부와 개발 기록을 정리하는 기술 블로그",
+    "title": "Jiwoo's Blog",
+    "description": "프로그래밍 공부와 개발 기록을 정리한 기술 블로그",
     "url": "https://juggernautsensei.notion.site/Jiwoo-s-Blog-c19c3fb6c02f82aa82be815072f54811",
     "domain": "notion.site",
     "image": "/assets/media/blog-photo.jpg",
