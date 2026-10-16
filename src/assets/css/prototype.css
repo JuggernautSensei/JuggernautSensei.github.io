@@ -52,7 +52,7 @@ img { max-width:100%; }
 .timeline-item>p:not(.timeline-period),.timeline-item li { font-size:14px; color:#b6bec8; line-height:1.85; }
 .timeline-item ul { margin-top:12px; padding-left:18px; }
 .about-copy .text-action { margin-top:24px; }
-.sec-title { font-size:26px; line-height:1.35; letter-spacing:-.02em; }
+.sec-title { font-size:32px; line-height:1.35; letter-spacing:-.02em; }
 .knowledge-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
 .knowledge-card { min-height:260px; padding:30px; background:linear-gradient(145deg,#14221f,var(--panel)); }
 .knowledge-card h3 { font-family:var(--body); font-size:clamp(20px,1.7vw,26px); margin-top:28px; line-height:1.4; }
@@ -171,7 +171,7 @@ html:not(.js) .reveal { opacity:1; transform:none; }
   .hero h1 { font-size:clamp(19px,6vw,30px); }
   .hero .hero-sub { font-size:12px; }
   .hero-role { font-size:9px; }
-  .sec-title { font-size:22px; }
+  .sec-title { font-size:25px; }
   .about-copy .bio { font-size:17px; }
   .about-layout { grid-template-columns:1fr 210px; gap:28px; }
   .about-copy .intro-headline { font-size:20px; }

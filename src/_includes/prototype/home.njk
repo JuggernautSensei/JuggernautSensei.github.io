@@ -18,7 +18,7 @@
 
 <section id="who" aria-labelledby="who-h" data-accent="#79d6c3">
   <div class="inner">
-    <div class="sec-head reveal"><div><p class="eyebrow">01 / 소개</p><h2 class="sec-title" id="who-h">게임을 좋아하다가,<br>만드는 쪽으로.</h2></div></div>
+    <div class="sec-head reveal"><div><p class="eyebrow">01 / 소개</p><h2 class="sec-title" id="who-h">게임을 좋아하다가, 만드는 쪽으로.</h2></div></div>
     <div class="about-layout">
       <div class="about-copy">
         <p class="bio intro-headline reveal">{{ profile.headline | replace("C++ 개발자", "프로그래머") | escape }}</p>
@@ -31,7 +31,7 @@
 </section>
 
 <section id="experience" aria-labelledby="experience-h" data-accent="#f4cd7c">
-  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">02 / 학력 · 활동 · 수상</p><h2 class="sec-title" id="experience-h">배우고, 가르치고,<br>함께 쌓은 경험.</h2></div></div>
+  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">02 / 학력 · 활동 · 수상</p><h2 class="sec-title" id="experience-h">배우고, 가르치고, 함께 쌓은 경험.</h2></div></div>
     <div class="experience-grid">
       <div><h3 class="experience-label reveal">학력</h3>{% for item in profile.education %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}
       <h3 class="experience-label reveal">활동</h3>{% for item in profile.activities %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}</div>
@@ -41,14 +41,14 @@
 </section>
 
 <section id="all-projects" aria-labelledby="archive-h" data-accent="#79a7ff">
-  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">03 / 전체 프로젝트</p><h2 class="sec-title" id="archive-h">만들고 탐구한<br>프로젝트들.</h2></div></div>
+  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">03 / 전체 프로젝트</p><h2 class="sec-title" id="archive-h">만들고 탐구한 프로젝트들.</h2></div></div>
     {% include "prototype/archive.njk" %}
   </div>
 </section>
 
 <section id="thinking" aria-labelledby="thinking-h" data-accent="#79d6c3">
   <div class="inner">
-    <div class="sec-head reveal"><div><p class="eyebrow">04 / 기술 문서와 학습</p><h2 class="sec-title" id="thinking-h">구현한 내용을<br>기록하고 나눕니다.</h2></div></div>
+    <div class="sec-head reveal"><div><p class="eyebrow">04 / 기술 문서와 학습</p><h2 class="sec-title" id="thinking-h">구현한 내용을 기록하고 나눕니다.</h2></div></div>
     <div class="knowledge-links">
       {% for entry in collections.presentations %}<a class="card knowledge-card reveal" href="{{ entry.url }}"><span class="meta meta--pop">발표 자료 / {{ loop.index }}</span><h3>{{ entry.data.displayTitle or entry.data.title }}</h3><p class="desc">{{ entry.data.description }}</p><span class="go">자료 살펴보기 <span class="ar" aria-hidden="true">↗</span></span></a>{% endfor %}
       <a class="card knowledge-card reveal" href="{{ profile.blog }}"><span class="meta meta--pop">직접 배우고 남긴 기록</span><h3>노션 기술 블로그</h3><p class="desc">구현하며 배운 것과 문제를 해결한 과정.<br>개발과 학습의 기록을 이어갑니다.</p><span class="go">블로그 방문하기 <span class="ar" aria-hidden="true">↗</span></span></a>
@@ -59,7 +59,7 @@
 <section id="personal" aria-labelledby="contact-h" data-accent="#79d6c3">
   <div class="inner">
     <p class="eyebrow reveal">05 / 연락처 · 소셜</p>
-    <h2 class="sec-title reveal" id="contact-h">다음 이야기는,<br>함께.</h2>
+    <h2 class="sec-title reveal" id="contact-h">다음 이야기는, 함께.</h2>
     <p class="bio reveal contact-copy">프로젝트나 협업에 관한 이야기는 편하게 연락 주세요.</p>
     <div class="contact-groups">
       <div class="contact-group reveal" aria-labelledby="contact-direct-h">
