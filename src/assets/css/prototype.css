@@ -164,8 +164,8 @@ img { max-width:100%; }
 html:not(.js) .navtoggle { display:none; }
 html:not(.js) .reveal { opacity:1; transform:none; }
 @media (min-width:901px) {
-  body:not(.article-page) { --shift:max(0px,calc((100vw - var(--nav-w) - 960px) / 2)); }
-  body:not(.article-page) .inner { max-width:960px; padding-left:86px; }
+  body:not(.article-page) { --content-w:clamp(960px,60vw,1200px); --shift:max(0px,calc((100vw - var(--nav-w) - var(--content-w)) / 2)); }
+  body:not(.article-page) .inner { max-width:var(--content-w); padding-left:86px; }
   body:not(.article-page) .sidebar { left:calc(22px + var(--shift)); }
   body:not(.article-page) .hero .inner { max-width:none; padding-left:calc(var(--nav-w) + var(--shift) + 86px); }
 }
