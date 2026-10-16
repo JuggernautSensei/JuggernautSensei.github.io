@@ -44,7 +44,7 @@ img { max-width:100%; }
 .profile-portrait img { display:block; width:100%; height:auto; border-radius:16px; border:1px solid var(--line); }
 .profile-portrait figcaption { display:flex; justify-content:space-between; gap:12px; margin-top:14px; font-size:15px; }
 .profile-portrait figcaption span { color:var(--muted); font-size:12px; }
-.experience-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:72px; }
+.experience-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 72px; }
 .experience-label { color:var(--pop); font-size:13px; margin:12px 0 18px; }
 .timeline-item { border-top:1px solid var(--line); padding:24px 0 32px; }
 .timeline-period { color:var(--muted); font-size:12px; margin-bottom:12px; }
@@ -170,6 +170,13 @@ html:not(.js) .reveal { opacity:1; transform:none; }
   body:not(.article-page) .hero .inner { max-width:none; margin-left:0; padding-left:calc(var(--inner-left) + 56px); }
 }
 @media (min-width:1280px) { .archive-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (min-width:1101px) {
+  .experience-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 48px; }
+  /* Let the intro text set the row height and crop the portrait to match it. */
+  .about-layout { grid-template-columns:minmax(0,1fr) 220px; align-items:stretch; }
+  .profile-portrait { position:static; display:flex; flex-direction:column; height:0; min-height:100%; }
+  .profile-portrait img { flex:1; min-height:0; object-fit:cover; object-position:center 20%; }
+}
 @media (max-width:1100px) and (min-width:901px) { .about-layout { gap:24px; grid-template-columns:1fr 190px; } }
 @media (max-width:900px) {
   .hero .inner { padding-top:72px; padding-bottom:20px; }

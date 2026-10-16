@@ -33,8 +33,8 @@
 <section id="experience" aria-labelledby="experience-h" data-accent="#f4cd7c">
   <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">02 / 학력 · 활동 · 수상</p><h2 class="sec-title" id="experience-h">배우고, 가르치고, 함께 쌓은 경험.</h2></div></div>
     <div class="experience-grid">
-      <div><h3 class="experience-label reveal">학력</h3>{% for item in profile.education %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}
-      <h3 class="experience-label reveal">활동</h3>{% for item in profile.activities %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}</div>
+      <div><h3 class="experience-label reveal">학력</h3>{% for item in profile.education %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}</div>
+      <div><h3 class="experience-label reveal">활동</h3>{% for item in profile.activities %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}</div>
       <div><h3 class="experience-label reveal">수상</h3>{% for item in profile.awards %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.organization }}</p></article>{% endfor %}</div>
     </div>
   </div>
