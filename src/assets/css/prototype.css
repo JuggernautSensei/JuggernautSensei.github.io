@@ -164,7 +164,7 @@ img { max-width:100%; }
 html:not(.js) .navtoggle { display:none; }
 html:not(.js) .reveal { opacity:1; transform:none; }
 @media (min-width:901px) {
-  body:not(.article-page) { --content-w:min(calc(100vw - var(--nav-w)),1360px); --inner-left:max(var(--nav-w),calc((100vw - var(--content-w)) / 2)); }
+  body:not(.article-page) { --content-w:min(calc(100vw - var(--nav-w) - clamp(0px,(100vw - 1100px) / 3,160px)),1360px); --inner-left:max(var(--nav-w),calc((100vw - var(--content-w)) / 2)); }
   body:not(.article-page) .inner { max-width:var(--content-w); padding-left:56px; margin-left:calc(var(--inner-left) - var(--nav-w)); margin-right:0; }
   body:not(.article-page) .sidebar { left:max(22px,calc(var(--inner-left) - 240px)); }
   body:not(.article-page) .hero .inner { max-width:none; margin-left:0; padding-left:calc(var(--inner-left) + 56px); }
