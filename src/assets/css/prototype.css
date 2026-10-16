@@ -43,8 +43,7 @@ img { max-width:100%; }
 .about-layout>.sec-head { grid-column:1/-1; margin-bottom:0; }
 .profile-portrait { margin:0; position:sticky; top:40px; }
 .profile-portrait img { display:block; width:100%; height:auto; border-radius:16px; border:1px solid var(--line); }
-.profile-portrait figcaption { display:flex; justify-content:space-between; gap:12px; margin-top:14px; font-size:15px; }
-.profile-portrait figcaption span { color:var(--muted); font-size:12px; }
+.intro-name { padding:0 .08em; color:var(--ink); font-weight:800; background:linear-gradient(transparent 62%,color-mix(in srgb,var(--pop) 38%,transparent) 62%); }
 .experience-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:40px 20px; }
 .experience-label { color:var(--pop); font-size:13px; margin:0 0 14px; }
 .exp-block { display:flex; flex-direction:column; min-width:0; }
@@ -188,12 +187,15 @@ html:not(.js) .reveal { opacity:1; transform:none; }
 @media (min-width:1280px) { .archive-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (min-width:1101px) {
   .experience-grid { grid-template-columns:7fr 5fr; }
-  /* Let the intro text set the row height and crop the portrait to match it. */
-  /* The portrait spans the section heading and the intro so it can stay large without leaving a gap under the text. */
-  .about-layout { grid-template-columns:minmax(0,1fr) 270px; }
-  .about-layout>.sec-head { grid-column:1; }
-  .profile-portrait { grid-column:2; grid-row:1 / span 2; }
+  /* The portrait fills the height of the heading and intro; the text sets the row heights. */
+  .about-layout { grid-template-columns:minmax(0,1fr) 300px; }
+  .about-layout>.sec-head { grid-column:1; grid-row:1; }
+  .about-copy { grid-column:1; grid-row:2; }
+  .profile-portrait { grid-column:2; grid-row:1 / span 2; align-self:stretch; position:static; display:flex; height:0; min-height:100%; }
+  .profile-portrait img { flex:1; min-height:0; object-fit:cover; object-position:center 25%; }
 }
+/* Narrower screens wrap the intro onto more lines; keep the portrait beside the text only so it is not cropped too thin. */
+@media (min-width:1101px) and (max-width:1599px) { .profile-portrait { grid-row:2; } }
 @media (max-width:1100px) and (min-width:901px) { .about-layout { column-gap:24px; grid-template-columns:1fr 190px; } }
 @media (max-width:900px) {
   .hero .inner { padding-top:72px; padding-bottom:20px; }
