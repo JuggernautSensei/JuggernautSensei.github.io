@@ -40,19 +40,19 @@
   </div>
 </section>
 
+<section id="all-projects" aria-labelledby="archive-h" data-accent="#79a7ff">
+  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">03 / 전체 프로젝트</p><h2 class="sec-title" id="archive-h">만들고 탐구한<br>프로젝트들.</h2></div></div>
+    {% include "prototype/archive.njk" %}
+  </div>
+</section>
+
 <section id="thinking" aria-labelledby="thinking-h" data-accent="#79d6c3">
   <div class="inner">
-    <div class="sec-head reveal"><div><p class="eyebrow">03 / 기술 문서와 학습</p><h2 class="sec-title" id="thinking-h">구현한 내용을<br>기록하고 나눕니다.</h2></div></div>
+    <div class="sec-head reveal"><div><p class="eyebrow">04 / 기술 문서와 학습</p><h2 class="sec-title" id="thinking-h">구현한 내용을<br>기록하고 나눕니다.</h2></div></div>
     <div class="knowledge-links">
       {% for entry in collections.presentations %}<a class="card knowledge-card reveal" href="{{ entry.url }}"><span class="meta meta--pop">발표 자료 / {{ loop.index }}</span><h3>{{ entry.data.displayTitle or entry.data.title }}</h3><p class="desc">{{ entry.data.description }}</p><span class="go">자료 살펴보기 <span class="ar" aria-hidden="true">↗</span></span></a>{% endfor %}
       <a class="card knowledge-card reveal" href="{{ profile.blog }}"><span class="meta meta--pop">직접 배우고 남긴 기록</span><h3>노션 기술 블로그</h3><p class="desc">구현하며 배운 것과 문제를 해결한 과정.<br>개발과 학습의 기록을 이어갑니다.</p><span class="go">블로그 방문하기 <span class="ar" aria-hidden="true">↗</span></span></a>
     </div>
-  </div>
-</section>
-
-<section id="all-projects" aria-labelledby="archive-h" data-accent="#79a7ff">
-  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">04 / 전체 프로젝트</p><h2 class="sec-title" id="archive-h">만들고 탐구한<br>프로젝트들.</h2></div></div>
-    {% include "prototype/archive.njk" %}
   </div>
 </section>
 
