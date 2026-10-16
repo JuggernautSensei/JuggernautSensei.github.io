@@ -24,6 +24,28 @@ export default function (config) {
     ...items.filter(item => item.pinned),
     ...items.filter(item => !item.pinned)
   ]);
+  // Split experience bullets into headline figures ("전공학점 4.29 / 4.5", "총 6학기 …") and plain notes.
+  config.addFilter("experienceDetails", (details = [], period = "") => {
+    const stats = [], notes = [];
+    for (const detail of details) {
+      const score = detail.match(/^(.+?)\s+([\d.]+)\s*\/\s*([\d.]+)$/);
+      const terms = detail.match(/^(?:총\s*)?(\d+\s*학기)\s+(.+)$/);
+      if (score) stats.push({ label: score[1], value: score[2], suffix: `/ ${score[3]}` });
+      else if (terms) stats.push({ label: terms[2], value: terms[1] });
+      else notes.push(detail);
+    }
+    const dates = [...period.matchAll(/(\d{4})\.\s*(\d{1,2})\./g)];
+    if (!stats.length && dates.length === 2) {
+      const months = (dates[1][1] - dates[0][1]) * 12 + (dates[1][2] - dates[0][2]);
+      if (months > 0) stats.push({ label: "활동 기간", value: `${months}개월` });
+    }
+    return { stats, notes };
+  });
+  // "교내 캡스톤 경진대회 동상 (6등)" -> { event: "교내 캡스톤 경진대회", prize: "동상", rank: "(6등)" }
+  config.addFilter("awardParts", title => {
+    const match = title.match(/^(.+?)\s+(\S+상)(?:\s*(\(.+\)))?$/);
+    return match ? { event: match[1], prize: match[2], rank: match[3] || "" } : { event: title, prize: "", rank: "" };
+  });
   config.addCollection("documents", api => api.getFilteredByGlob("src/documents/**/*.md"));
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },

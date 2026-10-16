@@ -18,8 +18,8 @@
 
 <section id="who" aria-labelledby="who-h" data-accent="#79d6c3">
   <div class="inner">
-    <div class="sec-head reveal"><div><p class="eyebrow">01 / 소개</p><h2 class="sec-title" id="who-h">게임을 좋아하다가, 만드는 쪽으로.</h2></div></div>
     <div class="about-layout">
+      <div class="sec-head reveal"><div><p class="eyebrow">01 / 소개</p><h2 class="sec-title" id="who-h">게임을 좋아하다가, 만드는 쪽으로.</h2></div></div>
       <div class="about-copy">
         <p class="bio intro-headline reveal">{{ profile.headline | replace("C++ 개발자", "프로그래머") | escape }}</p>
         <p class="bio reveal">{{ profile.introduction | escape }}</p>
@@ -33,9 +33,22 @@
 <section id="experience" aria-labelledby="experience-h" data-accent="#f4cd7c">
   <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">02 / 학력 · 활동 · 수상</p><h2 class="sec-title" id="experience-h">배우고, 가르치고, 함께 쌓은 경험.</h2></div></div>
     <div class="experience-grid">
-      <div><h3 class="experience-label reveal">학력</h3>{% for item in profile.education %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}</div>
-      <div><h3 class="experience-label reveal">활동</h3>{% for item in profile.activities %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}</div>
-      <div><h3 class="experience-label reveal">수상</h3>{% for item in profile.awards %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.organization }}</p></article>{% endfor %}</div>
+      {% for group in [{ label: "학력", items: profile.education }, { label: "활동", items: profile.activities }] %}
+      <div class="exp-block"><h3 class="experience-label reveal">{{ group.label }}</h3>
+        {% for item in group.items %}{% set parts = item.details | experienceDetails(item.period) %}
+        <article class="exp-card reveal">
+          <p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p class="exp-desc">{{ item.description }}</p>
+          {% if parts.stats.length %}<dl class="exp-stats">{% for stat in parts.stats %}<div><dt>{{ stat.label }}</dt><dd>{{ stat.value }}{% if stat.suffix %} <span>{{ stat.suffix }}</span>{% endif %}</dd></div>{% endfor %}</dl>{% endif %}
+          {% if parts.notes.length %}<ul class="exp-notes">{% for note in parts.notes %}<li>{{ note }}</li>{% endfor %}</ul>{% endif %}
+        </article>
+        {% endfor %}
+      </div>
+      {% endfor %}
+      <div class="exp-block exp-awards"><h3 class="experience-label reveal">수상</h3>
+        <div class="award-list">{% for item in profile.awards %}{% set award = item.title | awardParts %}
+          <article class="award-card reveal">{% if award.prize %}<span class="award-prize">{{ award.prize }}{% if award.rank %} <small>{{ award.rank }}</small>{% endif %}</span>{% endif %}<h4>{{ award.event }}</h4><p>{{ item.organization }}{% if item.period %} · {{ item.period }}{% endif %}</p></article>
+        {% endfor %}</div>
+      </div>
     </div>
   </div>
 </section>
