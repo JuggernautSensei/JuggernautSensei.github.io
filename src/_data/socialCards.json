@@ -15,9 +15,9 @@
     "description": "프로그래밍 공부와 개발 기록을 정리하는 기술 블로그",
     "url": "https://juggernautsensei.notion.site/Jiwoo-s-Blog-c19c3fb6c02f82aa82be815072f54811",
     "domain": "notion.site",
-    "image": "/assets/media/blog-card.png",
-    "alt": "프로그래밍 노트 아이콘",
-    "position": "center"
+    "image": "/assets/media/blog-photo.jpg",
+    "alt": "야외에서 촬영한 안지우의 블로그 프로필 사진",
+    "position": "center 40%"
   },
   {
     "label": "PORTFOLIO",
