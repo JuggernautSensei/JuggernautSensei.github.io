@@ -3,17 +3,17 @@
     {% for slide in hero.slides %}<img class="hero__img{% if loop.first %} is-active{% endif %}" src="{{ slide.src }}" alt="" style="object-position:{{ slide.position }}"{% if loop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
-  <div class="inner">
-    <p class="eyebrow hero-role">{{ profile.role | escape }} · {{ profile.name | escape }}</p>
-    <h1 aria-label="직접 구현하며, 검증하며, 디버깅하며, 소통하며 함께 만듭니다.">
-      <span class="line" aria-hidden="true"><span class="word">직접</span></span>
-      <span class="line" aria-hidden="true"><span class="word hero-process"><span class="roll roll--word" id="wordroll"><span class="roll__track"><span class="roll__item">구현하며</span><span class="roll__item"></span></span></span></span></span>
-      <span class="line" aria-hidden="true"><span class="word hero-final">만듭니다.</span></span>
-    </h1>
+  <div class="inner hero-layout">
+    <div class="hero-heading">
+      <p class="eyebrow hero-role">{{ profile.role | escape }} · {{ profile.name | escape }}</p>
+      <h1 aria-label="직접 구현하며, 검증하며, 디버깅하며, 소통하며 함께 만듭니다.">
+        <span class="line" aria-hidden="true"><span class="word">직접</span></span>
+        <span class="line" aria-hidden="true"><span class="word hero-process"><span class="roll roll--word" id="wordroll"><span class="roll__track"><span class="roll__item">구현하며</span><span class="roll__item"></span></span></span></span></span>
+        <span class="line" aria-hidden="true"><span class="word hero-final">만듭니다.</span></span>
+      </h1>
+    </div>
     <p class="hero-sub">게임에서 엔진과 라이브러리, 개발 도구까지.<br>구현과 검증으로 이해를 넓혀 갑니다.</p>
-    <div class="hero-actions"><a class="text-action" href="#work">프로젝트 살펴보기 <span aria-hidden="true">↘</span></a><a class="subtle-action" href="#who">저를 소개합니다 ↓</a></div>
   </div>
-  <div class="scrollcue" aria-hidden="true"><span class="ln"></span><span>아래로 스크롤</span></div>
 </section>
 
 <section id="who" aria-labelledby="who-h" data-accent="#79d6c3">
@@ -27,24 +27,15 @@
       </div>
       <figure class="profile-portrait reveal"><img src="{{ profile.portrait }}" alt="안지우의 프로필 사진" width="691" height="848" loading="lazy"><figcaption>{{ profile.name }}</figcaption></figure>
     </div>
-    <div class="expertise-strip reveal"><span>C/C++</span><span>Game Development</span><span>Computer Graphics</span><span>Computer Network</span><span>GPGPU</span></div>
   </div>
 </section>
 
-<section id="work" aria-labelledby="work-h" data-accent="#79a7ff">
-  <div class="inner">
-    <div class="sec-head reveal"><div><p class="eyebrow">02 / 대표 프로젝트</p><h2 class="sec-title" id="work-h">기반을 만드는 라이브러리부터,<br>플레이 가능한 게임까지.</h2></div><a class="seeall" href="#all-projects">전체 프로젝트 ↓</a></div>
-    <div class="featured-group" aria-labelledby="libraries-h">
-      <h3 class="featured-label reveal" id="libraries-h">라이브러리 · 프레임워크 <span>{{ collections.featuredLibraries | length }}개 프로젝트</span></h3>
-      <div class="featured-libraries">
-        {% for entry in collections.featuredLibraries %}<a class="featured-library reveal" href="{{ entry.url }}"><span class="featured-stack">C++20 <span aria-hidden="true">↗</span></span><h4>{{ entry.data.title }}</h4><p>{{ entry.data.description }}</p></a>{% endfor %}
-      </div>
-    </div>
-    <div class="featured-group" aria-labelledby="games-h">
-      <h3 class="featured-label reveal" id="games-h">게임 <span>{{ collections.featuredGames | length }}개 프로젝트</span></h3>
-      <div class="work-pair">
-        {% for entry in collections.featuredGames %}<a class="visual-project reveal" href="{{ entry.url }}">{% if entry.data.cover %}<img class="tile-image" src="{{ entry.data.cover }}" alt="{{ entry.data.coverAlt | escape }}" loading="lazy">{% else %}<div class="tile-image project-placeholder" aria-hidden="true">{{ entry.data.title }}</div>{% endif %}<div class="project-caption"><p class="eyebrow">{{ entry.data.stack }}</p><h4>{{ entry.data.displayTitle or entry.data.title }} <span aria-hidden="true">↗</span></h4><p>{{ entry.data.description }}</p></div></a>{% endfor %}
-      </div>
+<section id="experience" aria-labelledby="experience-h" data-accent="#f4cd7c">
+  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">02 / 학력 · 활동 · 수상</p><h2 class="sec-title" id="experience-h">배우고, 가르치고,<br>함께 쌓은 경험.</h2></div></div>
+    <div class="experience-grid">
+      <div><h3 class="experience-label reveal">학력</h3>{% for item in profile.education %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}
+      <h3 class="experience-label reveal">활동</h3>{% for item in profile.activities %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}</div>
+      <div><h3 class="experience-label reveal">수상</h3>{% for item in profile.awards %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.organization }}</p></article>{% endfor %}</div>
     </div>
   </div>
 </section>
@@ -59,25 +50,15 @@
   </div>
 </section>
 
-<section id="experience" aria-labelledby="experience-h" data-accent="#f4cd7c">
-  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">04 / 학력 · 활동 · 수상</p><h2 class="sec-title" id="experience-h">배우고, 가르치고,<br>함께 쌓은 경험.</h2></div></div>
-    <div class="experience-grid">
-      <div><h3 class="experience-label reveal">학력</h3>{% for item in profile.education %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}
-      <h3 class="experience-label reveal">활동</h3>{% for item in profile.activities %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}</div>
-      <div><h3 class="experience-label reveal">수상</h3>{% for item in profile.awards %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.organization }}</p></article>{% endfor %}</div>
-    </div>
-  </div>
-</section>
-
 <section id="all-projects" aria-labelledby="archive-h" data-accent="#79a7ff">
-  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">05 / 전체 프로젝트</p><h2 class="sec-title" id="archive-h">만들고 탐구한<br>프로젝트들.</h2></div></div>
+  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">04 / 전체 프로젝트</p><h2 class="sec-title" id="archive-h">만들고 탐구한<br>프로젝트들.</h2></div></div>
     {% include "prototype/archive.njk" %}
   </div>
 </section>
 
 <section id="personal" aria-labelledby="contact-h" data-accent="#79d6c3">
   <div class="inner">
-    <p class="eyebrow reveal">06 / 연락처 · 소셜</p>
+    <p class="eyebrow reveal">05 / 연락처 · 소셜</p>
     <h2 class="sec-title reveal" id="contact-h">다음 이야기는,<br>함께.</h2>
     <p class="bio reveal contact-copy">프로젝트나 협업에 관한 이야기는 편하게 연락 주세요.</p>
     <div class="contact-groups">

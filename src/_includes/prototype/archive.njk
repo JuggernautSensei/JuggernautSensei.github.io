@@ -3,7 +3,22 @@
     <button type="button" data-filter="all" aria-pressed="true">전체</button>
     {% for key, label in projectCatalog.labels %}<button type="button" data-filter="{{ key }}" aria-pressed="false">{{ label }}</button>{% endfor %}
   </div>
-  <div class="archive-grid">
-    {% for record in projectCatalog.items %}{% set entry = collections.projects | projectFor(record.slug) %}<a class="card" href="{{ entry.url }}" data-project-categories="{{ record.categories | join(' ') }}" data-notion-id="{{ record.id }}"><div class="archive-tags">{% for category in record.categories %}<span data-category="{{ category }}">{{ projectCatalog.labels[category] }}</span>{% endfor %}</div><h3>{{ record.title | escape }}</h3><p class="desc">{{ entry.data.description }}</p><span class="go">자세히 보기 ↗</span></a>{% endfor %}
+  <div class="archive-grid project-grid">
+    {% for record in projectCatalog.items | prioritizePinned %}
+      {% set entry = collections.projects | projectFor(record.slug) %}
+      {% set thumbnail = entry.data.cover %}
+      {% if record.slug in projectThumbnails %}{% set thumbnail = projectThumbnails[record.slug] %}{% endif %}
+      <a class="card project-card" href="{{ entry.url }}" data-project-categories="{{ record.categories | join(' ') }}" data-notion-id="{{ record.id }}">
+        {% if thumbnail %}
+          <img class="project-thumbnail" src="{{ thumbnail }}" alt="{{ entry.data.coverAlt or record.title }}" width="960" height="540" loading="lazy" decoding="async">
+        {% else %}
+          <div class="project-thumbnail project-thumbnail--placeholder" role="img" aria-label="{{ record.title }} 썸네일 준비 중"><span aria-hidden="true">썸네일 준비 중</span></div>
+        {% endif %}
+        <div class="project-card-copy">
+          <h3>{{ record.title }}</h3>
+          <p class="desc">{{ entry.data.description }}</p>
+        </div>
+      </a>
+    {% endfor %}
   </div>
 </div>

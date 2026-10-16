@@ -69,12 +69,21 @@ function makeRoll(id, words) {
   if (!element) return null;
   const track = element.querySelector(".roll__track");
   let index = 0;
+  function fitWord(item) {
+    const range = document.createRange();
+    range.selectNodeContents(item);
+    const fontSize = parseFloat(getComputedStyle(element).fontSize);
+    element.style.width = `${range.getBoundingClientRect().width / fontSize}em`;
+  }
   function paint() {
     track.children[0].textContent = words[index];
     track.children[1].textContent = words[(index + 1) % words.length];
+    fitWord(track.children[0]);
   }
   paint();
+  document.fonts.ready.then(() => fitWord(track.children[0]));
   return () => {
+    fitWord(track.children[1]);
     track.style.transition = "transform .42s cubic-bezier(.16,.86,.26,1)";
     track.style.transform = "translateY(-50%)";
     window.setTimeout(() => {

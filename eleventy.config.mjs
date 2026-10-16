@@ -20,11 +20,10 @@ export default function (config) {
     assert(entry, `Missing project page: ${slug}`);
     return entry;
   });
-  for (const [name, group] of [["featuredLibraries", "library"], ["featuredGames", "game"]]) {
-    config.addCollection(name, api => api.getFilteredByGlob("src/projects/**/*.md")
-      .filter(entry => projectAvailable(entry.data) && projectData(entry).pinned && projectData(entry).featuredGroup === group)
-      .sort((a, b) => projectData(a).featuredOrder - projectData(b).featuredOrder));
-  }
+  config.addFilter("prioritizePinned", items => [
+    ...items.filter(item => item.pinned),
+    ...items.filter(item => !item.pinned)
+  ]);
   config.addCollection("documents", api => api.getFilteredByGlob("src/documents/**/*.md"));
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
