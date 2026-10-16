@@ -21,7 +21,7 @@
     <div class="sec-head reveal"><div><p class="eyebrow">01 / 소개</p><h2 class="sec-title" id="who-h">게임을 좋아하다가,<br>만드는 쪽으로.</h2></div></div>
     <div class="about-layout">
       <div class="about-copy">
-        <p class="bio intro-headline reveal">{{ profile.headline | escape }}</p>
+        <p class="bio intro-headline reveal">{{ profile.headline | replace("C++ 개발자", "프로그래머") | escape }}</p>
         <p class="bio reveal">{{ profile.introduction | escape }}</p>
         <p class="bio reveal">더 자세한 프로젝트와 개발 기록은 <a href="{{ profile.github }}">GitHub</a>와 <a href="{{ profile.blog }}">노션 기술 블로그</a>에서 확인하실 수 있습니다.</p>
       </div>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.url == '/' %}안지우 | 게임과 그 기반을 만듭니다{% else %}{{ title }} · 안지우{% endif %}</title>
+  <title>{% if page.url == '/' %}{{ site.title }}{% else %}{{ title }} · 안지우{% endif %}</title>
   <meta name="description" content="{{ description or site.description }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <script>if (new URLSearchParams(location.search).get("embed") === "1") document.documentElement.classList.add("embedded");</script>
@@ -31,7 +31,7 @@
     <p class="toclabel">이 페이지의 내용</p>
     {% else %}
     <a class="wordmark" href="/#home"><span class="name">안지우<span class="name-period">.</span></span></a>
-    <p class="sidebar-intro">직접 구현하고 검증하며,<br>함께 만드는 C++ 개발자</p>
+    <p class="sidebar-intro">직접 구현하고 검증하며,<br>함께 만드는 프로그래머</p>
     {% endif %}
     <div class="nav">
       {% if article %}
