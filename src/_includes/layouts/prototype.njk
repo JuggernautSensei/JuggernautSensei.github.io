@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }} · 안지우</title>
+  <title>{% if page.url == '/' %}안지우 | 게임과 그 기반을 만듭니다{% else %}{{ title }} · 안지우{% endif %}</title>
   <meta name="description" content="{{ description or site.description }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <script>if (new URLSearchParams(location.search).get("embed") === "1") document.documentElement.classList.add("embedded");</script>
@@ -52,7 +52,10 @@
     </div>
     <div class="foot">
       {% if article %}<a href="/#all-projects">전체 프로젝트 ↗</a>
-      {% else %}<p class="sidebar-social-label">소셜</p><div class="sidebar-socials"><a href="{{ profile.github }}">GitHub ↗</a><a href="{{ profile.blog }}">블로그 ↗</a></div>{% endif %}
+      {% else %}
+      <div class="sidebar-link-group"><p class="sidebar-group-label">연락처</p><div class="sidebar-shortcuts"><a href="mailto:{{ profile.email }}">이메일 ↗</a><a href="{{ profile.discord }}">디스코드 ↗</a></div></div>
+      <div class="sidebar-link-group"><p class="sidebar-group-label">소셜</p><div class="sidebar-shortcuts"><a href="{{ profile.github }}">GitHub ↗</a><a href="{{ profile.blog }}">블로그 ↗</a></div></div>
+      {% endif %}
     </div>
   </nav>
   <main id="main">{{ content | safe }}</main>

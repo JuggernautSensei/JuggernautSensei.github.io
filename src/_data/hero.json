@@ -1,5 +1,5 @@
 {
-  "intervalMs": 6500,
+  "intervalMs": 5000,
   "slides": [
     { "src": "/assets/media/framework.png", "label": "Juggernaut · 게임 개발 프레임워크", "href": "/projects/juggernaut/", "position": "60% center" },
     { "src": "/assets/media/raytracing.png", "label": "C++로 그린 소프트웨어 레이트레이싱", "href": "/projects/raytracinginoneweekend/", "position": "62% center" },

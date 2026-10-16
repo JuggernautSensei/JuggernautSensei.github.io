@@ -14,11 +14,6 @@
     <div class="hero-actions"><a class="text-action" href="#work">프로젝트 살펴보기 <span aria-hidden="true">↘</span></a><a class="subtle-action" href="#who">저를 소개합니다 ↓</a></div>
   </div>
   <div class="scrollcue" aria-hidden="true"><span class="ln"></span><span>아래로 스크롤</span></div>
-  <div class="hero-player">
-    <div class="hero-dots" aria-label="배경 프로젝트 선택">{% for slide in hero.slides %}<button type="button" aria-label="{{ slide.label }} 배경" aria-pressed="{{ 'true' if loop.first else 'false' }}" data-slide="{{ loop.index0 }}" data-label="{{ slide.label }}" data-href="{{ slide.href }}"></button>{% endfor %}</div>
-    <button type="button" class="hero-pause" aria-label="배경 자동 전환 정지" aria-pressed="false">정지</button>
-    <a class="hero-caption" href="{{ hero.slides[0].href }}">{{ hero.slides[0].label }} ↗</a>
-  </div>
 </section>
 
 <section id="who" aria-labelledby="who-h" data-accent="#79d6c3">
@@ -48,7 +43,7 @@
     <div class="featured-group" aria-labelledby="games-h">
       <h3 class="featured-label reveal" id="games-h">게임 <span>{{ collections.featuredGames | length }}개 프로젝트</span></h3>
       <div class="work-pair">
-        {% for entry in collections.featuredGames %}<a class="visual-project reveal" href="{{ entry.url }}"><img class="tile-image" src="{{ entry.data.cover }}" alt="{{ entry.data.coverAlt | escape }}" loading="lazy"><div class="project-caption"><p class="eyebrow">{{ entry.data.stack }}</p><h4>{{ entry.data.displayTitle or entry.data.title }} <span aria-hidden="true">↗</span></h4><p>{{ entry.data.description }}</p></div></a>{% endfor %}
+        {% for entry in collections.featuredGames %}<a class="visual-project reveal" href="{{ entry.url }}">{% if entry.data.cover %}<img class="tile-image" src="{{ entry.data.cover }}" alt="{{ entry.data.coverAlt | escape }}" loading="lazy">{% else %}<div class="tile-image project-placeholder" aria-hidden="true">{{ entry.data.title }}</div>{% endif %}<div class="project-caption"><p class="eyebrow">{{ entry.data.stack }}</p><h4>{{ entry.data.displayTitle or entry.data.title }} <span aria-hidden="true">↗</span></h4><p>{{ entry.data.description }}</p></div></a>{% endfor %}
       </div>
     </div>
   </div>
@@ -58,8 +53,7 @@
   <div class="inner">
     <div class="sec-head reveal"><div><p class="eyebrow">03 / 기술 문서와 학습</p><h2 class="sec-title" id="thinking-h">구현한 내용을<br>기록하고 나눕니다.</h2></div></div>
     <div class="knowledge-links">
-      <a class="card knowledge-card reveal" href="/projects/deferred-rendering-gdc2025/"><span class="meta meta--pop">발표 자료 / 01</span><h3>Deferred Rendering<br>렌더링 최적화</h3><p class="desc">Deferred Rendering을 이용한 렌더링 최적화 발표 자료.</p><span class="go">자료 살펴보기 <span class="ar" aria-hidden="true">↗</span></span></a>
-      <a class="card knowledge-card reveal" href="/projects/research-report-on-multilayer-perceptrons/"><span class="meta meta--pop">발표 자료 / 02</span><h3>다층 퍼셉트론<br>조사 보고서</h3><p class="desc">다층 퍼셉트론의 구조와 학습 방법을 정리한 조사 보고서.</p><span class="go">자료 살펴보기 <span class="ar" aria-hidden="true">↗</span></span></a>
+      {% for entry in collections.presentations %}<a class="card knowledge-card reveal" href="{{ entry.url }}"><span class="meta meta--pop">발표 자료 / {{ loop.index }}</span><h3>{{ entry.data.displayTitle or entry.data.title }}</h3><p class="desc">{{ entry.data.description }}</p><span class="go">자료 살펴보기 <span class="ar" aria-hidden="true">↗</span></span></a>{% endfor %}
       <a class="card knowledge-card reveal" href="{{ profile.blog }}"><span class="meta meta--pop">직접 배우고 남긴 기록</span><h3>노션 기술 블로그</h3><p class="desc">구현하며 배운 것과 문제를 해결한 과정.<br>개발과 학습의 기록을 이어갑니다.</p><span class="go">블로그 방문하기 <span class="ar" aria-hidden="true">↗</span></span></a>
     </div>
   </div>

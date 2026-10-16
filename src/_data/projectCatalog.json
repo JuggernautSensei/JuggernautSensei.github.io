@@ -21,17 +21,8 @@
         "Project",
         "Library"
       ],
+      "pinned": true,
       "notionUrl": "https://juggernautsensei.notion.site/3fac3fb6c02f80748985e4e3b5a18414"
-    },
-    {
-      "id": "3ccc3fb6-c02f-80f8-a0a9-deccac0ef845",
-      "slug": "juggernaut",
-      "title": "[Juggernaut] 게임 개발 프레임워크",
-      "categories": [
-        "Project",
-        "Library"
-      ],
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80f8a0a9deccac0ef845"
     },
     {
       "id": "3fac3fb6-c02f-80ce-9da6-dadcb80ffe3f",
@@ -41,17 +32,30 @@
         "Project",
         "Library"
       ],
+      "pinned": true,
       "notionUrl": "https://juggernautsensei.notion.site/3fac3fb6c02f80ce9da6dadcb80ffe3f"
     },
     {
       "id": "3ccc3fb6-c02f-80d2-b932-c71bdd2055ca",
       "slug": "jugnet",
-      "title": "[JugNet] WinSock 기반 네트워크 라이브러리",
+      "title": "[JugNet] WinSock 기반 네트워크 라이브러리 ",
       "categories": [
         "Project",
         "Library"
       ],
+      "pinned": true,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80d2b932c71bdd2055ca"
+    },
+    {
+      "id": "3ccc3fb6-c02f-80f8-a0a9-deccac0ef845",
+      "slug": "juggernaut",
+      "title": "[Juggernaut] 게임 개발 프레임워크",
+      "categories": [
+        "Project",
+        "Library"
+      ],
+      "pinned": true,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80f8a0a9deccac0ef845"
     },
     {
       "id": "3ccc3fb6-c02f-80e6-a6e6-f4f385766241",
@@ -61,6 +65,7 @@
         "Project",
         "Game"
       ],
+      "pinned": true,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e6a6e6f4f385766241"
     },
     {
@@ -71,6 +76,7 @@
         "Project",
         "Game"
       ],
+      "pinned": true,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f800fbba1ed14ecb2cb97"
     },
     {
@@ -80,6 +86,7 @@
       "categories": [
         "Presentation"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806c98ffeccc0c5c3175"
     },
     {
@@ -89,6 +96,7 @@
       "categories": [
         "Presentation"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806b940aff6f542b0639"
     },
     {
@@ -98,6 +106,7 @@
       "categories": [
         "Study"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3f6c3fb6c02f8091ab34cdf9b2d6384e"
     },
     {
@@ -107,6 +116,7 @@
       "categories": [
         "Study"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80c0af3fd41364bb08a4"
     },
     {
@@ -116,6 +126,7 @@
       "categories": [
         "Study"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80588961fc9ce62565bf"
     },
     {
@@ -125,6 +136,7 @@
       "categories": [
         "Study"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806aa626f7ee1deb32e0"
     },
     {
@@ -134,6 +146,7 @@
       "categories": [
         "Study"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e285cdda7f05718cdc"
     },
     {
@@ -144,6 +157,7 @@
         "Study",
         "Game"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f8094bc76d4d782b88458"
     },
     {
@@ -153,6 +167,7 @@
       "categories": [
         "Study"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e6bd8cdd32b8c0a56c"
     },
     {
@@ -162,6 +177,7 @@
       "categories": [
         "Study"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f8042a51dd40d2fff8e90"
     },
     {
@@ -171,6 +187,7 @@
       "categories": [
         "Study"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f809d848fc4401558ee91"
     },
     {
@@ -180,6 +197,7 @@
       "categories": [
         "Study"
       ],
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80b89021c00bc20935a9"
     }
   ]

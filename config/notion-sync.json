@@ -4,6 +4,13 @@
   "headlineBlockId": "3cdc3fb6-c02f-80fa-be23-d6096ee8a9cb",
   "introductionBlockId": "3f4c3fb6-c02f-809c-95cd-f7a5e778f2f4",
   "portraitBlockId": "3cdc3fb6-c02f-80b4-85fa-e9764e067847",
+  "experienceColumnId": "f12c3fb6-c02f-8335-86f9-81fbb1083792",
+  "contactBlocks": {
+    "email": "b5dc3fb6-c02f-8316-90c6-81c9a68175af",
+    "discord": "3cdc3fb6-c02f-807f-8540-d290c8a325b6",
+    "github": "3cdc3fb6-c02f-8020-b92a-e63a41536cdc",
+    "blog": "3cec3fb6-c02f-80cd-a171-d5197aa333e0"
+  },
   "covers": [
     { "pageId": "3ccc3fb6-c02f-80f8-a0a9-deccac0ef845", "file": "framework.png" },
     { "pageId": "3ccc3fb6-c02f-806c-98ff-eccc0c5c3175", "file": "deferred.png" },

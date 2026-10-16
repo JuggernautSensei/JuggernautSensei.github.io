@@ -99,28 +99,11 @@ reduce.addEventListener("change", () => {
 
 if (heroBackdrop) {
   const images = [...heroBackdrop.querySelectorAll("img")];
-  const dots = [...document.querySelectorAll("[data-slide]")];
-  const caption = document.querySelector(".hero-caption");
-  const pauseButton = document.querySelector(".hero-pause");
   let active = 0;
-  let paused = false;
-  function showSlide(index) {
-    images.forEach((image, i) => image.classList.toggle("is-active", i === index));
-    dots.forEach((dot, i) => dot.setAttribute("aria-pressed", String(i === index)));
-    caption.textContent = dots[index].dataset.label + " ↗";
-    caption.href = dots[index].dataset.href;
-    active = index;
-  }
-  dots.forEach(dot => dot.addEventListener("click", () => showSlide(Number(dot.dataset.slide))));
-  pauseButton.addEventListener("click", () => {
-    paused = !paused;
-    pauseButton.textContent = paused ? "재생" : "정지";
-    pauseButton.setAttribute("aria-pressed", String(paused));
-    pauseButton.setAttribute("aria-label", paused ? "배경 자동 전환 재생" : "배경 자동 전환 정지");
-  });
   window.setInterval(() => {
-    if (paused || reduce.matches || document.hidden || window.scrollY >= hero.offsetHeight) return;
-    showSlide((active + 1) % images.length);
+    if (reduce.matches || document.hidden) return;
+    active = (active + 1) % images.length;
+    images.forEach((image, index) => image.classList.toggle("is-active", index === active));
   }, Number(heroBackdrop.dataset.interval));
 }
 

@@ -1,0 +1,474 @@
+{
+  "active": true,
+  "pages": {
+    "jugx": {
+      "id": "3fac3fb6-c02f-8074-8985-e4e3b5a18414",
+      "title": "JugX",
+      "displayTitle": "[JugX] C++20 스탠다드 라이브러리",
+      "categories": [
+        "Project",
+        "Library"
+      ],
+      "category": "프로젝트 · 라이브러리",
+      "pinned": true,
+      "featuredGroup": "library",
+      "featuredOrder": 0,
+      "repository": null,
+      "cover": "/assets/notion/3452b09e8ad3454674a60c42.png",
+      "coverAlt": "[JugX] C++20 스탠다드 라이브러리",
+      "notionUrl": "https://juggernautsensei.notion.site/3fac3fb6c02f80748985e4e3b5a18414",
+      "notionHtml": ""
+    },
+    "juggfx": {
+      "id": "3fac3fb6-c02f-80ce-9da6-dadcb80ffe3f",
+      "title": "JugGfx",
+      "displayTitle": "[JugGfx] D3D11 기반 그래픽스 라이브러리",
+      "categories": [
+        "Project",
+        "Library"
+      ],
+      "category": "프로젝트 · 라이브러리",
+      "pinned": true,
+      "featuredGroup": "library",
+      "featuredOrder": 1,
+      "repository": null,
+      "cover": "/assets/notion/153dc2351f74fcf25d406587.png",
+      "coverAlt": "[JugGfx] D3D11 기반 그래픽스 라이브러리",
+      "notionUrl": "https://juggernautsensei.notion.site/3fac3fb6c02f80ce9da6dadcb80ffe3f",
+      "notionHtml": ""
+    },
+    "jugnet": {
+      "id": "3ccc3fb6-c02f-80d2-b932-c71bdd2055ca",
+      "title": "JugNet",
+      "displayTitle": "[JugNet] WinSock 기반 네트워크 라이브러리 ",
+      "categories": [
+        "Project",
+        "Library"
+      ],
+      "category": "프로젝트 · 라이브러리",
+      "pinned": true,
+      "featuredGroup": "library",
+      "featuredOrder": 2,
+      "repository": null,
+      "cover": "/assets/notion/0a0d7295b5c03643608d4a07.png",
+      "coverAlt": "[JugNet] WinSock 기반 네트워크 라이브러리 ",
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80d2b932c71bdd2055ca",
+      "notionHtml": ""
+    },
+    "juggernaut": {
+      "id": "3ccc3fb6-c02f-80f8-a0a9-deccac0ef845",
+      "title": "Juggernaut",
+      "displayTitle": "[Juggernaut] 게임 개발 프레임워크",
+      "categories": [
+        "Project",
+        "Library"
+      ],
+      "category": "프로젝트 · 라이브러리",
+      "pinned": true,
+      "featuredGroup": "library",
+      "featuredOrder": 3,
+      "repository": null,
+      "cover": "/assets/notion/30556147a1bfa1df15d80834.png",
+      "coverAlt": "[Juggernaut] 게임 개발 프레임워크",
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80f8a0a9deccac0ef845",
+      "notionHtml": ""
+    },
+    "textgradius": {
+      "id": "3ccc3fb6-c02f-80e6-a6e6-f4f385766241",
+      "title": "Text Gradius",
+      "displayTitle": "Text Gradius",
+      "categories": [
+        "Project",
+        "Game"
+      ],
+      "category": "프로젝트 · 게임",
+      "pinned": true,
+      "featuredGroup": "game",
+      "featuredOrder": 4,
+      "repository": "https://github.com/JuggernautSensei/TextGradius.git",
+      "cover": "/assets/notion/7d4c808ae68b9937313851e5.png",
+      "coverAlt": "Text Gradius",
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e6a6e6f4f385766241",
+      "notionHtml": "<h2 id=\"notion-4f6b2a78-4595-4169-a508-ca40a8061e7d\">개요</h2><p>Windows 콘솔에서 동작하는 C++20 기반의 Gradius 스타일 횡스크롤 슈팅 게임입니다. C/C++ 기본기를 실제 게임 구조에 적용하고, 콘솔 렌더링과 적 처리 구조를 개선해 본 첫 완성 프로젝트입니다.</p><h2 id=\"notion-54af17e3-d524-4391-bb15-cf53ff990172\">프로젝트 개요</h2><ul><li><strong>플랫폼 / 도구:</strong> Windows 10·11, Visual Studio 2026 이상, MSVC v145, C++20</li><li><strong>게임 흐름:</strong> 이름 입력 → 기체 선택 → 2개 스테이지 진행 → 결과 및 점수 저장 → 상위 10개 랭킹 확인</li><li><strong>조작:</strong> 방향키 이동, 자동 사격. 초당 30프레임으로 동작</li><li><strong>기체:</strong> Triangle, Clover, Diamond. 목숨, 공격력, 발사 간격이 서로 달라 플레이 스타일이 다릅니다.</li><li><strong>적:</strong> Uros, Call, Starman. 적별 이동·공격 방식이 다르며 스테이지 2에는 추적형 Starman이 등장합니다.</li></ul><h3 id=\"notion-53ec520c-3975-4a98-a87a-6512e5d723da\">게임 플레이</h3><p>스테이지 2 플레이 장면.</p><figure><img src=\"/assets/notion/0424d6fb29f651227aad2fc6.gif\" alt=\"\" loading=\"lazy\"></figure><h2 id=\"notion-933943b0-89ab-4e4b-8ccb-0a6360334488\">주요 구현과 설계</h2><ul><li><strong>씬 기반 구조:</strong> 타이틀, 이름 입력, 기체 선택, 스테이지 안내, 플레이, 결과, 랭킹을 Scene 다형성으로 분리했습니다. Game이 현재 씬을 unique_ptr로 소유하고 씬 전환을 관리합니다.</li><li><strong>오브젝트 풀:</strong> 적·탄환·별을 미리 생성해 재사용합니다. 게임 중 반복적인 동적 할당을 줄이고 생존 상태를 바꿔 오브젝트를 관리합니다.</li><li><strong>적 다형성:</strong> Uros·Call·Starman을 Enemy 포인터 목록으로 순회하도록 바꾸어 적과 탄환 처리 반복문을 <strong>19개에서 8개로</strong> 줄였습니다.</li><li><strong>더블 버퍼링:</strong> 100×30 크기의 CHAR_INFO 백 버퍼에 먼저 그린 뒤 WriteConsoleOutputW로 프레임당 한 번 출력합니다. 한글 등 두 칸을 차지하는 문자도 고려합니다.</li><li><strong>랭킹 저장:</strong> 플레이어 ID·이름·점수를 gamedata.sav 텍스트 파일에 저장하고, 점수순으로 정렬해 상위 10개를 표시합니다.</li></ul><h3 id=\"notion-06cab8d5-771a-4135-b9d2-8d8c113ce05e\">랭킹 화면</h3><p>결과 화면에서 기록이 저장되고 랭킹을 확인하는 흐름.</p><figure><img src=\"/assets/notion/02bb601a6b1da1e5afbbb95a.gif\" alt=\"\" loading=\"lazy\"></figure><h2 id=\"notion-7a3e2a0d-2375-4037-8f42-f98dc41b5377\">성능 개선</h2><p>별도 렌더링 벤치마크에서 프레임당 출력 시간이 기존 방식의 <strong>40.04ms</strong>에서 최종 방식의 <strong>0.082ms</strong>로 줄었습니다(약 <strong>490배</strong> 개선). 이 수치는 실제 게임 전체가 아니라 동일한 렌더링 방식을 재현한 벤치마크 결과이며, README에 기재된 환경은 Ryzen 9 7945HX, Windows 11, conhost, Release 빌드입니다.</p><h3 id=\"notion-ec06dac2-961f-41e6-a067-624c492e9ea4\">렌더링 방식 비교</h3><p>기존 출력 방식과 더블 버퍼링 적용 후의 화면 비교.</p><figure><img src=\"/assets/notion/9b7653b2fa0c99c7c6b4ac31.gif\" alt=\"\" loading=\"lazy\"></figure><h2 id=\"notion-24f93075-33a5-40fa-9ca5-716e274c8172\">회고와 다음 개선점</h2><p>병목을 추측으로 고치기보다 측정해 확인하는 과정에서 디버깅과 성능 분석을 배웠고, 상속을 정의하는 것뿐 아니라 공통 타입으로 실제 처리해야 다형성의 이점을 얻는다는 점을 확인했습니다. 후속 개선 과제로는 씬 생성 등록 구조 개선과 모든 오브젝트가 공통으로 사용할 Update 인터페이스 설계가 남아 있습니다.</p>",
+      "toc": [
+        {
+          "id": "overview",
+          "label": "개요"
+        },
+        {
+          "id": "notion-4f6b2a78-4595-4169-a508-ca40a8061e7d",
+          "label": "개요"
+        },
+        {
+          "id": "notion-54af17e3-d524-4391-bb15-cf53ff990172",
+          "label": "프로젝트 개요"
+        },
+        {
+          "id": "notion-933943b0-89ab-4e4b-8ccb-0a6360334488",
+          "label": "주요 구현과 설계"
+        },
+        {
+          "id": "notion-7a3e2a0d-2375-4037-8f42-f98dc41b5377",
+          "label": "성능 개선"
+        },
+        {
+          "id": "notion-24f93075-33a5-40fa-9ca5-716e274c8172",
+          "label": "회고와 다음 개선점"
+        },
+        {
+          "id": "links",
+          "label": "관련 자료"
+        }
+      ]
+    },
+    "metalslug2-clone": {
+      "id": "3ccc3fb6-c02f-800f-bba1-ed14ecb2cb97",
+      "title": "메탈슬러그2 모작",
+      "displayTitle": "메탈슬러그2 모작",
+      "categories": [
+        "Project",
+        "Game"
+      ],
+      "category": "프로젝트 · 게임",
+      "pinned": true,
+      "featuredGroup": "game",
+      "featuredOrder": 5,
+      "repository": "https://github.com/JuggernautSensei/MetalSlug2-Clone",
+      "cover": "/assets/notion/548c075b4bbb080f7cf642f4.jpg",
+      "coverAlt": "메탈슬러그2 모작",
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f800fbba1ed14ecb2cb97",
+      "notionHtml": "<h2 id=\"notion-43fcf442-7923-4bd5-aa9a-f508880bad4c\">개요</h2><p>C++20과 SDL3로 메탈슬러그 2의 Mission 4를 모작한 2D 횡스크롤 액션 게임입니다. 게임 엔진 없이 게임 루프, 물리, 충돌, 렌더링, 애니메이션, 사운드를 직접 구현하고, 게임을 실행하면서 데이터를 편집할 수 있는 런타임 에디터를 함께 만들었습니다.</p><h2 id=\"notion-a83234b4-a477-4fba-a96a-7a9f2d9c1fc3\">프로젝트 개요</h2><ul><li><strong>개발 기간 / 인원:</strong> 2024년 2월부터 약 2개월간 1인 개발로 게임을 완성했습니다. 2026년 10월에는 약 1주간 Claude Code와 함께 기존 코드를 리팩터링했습니다.</li><li><strong>플랫폼 / 도구:</strong> Windows x64, Visual Studio, MSVC, C++20, SDL3. 에디터는 Dear ImGui, 사운드는 miniaudio를 사용합니다.</li><li><strong>게임 흐름:</strong> 시내 → 버스 → 지하 → 강가 → 다운타운 → 사막 → 최종 보스로 이어지며, 시작부터 보스전 클리어까지 한 판을 플레이할 수 있습니다.</li><li><strong>플레이어:</strong> 이동, 점프, 앉기, 8방향 조준, 사격, 칼, 폭탄과 무기 5종(권총·헤비머신건·샷건·로켓·파이어샷)을 구현했습니다.</li><li><strong>적 / 오브젝트:</strong> 병사, 방패병, 바주카, 헬기, 전차류, 중간 보스 버스와 최종 보스 빅 셰이가 등장합니다. 부서지는 건물·구조물, 아이템 드롭, 포로도 구현했습니다.</li><li><strong>조작:</strong> 방향키 / WASD로 이동·조준·앉기, J / Z로 사격·근접 공격, K / X로 점프, L / C로 폭탄을 사용합니다.</li></ul><h3 id=\"notion-0a1b3517-ff76-45ec-8f46-bfc1580f1697\">게임 플레이</h3><p>Mission 4의 전투와 스테이지 진행 장면.</p><figure><img src=\"/assets/notion/466735138fc396785636a1c0.gif\" alt=\"게임 플레이\" loading=\"lazy\"><figcaption>게임 플레이</figcaption></figure><p><a href=\"https://www.youtube.com/watch?v=3DOms4Vg5p4\">전체 플레이와 에디터 사용 장면, 설계 설명 영상</a></p><h2 id=\"notion-2c1bc0a2-6257-4f79-a920-7bff4887a30a\">주요 구현과 설계</h2><ul><li><strong>고정 스텝과 장면 분리:</strong> 게임 로직은 1/60초 고정 스텝으로 갱신하고 화면은 틱 사이를 보간합니다. 타이틀, 스테이지, 에디터 샌드박스를 <code>IGameState</code>로 분리하고, <code>SimRunner</code>가 입력 기록과 장면 전환을 관리합니다.</li><li><strong>플레이어 입력 보정:</strong> 접지·자세·이동 여부로 상태를 계산합니다. 점프는 4틱, 사격·폭탄은 6틱 동안 입력을 기억하고, 발판에서 떨어진 직후 4틱 안에도 점프할 수 있도록 코요테 타임을 적용했습니다. 근접 범위에 적이 있으면 사격 입력을 칼 공격으로 전환합니다.</li><li><strong>상·하체 애니메이션:</strong> 상체와 하체를 따로 재생하고 자세·조준·공격 상태와 무기별 클립 규칙으로 애니메이션을 선택합니다. 사격·칼·투척 모션은 튜닝의 지속 시간에 맞춰 재생 속도를 조절합니다.</li><li><strong>충돌과 전투 판정:</strong> 캐릭터·투사체·발판·벽에는 AABB를, 사선·곡선 지형에는 픽셀 마스크를 사용합니다. 빠른 탄은 이전 위치와 현재 위치를 감싸는 상자로 판정하고, 공격마다 hit ID를 부여해 같은 대상에게 중복 피해를 주지 않도록 했습니다.</li><li><strong>데이터 중심 스테이지:</strong> 적·소품 정의, 애니메이션, 배치, 튜닝 값을 JSON으로 관리합니다. 플레이어가 섹션 시작선을 넘으면 해당 구간의 적을 생성하고, 카메라 고정·보간과 화면 밖 오브젝트 정리를 함께 처리합니다.</li><li><strong>렌더링과 로딩:</strong> 그릴 항목을 <code>SpriteBatch</code>에 모아 depth → sortKey → 제출 순서로 정렬합니다. 이미지 읽기와 디코딩은 여러 스레드로 처리하고 GPU 텍스처 등록은 메인 스레드에서 수행합니다.</li><li><strong>사운드 관리:</strong> 이름으로 사운드를 찾아 재생합니다. 같은 소리는 동시에 4개까지 허용하고 초과하면 가장 오래된 소리를 교체하며, BGM은 페이드 아웃 후 전환합니다.</li></ul><h3 id=\"notion-c528c5f7-272d-4a5d-8787-ff343514d81d\">보스전</h3><p>최종 보스 빅 셰이 전투 장면.</p><figure><img src=\"/assets/notion/1dafb66da70bdaca43536d2e.gif\" alt=\"최종 보스 빅 셰이\" loading=\"lazy\"><figcaption>최종 보스 빅 셰이</figcaption></figure><h2 id=\"notion-4034ba56-60c0-4e4a-b8af-f1fb0f128a8a\">런타임 에디터</h2><p>게임을 <code>--editor</code>로 실행하면 Dear ImGui 에디터가 함께 열립니다. 수치와 배치를 데이터로 분리해, 게임을 돌리면서 동작을 확인하고 수정할 수 있도록 했습니다.</p><ul><li><strong>Animation:</strong> 프레임별 기준점과 재생 시간, 어니언 스킨, 1px 단위 이동을 지원합니다.</li><li><strong>Map:</strong> 적·오브젝트를 배치하고 섹션 시작선을 드래그해 조정합니다.</li><li><strong>Collision:</strong> 맵 위에 연필·사각형·선·채우기로 픽셀 충돌 마스크를 편집합니다.</li><li><strong>AI:</strong> 히트박스·발사 위치·모션 값을 조정하고, 적 스폰과 일시정지·1틱 진행으로 게임 플레이를 확인합니다.</li></ul><p>애니메이션과 튜닝 값은 편집하는 즉시 반영되며, 맵과 충돌 데이터는 저장 후 다음 실행에 반영됩니다. 저장 단축키는 Ctrl+S입니다.</p><h3 id=\"notion-ceee6dd3-5426-4c0b-95cd-2a688dc50c02\">애니메이션 편집</h3><p>어니언 스킨을 보면서 프레임별 기준점과 재생 시간을 맞추는 과정.</p><figure><img src=\"/assets/notion/cf41e4a1c16f1872b6411ec7.gif\" alt=\"애니메이션 에디터\" loading=\"lazy\"><figcaption>애니메이션 에디터</figcaption></figure><h3 id=\"notion-f381a9a3-e5d8-4c91-9ea5-fa728cb9399f\">게임 플레이 편집</h3><p>히트박스와 AI를 확인하고 적을 스폰해 동작을 검토하는 과정.</p><figure><img src=\"/assets/notion/a31346efa2cd9ee7dbb97632.gif\" alt=\"게임 플레이 에디터\" loading=\"lazy\"><figcaption>게임 플레이 에디터</figcaption></figure><h2 id=\"notion-d1758a80-a773-45bf-a30f-0969552972af\">회고</h2><p>바닥부터 직접 구현하며 C++과 그래픽스 기본기를 단련하고, 객체 설계와 데이터 구조, 직렬화·역직렬화 구조를 깊이 고민할 수 있었습니다. 오픈 소스를 참고하면서 좋은 코드를 읽고 설계와 구현을 판단하는 경험도 쌓았습니다.</p><p>AI를 활용한 리팩터링에서는 코드가 크게 바뀌어 곤혹을 겪기도 했지만, 하네스 작성, AI 코드 리뷰, 테스트와 검증을 거치며 AI 활용 역량을 키울 수 있었습니다. 기획·개발·QA를 나누어 진행하는 개발팀의 과정을 간접적으로 경험했습니다.</p><p><a href=\"https://github.com/JuggernautSensei/MetalSlug2-Clone\">소스 코드와 빌드·실행 방법</a></p><p>이 프로젝트는 학습 목적의 비상업 모작입니다. 메탈슬러그 2의 그래픽과 사운드 저작권은 SNK에 있습니다.</p>",
+      "toc": [
+        {
+          "id": "overview",
+          "label": "개요"
+        },
+        {
+          "id": "notion-43fcf442-7923-4bd5-aa9a-f508880bad4c",
+          "label": "개요"
+        },
+        {
+          "id": "notion-a83234b4-a477-4fba-a96a-7a9f2d9c1fc3",
+          "label": "프로젝트 개요"
+        },
+        {
+          "id": "notion-2c1bc0a2-6257-4f79-a920-7bff4887a30a",
+          "label": "주요 구현과 설계"
+        },
+        {
+          "id": "notion-4034ba56-60c0-4e4a-b8af-f1fb0f128a8a",
+          "label": "런타임 에디터"
+        },
+        {
+          "id": "notion-d1758a80-a773-45bf-a30f-0969552972af",
+          "label": "회고"
+        },
+        {
+          "id": "links",
+          "label": "관련 자료"
+        }
+      ]
+    },
+    "deferred-rendering-gdc2025": {
+      "id": "3ccc3fb6-c02f-806c-98ff-eccc0c5c3175",
+      "title": "Deferred Rendering을 이용한 렌더링 최적화",
+      "displayTitle": "Deferred Rendering을 이용한 렌더링 최적화",
+      "categories": [
+        "Presentation"
+      ],
+      "category": "발표",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 6,
+      "repository": "https://github.com/JuggernautSensei/Deferred-Rendering-GDC-2025-.git",
+      "cover": "/assets/notion/4d2914fd08bc8935a70502a2.png",
+      "coverAlt": "Deferred Rendering을 이용한 렌더링 최적화",
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806c98ffeccc0c5c3175",
+      "notionHtml": "<h2 id=\"notion-8c25cb9e-4db3-4651-bdfc-329372c078cf\">개요</h2><figure><img src=\"/assets/notion/0832a10fec8f1dab38ec6205.png\" alt=\"\" loading=\"lazy\"></figure><p>GDC 2025 발표 자료입니다. Forward Rendering에서 반복되는 색상 계산을 Deferred Rendering으로 줄이는 원리와 G-buffer 최적화, 성능 비교, 적용 시 고려할 한계를 정리합니다.</p><h2 id=\"notion-2df135e7-7b4d-4794-8a7e-41995a463c8d\">프로젝트 개요</h2><ul><li><strong>주제:</strong> Deferred Rendering을 이용한 렌더링 최적화</li><li><strong>발표 범위:</strong> 렌더링 기초, Forward / Deferred Rendering 비교, G-buffer 최적화, 성능 테스트, 안티앨리어싱과 반투명 물체 처리</li><li><strong>발표자:</strong> 안지우 (부경대학교 컴퓨터공학과 4학년)</li></ul><h2 id=\"notion-3d460c15-c394-465c-a5a2-cfe162ee2c3d\">주요 내용과 설계</h2><ul><li><strong>Forward Rendering:</strong> 모델마다 렌더링 파이프라인을 수행하므로 모델 수에 따라 계산이 반복됩니다. 다른 물체에 가려지는 픽셀에도 색상 계산이 발생할 수 있습니다.</li><li><strong>Deferred Rendering:</strong> Geometry pass에서 위치·법선·깊이·재질 정보를 G-buffer에 기록한 뒤, 두 번째 pass에서 이를 바탕으로 화면 색상을 계산합니다.</li><li>G-buffer 최적화: 저장할 버퍼 수를 줄이고, 깊이값으로 위치를 복원해 위치 버퍼를 생략하며, 데이터 범위에 맞는 포맷(R8G8B8A8_UNORM 또는 R16G16B16A16_FLOAT)을 선택합니다.</li><li><strong>계산 규모:</strong> README는 1280×720 해상도와 60fps 기준으로 초당 55,296,000회의 픽셀 색상 계산이 필요하다고 설명합니다.</li></ul><h2 id=\"notion-8ef5ef84-9752-44da-9118-afe27a1d290a\">성능 개선</h2><p>README에 기록된 스트레스 테스트는 AMD Ryzen 9 7945HX와 NVIDIA GeForce RTX 4060에서 구 100,000개(총 버텍스 약 6.43억 개)를 대상으로 진행했습니다.</p><ul><li><strong>Forward Rendering:</strong> 40 FPS</li><li><strong>Deferred Rendering:</strong> 68 FPS (약 70% 향상)</li></ul><p>결과는 해당 테스트 장면과 하드웨어에서의 측정값이며, 다른 장면이나 환경의 성능을 보장하지는 않습니다.</p><h2 id=\"notion-b0f07c67-86db-4e12-8bba-ff746abf73e5\">한계와 대응 방안</h2><ul><li><strong>하드웨어 MSAA 제약:</strong> FXAA 또는 TAA 같은 후처리 안티앨리어싱을 사용할 수 있습니다.</li><li><strong>반투명 물체:</strong> 투명 물체만 깊이순으로 정렬해 Forward Rendering으로 처리하거나, 디더링으로 투명도를 근사하거나, OIT(Order-Independent Transparency)를 적용하는 방안을 제시합니다.</li></ul>",
+      "toc": [
+        {
+          "id": "overview",
+          "label": "개요"
+        },
+        {
+          "id": "notion-8c25cb9e-4db3-4651-bdfc-329372c078cf",
+          "label": "개요"
+        },
+        {
+          "id": "notion-2df135e7-7b4d-4794-8a7e-41995a463c8d",
+          "label": "프로젝트 개요"
+        },
+        {
+          "id": "notion-3d460c15-c394-465c-a5a2-cfe162ee2c3d",
+          "label": "주요 내용과 설계"
+        },
+        {
+          "id": "notion-8ef5ef84-9752-44da-9118-afe27a1d290a",
+          "label": "성능 개선"
+        },
+        {
+          "id": "notion-b0f07c67-86db-4e12-8bba-ff746abf73e5",
+          "label": "한계와 대응 방안"
+        },
+        {
+          "id": "links",
+          "label": "관련 자료"
+        }
+      ]
+    },
+    "research-report-on-multilayer-perceptrons": {
+      "id": "3ccc3fb6-c02f-806b-940a-ff6f542b0639",
+      "title": "다층 퍼셉트론 조사 보고서",
+      "displayTitle": "다층 퍼셉트론 조사 보고서",
+      "categories": [
+        "Presentation"
+      ],
+      "category": "발표",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 7,
+      "repository": "https://github.com/JuggernautSensei/Research-Report-on-Multilayer-Perceptrons",
+      "cover": "/assets/notion/3e52bd439399fb28ce674f0b.png",
+      "coverAlt": "다층 퍼셉트론 조사 보고서",
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806b940aff6f542b0639",
+      "notionHtml": "<h2 id=\"notion-f63257fe-6046-46d2-a9f0-a8d387d86454\">개요</h2><figure><img src=\"/assets/notion/a838eb36c1ded6b8dc888a05.png\" alt=\"입력층, 은닉층, 출력층으로 구성된 다층 퍼셉트론 — 보고서 5쪽\" loading=\"lazy\"><figcaption>입력층, 은닉층, 출력층으로 구성된 다층 퍼셉트론 — 보고서 5쪽</figcaption></figure><p>인공지능 입문 과목에서 작성한 다층 퍼셉트론(Multilayer Perceptron, MLP) 조사 보고서입니다. 단층 퍼셉트론의 XOR 문제를 출발점으로, 은닉층과 비선형 활성화 함수가 필요한 이유를 설명하고 역전파를 통한 가중치 학습 과정을 정리합니다.</p><h2 id=\"notion-9ee50534-8f14-4da1-8595-d4464d47d4c3\">프로젝트 개요</h2><ul><li><strong>주제:</strong> 다층 퍼셉트론의 구조와 학습 원리</li><li><strong>조사 범위:</strong> 단층 퍼셉트론의 한계, XOR 문제, 은닉층, 활성화 함수, 순전파와 역전파</li><li><strong>작성자:</strong> 안지우 (부경대학교 컴퓨터공학과)</li><li><strong>결과물:</strong> 구조도·논리 연산 예시·함수 그래프·가중치 갱신 수식을 담은 16쪽 PDF 보고서</li><li><strong>자료:</strong> <a href=\"https://github.com/JuggernautSensei/Research-Report-on-Multilayer-Perceptrons\">GitHub 저장소</a> · <a href=\"https://github.com/JuggernautSensei/Research-Report-on-Multilayer-Perceptrons/blob/b7ed1fe1af215dd98a83e232a4057095024e8039/%EB%8B%A4%EC%B8%B5%20%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%20%EC%A1%B0%EC%82%AC%20%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf\">PDF 원문</a></li></ul><h2 id=\"notion-5aa51e1f-5cce-4aa8-a39c-95d93852fb61\">주요 내용과 설계</h2><ul><li><strong>단층 퍼셉트론의 한계:</strong> 선형 분리가 가능한 데이터를 구분할 수 있지만, XOR처럼 하나의 직선으로 나눌 수 없는 문제에는 한계가 있습니다. 보고서는 이를 은닉층이 필요한 배경으로 설명합니다. (PDF 3–4쪽)</li><li><strong>다층 퍼셉트론의 구조:</strong> 입력층이 데이터를 전달하고, 은닉층이 비선형 변환을 수행하며, 출력층이 최종 결과를 만듭니다. 보고서는 은닉층이 1개인 구조와 여러 개인 구조를 비교합니다. (PDF 5쪽)</li><li><strong>XOR 표현:</strong> 은닉층에서 NAND와 OR 연산을 각각 수행하고, 출력층에서 두 결과를 AND 연산으로 결합합니다. 여러 퍼셉트론을 연결해 단층으로 표현할 수 없던 XOR를 구현하는 예시입니다. (PDF 6쪽)</li><li><strong>비선형 활성화 함수:</strong> 선형 변환만 여러 번 쌓으면 전체도 선형 변환입니다. 비선형 문제를 표현하려면 가중합에 비선형 활성화 함수를 적용해야 합니다. (PDF 7쪽)</li></ul><h3 id=\"notion-b017f1ed-b01b-4a67-bc3d-2c6efe440a7c\">활성화 함수 비교</h3><figure><img src=\"/assets/notion/1555dadee854b5f961d90725.png\" alt=\"Sigmoid, Tanh, ReLU, ELU의 그래프와 수식 — 보고서 8쪽\" loading=\"lazy\"><figcaption>Sigmoid, Tanh, ReLU, ELU의 그래프와 수식 — 보고서 8쪽</figcaption></figure><p>보고서는 네 가지 활성화 함수의 출력 형태와 학습 시 고려할 특징을 비교합니다. (PDF 8–12쪽)</p><ul><li><strong>Sigmoid:</strong> 입력을 0과 1 사이로 압축합니다. 큰 절댓값의 입력에서는 기울기가 작아져 학습 중 기울기 소실이 발생할 수 있습니다.</li><li><strong>Tanh:</strong> 입력을 -1과 1 사이로 압축하며 출력이 원점을 중심으로 합니다. Sigmoid와 마찬가지로 포화 영역에서 기울기가 작아집니다.</li><li><strong>ReLU:</strong> 양수는 그대로, 0 이하는 0으로 출력합니다. 계산이 단순하지만 뉴런이 계속 비활성 영역에 머무르면 학습이 멈추는 Dying ReLU 문제가 생길 수 있습니다. 보고서는 대안으로 Leaky ReLU와 PReLU를 소개합니다.</li><li><strong>ELU:</strong> 양수는 그대로 출력하고 음수는 지수 함수로 변환합니다. 음수 영역에서도 기울기를 가지며, 입력이 크게 음수가 되면 출력은 -α에 가까워집니다. 음수 영역의 지수 연산 때문에 ReLU보다 계산량이 늘어납니다.</li></ul><h2 id=\"notion-4fd744b4-8346-4764-a4b2-24917e4410b9\">학습 과정</h2><p>보고서는 <strong>순전파 → 손실 계산 → 역전파 → 가중치 갱신</strong>의 흐름을 도식과 수식으로 설명합니다. (PDF 13–14쪽)</p><ol><li><strong>순전파:</strong> 입력값을 각 층의 가중합과 활성화 함수를 거쳐 전달해 예측값을 구합니다.</li><li><strong>손실 계산:</strong> 예측값과 목표값의 차이를 바탕으로 손실을 계산합니다.</li><li><strong>역전파:</strong> 출력층에서 앞쪽 층으로 계산을 이어 가며 각 가중치에 대한 손실의 기울기를 구합니다.</li><li><strong>가중치 갱신:</strong> 학습률과 기울기를 이용해 손실을 줄이는 방향으로 가중치를 조정합니다.</li></ol><pre class=\"notion-equation\">w \\leftarrow w - \\eta \\frac{\\partial L}{\\partial w}</pre><p>여기서 w는 가중치, η는 학습률, L은 손실입니다. 역전파는 기울기를 계산하고, 경사하강법은 그 기울기를 이용해 가중치를 갱신합니다.</p><h2 id=\"notion-6115ae34-703e-41e1-b7a1-84eede4482a1\">한계와 대응 방안</h2><ul><li><strong>기울기 소실:</strong> 깊은 신경망이나 활성화 함수의 포화 영역에서는 앞쪽 층까지 전달되는 기울기가 작아져 학습이 어려워질 수 있습니다. 보고서는 활성화 함수별 특성과 ReLU 계열의 대안을 함께 살펴봅니다. (PDF 9–12, 15쪽)</li><li><strong>최적화의 한계:</strong> 역전파로 구한 기울기를 사용하는 경사하강법이 항상 전역 최솟값에 수렴하는 것은 아닙니다. (PDF 15쪽)</li><li><strong>조사 범위:</strong> 개념과 동작 원리를 설명하는 자료이며, 별도의 구현 코드·학습 실험·정확도 또는 성능 측정은 포함하지 않습니다.</li></ul><h2 id=\"notion-1c27d5a1-95e3-4f5f-8942-7dd90bd15385\">참고 자료</h2><ul><li><strong>주요 출처:</strong> <a href=\"https://github.com/JuggernautSensei/Research-Report-on-Multilayer-Perceptrons/blob/b7ed1fe1af215dd98a83e232a4057095024e8039/%EB%8B%A4%EC%B8%B5%20%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%20%EC%A1%B0%EC%82%AC%20%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf\">다층 퍼셉트론 조사 보고서 PDF</a> · <a href=\"https://github.com/JuggernautSensei/Research-Report-on-Multilayer-Perceptrons/blob/b7ed1fe1af215dd98a83e232a4057095024e8039/README.md\">저장소 README</a></li><li><strong>ELU 설명 보완:</strong> 음수 영역의 포화 특성은 <a href=\"https://arxiv.org/abs/1511.07289\">ELU 원 논문</a>을 함께 확인했습니다.</li></ul>",
+      "toc": [
+        {
+          "id": "overview",
+          "label": "개요"
+        },
+        {
+          "id": "notion-f63257fe-6046-46d2-a9f0-a8d387d86454",
+          "label": "개요"
+        },
+        {
+          "id": "notion-9ee50534-8f14-4da1-8595-d4464d47d4c3",
+          "label": "프로젝트 개요"
+        },
+        {
+          "id": "notion-5aa51e1f-5cce-4aa8-a39c-95d93852fb61",
+          "label": "주요 내용과 설계"
+        },
+        {
+          "id": "notion-4fd744b4-8346-4764-a4b2-24917e4410b9",
+          "label": "학습 과정"
+        },
+        {
+          "id": "notion-6115ae34-703e-41e1-b7a1-84eede4482a1",
+          "label": "한계와 대응 방안"
+        },
+        {
+          "id": "notion-1c27d5a1-95e3-4f5f-8942-7dd90bd15385",
+          "label": "참고 자료"
+        },
+        {
+          "id": "links",
+          "label": "관련 자료"
+        }
+      ]
+    },
+    "raytracinginoneweekend": {
+      "id": "3f6c3fb6-c02f-8091-ab34-cdf9b2d6384e",
+      "title": "Software Raytracing",
+      "displayTitle": "Software Raytracing",
+      "categories": [
+        "Study"
+      ],
+      "category": "학습",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 8,
+      "repository": "https://github.com/JuggernautSensei/RayTracingInOneWeekend",
+      "cover": "/assets/notion/764e13f47ae42c29c8d27368.png",
+      "coverAlt": "Software Raytracing",
+      "notionUrl": "https://juggernautsensei.notion.site/3f6c3fb6c02f8091ab34cdf9b2d6384e",
+      "notionHtml": "<h2 id=\"notion-5c969e83-f557-4cbe-9e7d-ac711c1ea44d\">개요</h2><figure><img src=\"/assets/notion/9880dbef2d3ad2dbc6e99282.png\" alt=\"최종 장면\" loading=\"lazy\"><figcaption>최종 장면</figcaption></figure><p>Peter Shirley의 Ray Tracing in One Weekend를 따라 C++20으로 직접 구현한 CPU 레이 트레이서입니다. 카메라에서 픽셀마다 광선을 쏘고, 물체에 부딪힐 때마다 재질에 따라 산란시키며 색을 계산합니다. 책의 코드를 그대로 옮기지 않고 인터페이스, Dirty Flag, OpenMP 병렬화를 적용해 다시 설계했습니다.</p><h2 id=\"notion-d2b94aea-0de3-46dd-8f3c-e2ecc993ece9\">프로젝트 개요</h2><ul><li><strong>플랫폼 / 도구:</strong> Windows 10·11, Visual Studio, MSVC v145, C++20, OpenMP</li><li><strong>참고 자료:</strong> <em>Ray Tracing in One Weekend</em> (챕터 4~14 구현)</li><li><strong>최종 장면:</strong> 무작위 구체 약 480개와 주인공 구체 3개, 1920×1080, 픽셀당 500 샘플, 최대 재귀 깊이 50</li><li><strong>카메라:</strong> 수직 FOV 20°, 렌즈 각 0.6°, 초점 거리 10 (피사계 심도 적용)</li><li><strong>구현 범위:</strong> 구-광선 교차, 안티앨리어싱, 람베르트·금속·유리 재질, 위치 지정 가능한 카메라, 디포커스 블러</li><li><strong>외부 라이브러리:</strong> 이미지 저장용 stb_image_write만 사용. 벡터, 난수 생성기, 카메라, 재질은 직접 작성했습니다.</li></ul><h2 id=\"notion-bf0895ba-415a-4e1d-9e0c-6c812a92c192\">주요 구현과 설계</h2><ul><li><strong>인터페이스 분리:</strong> 충돌 가능한 객체는 <code>IHittable</code>, 재질은 <code>Material</code> 뒤로 숨겼습니다. <code>Sphere</code>와 <code>HittableList</code>가 <code>IHittable</code>을 구현하고, 새 재질은 <code>Scatter()</code> 하나만 오버라이드하면 추가됩니다.</li><li><strong>카메라 Dirty Flag:</strong> 뷰포트 크기, 픽셀 간격, 시작 위치는 렌더링 중 변하지 않으므로 <code>Set...()</code>은 플래그만 켜고, <code>Render()</code> 시작 시점에 한 번만 계산합니다.</li><li><strong>피사계 심도:</strong> 렌즈를 원판으로 보고 광선 시작점을 원판 위 무작위 점으로 옮깁니다. 목표 지점은 그대로라 초점 평면의 물체는 선명하고 나머지는 번집니다. 렌즈 각이 0이면 샘플링을 건너뜁니다.</li><li><strong>Lambertian:</strong> 법선에 단위 구 위의 무작위 벡터를 더한 방향으로 산란합니다. 결과가 영벡터에 가까우면 법선을 사용합니다.</li><li><strong>Dielectric:</strong> 앞면 충돌 여부에 따라 굴절률 비를 뒤집고, 전반사 조건이거나 슐릭 근사 반사율이 무작위 값보다 크면 반사합니다.</li><li><strong>난수 생성기:</strong> SHR3, MWC, MT19937을 <code>RandomGeneratorT</code> 컨셉으로 교체할 수 있게 구성했습니다.</li><li><strong>OpenMP 병렬 렌더링:</strong> 픽셀끼리 의존성이 없어 행 단위로 나눴고, 광선 경로 길이가 장면마다 달라 <code>schedule(dynamic)</code>을 사용했습니다. 각 픽셀은 자기 칸에만 쓰므로 이미지 버퍼에 잠금이 필요 없고, 진행률은 <code>std::atomic</code>과 <code>omp critical</code>로 처리합니다.</li></ul><h3 id=\"notion-4ff36c5a-82fc-4b90-9ea2-02659f89ba93\">구현 챕터</h3><div class=\"notion-table\"><table><tr><th>챕터</th><th>주제</th><th>핵심 내용</th></tr><tr><td>4</td><td>Rays, Camera, Background</td><td>Ray, 하늘색 그라디언트 배경</td></tr><tr><td>5</td><td>Sphere</td><td>이차방정식 판별식으로 구-광선 교차 판정</td></tr><tr><td>6</td><td>Normals &amp; Multiple Objects</td><td>IHittable 인터페이스, HittableList</td></tr><tr><td>7</td><td>Camera</td><td>Camera 클래스 분리, Dirty Flag</td></tr><tr><td>8</td><td>Antialiasing</td><td>픽셀 안 무작위 다중 샘플링 후 평균</td></tr><tr><td>9</td><td>Diffuse</td><td>람베르트 산란, 감마 보정</td></tr><tr><td>10</td><td>Metal</td><td>반사 + fuzz</td></tr><tr><td>11</td><td>Dielectric</td><td>스넬 굴절, 전반사, 슐릭 근사</td></tr><tr><td>12</td><td>Positionable Camera</td><td>LookAt, CameraUp, FOV</td></tr><tr><td>13</td><td>Defocus Blur</td><td>렌즈 디스크 샘플링</td></tr><tr><td>14</td><td>Final Scene</td><td>무작위 재질 구체 수백 개</td></tr></table></div><h2 id=\"notion-4b0004df-7598-45db-8cbc-dd7c565eda34\">성능</h2><p>최종 장면(1920×1080, 픽셀당 500 샘플)은 Release 빌드에서 OpenMP로 병렬화해 약 <strong>10분 58초</strong>에 렌더링됩니다. 병렬화 전과 비교한 측정값은 따로 기록하지 않았습니다.</p>",
+      "toc": [
+        {
+          "id": "overview",
+          "label": "개요"
+        },
+        {
+          "id": "notion-5c969e83-f557-4cbe-9e7d-ac711c1ea44d",
+          "label": "개요"
+        },
+        {
+          "id": "notion-d2b94aea-0de3-46dd-8f3c-e2ecc993ece9",
+          "label": "프로젝트 개요"
+        },
+        {
+          "id": "notion-bf0895ba-415a-4e1d-9e0c-6c812a92c192",
+          "label": "주요 구현과 설계"
+        },
+        {
+          "id": "notion-4b0004df-7598-45db-8cbc-dd7c565eda34",
+          "label": "성능"
+        },
+        {
+          "id": "links",
+          "label": "관련 자료"
+        }
+      ]
+    },
+    "cpp": {
+      "id": "3ccc3fb6-c02f-80c0-af3f-d41364bb08a4",
+      "title": "C/C++",
+      "displayTitle": "C/C++",
+      "categories": [
+        "Study"
+      ],
+      "category": "학습",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 9,
+      "repository": null,
+      "cover": "/assets/notion/a1d1f7848639134ecf2198de.png",
+      "coverAlt": "C/C++",
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80c0af3fd41364bb08a4",
+      "notionHtml": "<p>인터넷 검색과 AI 도움 없이, 자료구조와 알고리즘을 직접 코드로 짜보면서 연습한 기록입니다.</p><p><a href=\"https://juggernautsensei.notion.site/340c3fb6c02f80e9984fd1517de679ee\">‣</a> </p>",
+      "toc": [
+        {
+          "id": "overview",
+          "label": "개요"
+        },
+        {
+          "id": "links",
+          "label": "관련 자료"
+        }
+      ]
+    },
+    "cuda": {
+      "id": "3ccc3fb6-c02f-8058-8961-fc9ce62565bf",
+      "title": "CUDA",
+      "displayTitle": "CUDA",
+      "categories": [
+        "Study"
+      ],
+      "category": "학습",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 10,
+      "repository": null,
+      "cover": "/assets/notion/ce86fa753c41499654807454.jpg",
+      "coverAlt": "CUDA",
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80588961fc9ce62565bf",
+      "notionHtml": "<p>NVIDIA의 GPGPU 기술인 CUDA 를 공부한 기록입니다.</p><p><a href=\"https://juggernautsensei.notion.site/38dc3fb6c02f800fb1e2dc9b9f4baf19\">‣</a> </p>",
+      "toc": [
+        {
+          "id": "overview",
+          "label": "개요"
+        },
+        {
+          "id": "links",
+          "label": "관련 자료"
+        }
+      ]
+    },
+    "digital-signal-processing": {
+      "id": "3ccc3fb6-c02f-806a-a626-f7ee1deb32e0",
+      "title": "디지털신호처리",
+      "displayTitle": "디지털신호처리",
+      "categories": [
+        "Study"
+      ],
+      "category": "학습",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 11,
+      "repository": null,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806aa626f7ee1deb32e0",
+      "notionHtml": ""
+    },
+    "software-rasterizer": {
+      "id": "3ccc3fb6-c02f-80e2-85cd-da7f05718cdc",
+      "title": "소프트웨어 레스터라이저",
+      "displayTitle": "소프트웨어 레스터라이저",
+      "categories": [
+        "Study"
+      ],
+      "category": "학습",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 12,
+      "repository": null,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e285cdda7f05718cdc",
+      "notionHtml": ""
+    },
+    "super-mario-online": {
+      "id": "3ccc3fb6-c02f-8094-bc76-d4d782b88458",
+      "title": "슈퍼마리오 온라인 데모",
+      "displayTitle": "슈퍼마리오 온라인 데모",
+      "categories": [
+        "Study",
+        "Game"
+      ],
+      "category": "학습 · 게임",
+      "pinned": false,
+      "featuredGroup": "game",
+      "featuredOrder": 13,
+      "repository": null,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f8094bc76d4d782b88458",
+      "notionHtml": ""
+    },
+    "oracle-sql-demo": {
+      "id": "3ccc3fb6-c02f-80e6-bd8c-dd32b8c0a56c",
+      "title": "오라클 SQL로 간단한 데모 작성 (자료가 부족)",
+      "displayTitle": "오라클 SQL로 간단한 데모 작성 (자료가 부족)",
+      "categories": [
+        "Study"
+      ],
+      "category": "학습",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 14,
+      "repository": null,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e6bd8cdd32b8c0a56c",
+      "notionHtml": ""
+    },
+    "titanic": {
+      "id": "3ccc3fb6-c02f-8042-a51d-d40d2fff8e90",
+      "title": "타이타닉 사망자 예측",
+      "displayTitle": "타이타닉 사망자 예측",
+      "categories": [
+        "Study"
+      ],
+      "category": "학습",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 15,
+      "repository": null,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f8042a51dd40d2fff8e90",
+      "notionHtml": ""
+    },
+    "diary": {
+      "id": "3ccc3fb6-c02f-809d-848f-c4401558ee91",
+      "title": "매일일기",
+      "displayTitle": "매일일기",
+      "categories": [
+        "Study"
+      ],
+      "category": "학습",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 16,
+      "repository": null,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f809d848fc4401558ee91",
+      "notionHtml": ""
+    },
+    "solarsystemrendering": {
+      "id": "3ccc3fb6-c02f-80b8-9021-c00bc20935a9",
+      "title": "OpenGL을 이용한 태양계 공전 시뮬레이션",
+      "displayTitle": "OpenGL을 이용한 태양계 공전 시뮬레이션",
+      "categories": [
+        "Study"
+      ],
+      "category": "학습",
+      "pinned": false,
+      "featuredGroup": null,
+      "featuredOrder": 17,
+      "repository": null,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80b89021c00bc20935a9",
+      "notionHtml": ""
+    }
+  }
+}

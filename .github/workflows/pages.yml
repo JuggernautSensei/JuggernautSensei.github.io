@@ -5,7 +5,7 @@ on:
     branches: [main]
   pull_request:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
     inputs:
       publish:
@@ -36,8 +36,6 @@ jobs:
       - name: Sync approved public Notion content
         if: vars.NOTION_SYNC_ENABLED == 'true' && github.event_name != 'pull_request'
         run: npm run sync:notion
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
       - run: npm run check
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         if: (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.publish) || (github.event_name == 'schedule' && vars.NOTION_AUTO_DEPLOY_ENABLED == 'true')) && github.ref == 'refs/heads/main' && github.repository == 'JuggernautSensei/JuggernautSensei.github.io'

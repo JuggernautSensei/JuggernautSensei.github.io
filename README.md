@@ -61,4 +61,4 @@ npm run check
 Pages Source는 GitHub Actions입니다. `main`에 반영하면 공개 경계 검사·Notion 동기화 검사·빌드·내부 링크 검증을 통과한 결과를 배포합니다.
 Pull request에서는 검증만 수행합니다. 수동 배포는 Actions의 `Verify and publish Pages`에서 `publish: true`로 실행할 수 있습니다.
 
-Notion 자동 반영 코드는 준비했지만 토큰과 저장소 변수는 기본적으로 설정하지 않습니다. 이를 연결하기 전까지 Notion 수정 내용은 자동 반영되지 않습니다.
+공개 Notion 변경을 토큰 없이 15분 간격으로 수집·검증해 자동 배포합니다. 소개·사진·이력·프로젝트 본문·분류·순서·새 항목을 반영합니다. 예약 실행은 지연될 수 있으며, 범위와 운영 방법은 [Notion 자동 갱신](docs/NOTION-SYNC.md)을 참고하세요.

@@ -17,7 +17,9 @@ article: true
       {% if technologies %}<div class="project-facts">{% for tech in technologies %}<span>{{ tech }}</span>{% endfor %}</div>{% endif %}
     </header>
     <div class="post-body">
-      {% if page.fileSlug == 'juggfx' %}
+      {% if notionHtml %}
+        <section id="overview" class="notion-content">{{ notionHtml | safe }}</section>
+      {% elif page.fileSlug == 'juggfx' %}
         {% include 'prototype/juggfx-body.njk' %}
       {% elif page.fileSlug == 'metalslug2-clone' %}
         {% include 'prototype/metalslug-body.njk' %}
