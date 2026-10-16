@@ -168,10 +168,8 @@ html:not(.js) .reveal { opacity:1; transform:none; }
   body:not(.article-page) .inner { max-width:var(--content-w); padding-left:56px; margin-left:calc(var(--inner-left) - var(--nav-w)); margin-right:0; }
   body:not(.article-page) .sidebar { left:max(22px,calc(var(--inner-left) - 240px)); }
   body:not(.article-page) .hero .inner { max-width:none; margin-left:0; padding-left:calc(var(--inner-left) + 56px); }
-  /* Sidebar gutter: a slightly recessed dot grid that fades out toward the content. */
-  body:not(.article-page)::before,body:not(.article-page)::after { content:""; position:fixed; top:0; bottom:0; left:0; width:calc(var(--inner-left) + 20px); pointer-events:none; z-index:-1; }
-  body:not(.article-page)::before { background:linear-gradient(90deg,rgba(0,0,0,.38),rgba(0,0,0,.38) calc(100% - 200px),transparent); }
-  body:not(.article-page)::after { background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1.6px); background-size:18px 18px; -webkit-mask-image:linear-gradient(90deg,#000 40%,transparent); mask-image:linear-gradient(90deg,#000 40%,transparent); }
+  /* Sidebar gutter: slightly recessed, fading out toward the content. */
+  body:not(.article-page)::before { content:""; position:fixed; top:0; bottom:0; left:0; width:calc(var(--inner-left) + 20px); pointer-events:none; z-index:-1; background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,.5) calc(100% - 200px),transparent); }
 }
 @media (min-width:1280px) { .archive-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (max-width:1100px) and (min-width:901px) { .about-layout { gap:24px; grid-template-columns:1fr 190px; } }
