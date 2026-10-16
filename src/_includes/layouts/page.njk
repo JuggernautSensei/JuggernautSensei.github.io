@@ -1,0 +1,15 @@
+---
+layout: layouts/prototype.njk
+article: true
+toc:
+  - id: overview
+    label: 개요
+---
+<article class="post">
+  <div class="post-hero"></div>
+  <div class="wrap">
+    <header class="post-head"><p class="eyebrow">안지우 / 포트폴리오</p><h1>{{ title }}</h1></header>
+    <div class="post-body"><section id="overview">{{ content | safe }}</section></div>
+    <div class="post-foot"><a class="backall" href="/">← 메인으로</a></div>
+  </div>
+</article>

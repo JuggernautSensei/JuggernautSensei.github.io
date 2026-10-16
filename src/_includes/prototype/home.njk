@@ -1,0 +1,106 @@
+<section class="hero" id="home" data-accent="#79d6c3">
+  <div class="hero-backgrounds" data-interval="{{ hero.intervalMs }}" aria-hidden="true">
+    {% for slide in hero.slides %}<img class="hero__img{% if loop.first %} is-active{% endif %}" src="{{ slide.src }}" alt="" style="object-position:{{ slide.position }}"{% if loop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="eyebrow hero-role">{{ profile.role | escape }} · {{ profile.name | escape }}</p>
+    <h1 aria-label="직접 구현하며, 검증하며, 디버깅하며, 소통하며 함께 만듭니다.">
+      <span class="line" aria-hidden="true"><span class="word">직접</span></span>
+      <span class="line" aria-hidden="true"><span class="word hero-process"><span class="roll roll--word" id="wordroll"><span class="roll__track"><span class="roll__item">구현하며</span><span class="roll__item"></span></span></span></span></span>
+      <span class="line" aria-hidden="true"><span class="word hero-final">만듭니다.</span></span>
+    </h1>
+    <p class="hero-sub">게임에서 엔진과 라이브러리, 개발 도구까지.<br>구현과 검증으로 이해를 넓혀 갑니다.</p>
+    <div class="hero-actions"><a class="text-action" href="#work">프로젝트 살펴보기 <span aria-hidden="true">↘</span></a><a class="subtle-action" href="#who">저를 소개합니다 ↓</a></div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"><span class="ln"></span><span>아래로 스크롤</span></div>
+  <div class="hero-player">
+    <div class="hero-dots" aria-label="배경 프로젝트 선택">{% for slide in hero.slides %}<button type="button" aria-label="{{ slide.label }} 배경" aria-pressed="{{ 'true' if loop.first else 'false' }}" data-slide="{{ loop.index0 }}" data-label="{{ slide.label }}" data-href="{{ slide.href }}"></button>{% endfor %}</div>
+    <button type="button" class="hero-pause" aria-label="배경 자동 전환 정지" aria-pressed="false">정지</button>
+    <a class="hero-caption" href="{{ hero.slides[0].href }}">{{ hero.slides[0].label }} ↗</a>
+  </div>
+</section>
+
+<section id="who" aria-labelledby="who-h" data-accent="#79d6c3">
+  <div class="inner">
+    <div class="sec-head reveal"><div><p class="eyebrow">01 / 소개</p><h2 class="sec-title" id="who-h">게임을 좋아하다가,<br>만드는 쪽으로.</h2></div></div>
+    <div class="about-layout">
+      <div class="about-copy">
+        <p class="bio intro-headline reveal">{{ profile.headline | escape }}</p>
+        <p class="bio reveal">{{ profile.introduction | escape }}</p>
+        <p class="bio reveal">더 자세한 프로젝트와 개발 기록은 <a href="{{ profile.github }}">GitHub</a>와 <a href="{{ profile.blog }}">노션 기술 블로그</a>에서 확인하실 수 있습니다.</p>
+      </div>
+      <figure class="profile-portrait reveal"><img src="{{ profile.portrait }}" alt="안지우의 프로필 사진" width="691" height="848" loading="lazy"><figcaption>{{ profile.name }}</figcaption></figure>
+    </div>
+    <div class="expertise-strip reveal"><span>C/C++</span><span>Game Development</span><span>Computer Graphics</span><span>Computer Network</span><span>GPGPU</span></div>
+  </div>
+</section>
+
+<section id="work" aria-labelledby="work-h" data-accent="#79a7ff">
+  <div class="inner">
+    <div class="sec-head reveal"><div><p class="eyebrow">02 / 대표 프로젝트</p><h2 class="sec-title" id="work-h">기반을 만드는 라이브러리부터,<br>플레이 가능한 게임까지.</h2></div><a class="seeall" href="#all-projects">전체 프로젝트 ↓</a></div>
+    <div class="featured-group" aria-labelledby="libraries-h">
+      <h3 class="featured-label reveal" id="libraries-h">라이브러리 · 프레임워크 <span>{{ collections.featuredLibraries | length }}개 프로젝트</span></h3>
+      <div class="featured-libraries">
+        {% for entry in collections.featuredLibraries %}<a class="featured-library reveal" href="{{ entry.url }}"><span class="featured-stack">C++20 <span aria-hidden="true">↗</span></span><h4>{{ entry.data.title }}</h4><p>{{ entry.data.description }}</p></a>{% endfor %}
+      </div>
+    </div>
+    <div class="featured-group" aria-labelledby="games-h">
+      <h3 class="featured-label reveal" id="games-h">게임 <span>{{ collections.featuredGames | length }}개 프로젝트</span></h3>
+      <div class="work-pair">
+        {% for entry in collections.featuredGames %}<a class="visual-project reveal" href="{{ entry.url }}"><img class="tile-image" src="{{ entry.data.cover }}" alt="{{ entry.data.coverAlt | escape }}" loading="lazy"><div class="project-caption"><p class="eyebrow">{{ entry.data.stack }}</p><h4>{{ entry.data.displayTitle or entry.data.title }} <span aria-hidden="true">↗</span></h4><p>{{ entry.data.description }}</p></div></a>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="thinking" aria-labelledby="thinking-h" data-accent="#79d6c3">
+  <div class="inner">
+    <div class="sec-head reveal"><div><p class="eyebrow">03 / 기술 문서와 학습</p><h2 class="sec-title" id="thinking-h">구현한 내용을<br>기록하고 나눕니다.</h2></div></div>
+    <div class="knowledge-links">
+      <a class="card knowledge-card reveal" href="/projects/deferred-rendering-gdc2025/"><span class="meta meta--pop">발표 자료 / 01</span><h3>Deferred Rendering<br>렌더링 최적화</h3><p class="desc">Deferred Rendering을 이용한 렌더링 최적화 발표 자료.</p><span class="go">자료 살펴보기 <span class="ar" aria-hidden="true">↗</span></span></a>
+      <a class="card knowledge-card reveal" href="/projects/research-report-on-multilayer-perceptrons/"><span class="meta meta--pop">발표 자료 / 02</span><h3>다층 퍼셉트론<br>조사 보고서</h3><p class="desc">다층 퍼셉트론의 구조와 학습 방법을 정리한 조사 보고서.</p><span class="go">자료 살펴보기 <span class="ar" aria-hidden="true">↗</span></span></a>
+      <a class="card knowledge-card reveal" href="{{ profile.blog }}"><span class="meta meta--pop">직접 배우고 남긴 기록</span><h3>노션 기술 블로그</h3><p class="desc">구현하며 배운 것과 문제를 해결한 과정.<br>개발과 학습의 기록을 이어갑니다.</p><span class="go">블로그 방문하기 <span class="ar" aria-hidden="true">↗</span></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="experience" aria-labelledby="experience-h" data-accent="#f4cd7c">
+  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">04 / 학력 · 활동 · 수상</p><h2 class="sec-title" id="experience-h">배우고, 가르치고,<br>함께 쌓은 경험.</h2></div></div>
+    <div class="experience-grid">
+      <div><h3 class="experience-label reveal">학력</h3>{% for item in profile.education %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}
+      <h3 class="experience-label reveal">활동</h3>{% for item in profile.activities %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.description }}</p><ul>{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul></article>{% endfor %}</div>
+      <div><h3 class="experience-label reveal">수상</h3>{% for item in profile.awards %}<article class="timeline-item reveal"><p class="timeline-period">{{ item.period }}</p><h4>{{ item.title }}</h4><p>{{ item.organization }}</p></article>{% endfor %}</div>
+    </div>
+  </div>
+</section>
+
+<section id="all-projects" aria-labelledby="archive-h" data-accent="#79a7ff">
+  <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">05 / 전체 프로젝트</p><h2 class="sec-title" id="archive-h">만들고 탐구한<br>프로젝트들.</h2></div></div>
+    {% include "prototype/archive.njk" %}
+  </div>
+</section>
+
+<section id="personal" aria-labelledby="contact-h" data-accent="#79d6c3">
+  <div class="inner">
+    <p class="eyebrow reveal">06 / 연락처 · 소셜</p>
+    <h2 class="sec-title reveal" id="contact-h">다음 이야기는,<br>함께.</h2>
+    <p class="bio reveal contact-copy">프로젝트나 협업에 관한 이야기는 편하게 연락 주세요.</p>
+    <div class="contact-groups">
+      <div class="contact-group reveal" aria-labelledby="contact-direct-h">
+        <h3 id="contact-direct-h">연락처</h3>
+        <div class="contact-links">
+          <a href="mailto:{{ profile.email }}"><span>이메일</span><strong>{{ profile.email }}</strong><span aria-hidden="true">↗</span></a>
+          <a href="{{ profile.discord }}"><span>디스코드</span><strong>juggernautsensei</strong><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="contact-group reveal" aria-labelledby="contact-social-h">
+        <h3 id="contact-social-h">소셜</h3>
+        <div class="contact-links">
+          <a href="{{ profile.github }}"><span>깃허브</span><strong>JuggernautSensei</strong><span aria-hidden="true">↗</span></a>
+          <a href="{{ profile.blog }}"><span>노션 기술 블로그</span><strong>Jiwoo’s Blog</strong><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

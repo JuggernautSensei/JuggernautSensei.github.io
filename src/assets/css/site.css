@@ -1,0 +1,34 @@
+:root {
+  --bg: #0c0f12;
+  --ink: #f1f1ed;
+  --accent: #79d6c3;
+  --pop: #79d6c3;
+  --display: system-ui, "Segoe UI", "Malgun Gothic", sans-serif;
+  --body: system-ui, "Segoe UI", "Malgun Gothic", sans-serif;
+  color-scheme: dark;
+}
+body { background-image: none; }
+.name { overflow-wrap: anywhere; }
+.page, .project { max-width: 70ch; padding: 100px 24px 64px; margin: 0 auto; }
+.page h1, .project h1 { font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+.page h2, .project h2 { margin: 2rem 0 1rem; }
+.page p, .project p { margin: 1rem 0; }
+.page ul, .project ul { padding-left: 1.5rem; }
+.page table, .project table { display: block; overflow-x: auto; max-width: 100%; }
+pre { overflow-x: auto; padding: 1rem; background: var(--panel); }
+img, video { max-width: 100%; height: auto; }
+.prose { max-width: 70ch; margin: 0 auto; }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.project-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.project-card h3 { font-size: 1.25rem; margin: 1rem 0; overflow-wrap: anywhere; }
+.project-card p, .credit { color: var(--muted); font-size: 0.85rem; }
+.site-footer p { margin-bottom: 0.7rem; }
+.hero { background: var(--bg); }
+html:not(.js) .navtoggle { display: none; }
+@media (max-width: 900px) {
+  .project-grid { grid-template-columns: 1fr; }
+  html:not(.js) .sidebar { position: static; opacity: 1; visibility: visible; pointer-events: auto; transform: none; width: auto; margin: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

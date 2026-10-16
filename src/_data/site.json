@@ -1,0 +1,13 @@
+{
+  "title": "JuggernautSensei",
+  "lang": "ko",
+  "url": "https://juggernautsensei.github.io",
+  "description": "게임 개발 프로젝트와 기술 문서",
+  "github": "https://github.com/JuggernautSensei",
+  "navigation": [
+    { "label": "프로젝트", "url": "/projects/" },
+    { "label": "소개", "url": "/about/" },
+    { "label": "기술 문서", "url": "/notes/" },
+    { "label": "이력", "url": "/resume/" }
+  ]
+}

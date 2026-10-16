@@ -1,0 +1,10 @@
+node_modules/
+_site/
+.cache/
+.env
+.env.*
+!.env.example
+private/
+staging/
+notion-export/
+*.log

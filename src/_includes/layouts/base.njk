@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} · {{ site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="stylesheet" href="/assets/css/starter.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <script src="/assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 건너뛰기</a>
+    <button class="navtoggle" aria-controls="primary-nav" aria-expanded="false" aria-label="메뉴 열기"><span class="bars" aria-hidden="true"></span></button>
+    <header class="sidebar" id="primary-nav">
+      <a class="wordmark" href="/"><span class="name">{{ site.title }}</span></a>
+      <nav class="nav" aria-label="주 메뉴">
+          <a href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+          {% for item in site.navigation %}
+          <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {% endfor %}
+      </nav>
+    </header>
+    <main id="main" class="site-main">{{ content | safe }}</main>
+    <footer class="site-footer">
+      <div class="inner"><p><a href="{{ site.github }}">GitHub</a> · <a href="/credits/">Credits</a></p>
+      <p class="credit">Created by <a href="https://benjaminmullins.tv">benjaminmullins.tv</a> · Portfolio Starter</p></div>
+    </footer>
+  </body>
+</html>

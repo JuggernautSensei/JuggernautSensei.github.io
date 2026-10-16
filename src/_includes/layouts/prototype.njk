@@ -1,0 +1,72 @@
+{# PROTOTYPE: reference fidelity and portfolio navigation; public README excerpts only. #}
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · 안지우</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <script>if (new URLSearchParams(location.search).get("embed") === "1") document.documentElement.classList.add("embedded");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/starter.css">
+  {% if article %}<link rel="stylesheet" href="/assets/css/starter-article.css">{% endif %}
+  <link rel="stylesheet" href="/assets/css/prototype.css">
+  <script src="/assets/js/prototype.js" defer></script>
+  <script src="/assets/js/project-preview.js" defer></script>
+</head>
+<body class="prototype{% if article %} article-page{% endif %}">
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  {% if article %}
+  <div class="topbar">
+    <a class="home" href="/#work"><span aria-hidden="true">←</span> 안지우</a>
+    <span class="tag">{{ category or '포트폴리오' }}</span>
+  </div>
+  {% endif %}
+  <button class="navtoggle" aria-expanded="false" aria-controls="primary-nav" aria-label="메뉴 열기"><span class="bars" aria-hidden="true"></span></button>
+  <nav class="sidebar" id="primary-nav" aria-label="{% if article %}본문 목차{% else %}주 메뉴{% endif %}">
+    {% if article %}
+    <p class="toclabel">이 페이지의 내용</p>
+    {% else %}
+    <a class="wordmark" href="/#home"><span class="name">안지우<span class="name-period">.</span></span></a>
+    <p class="sidebar-intro">직접 구현하고 검증하며,<br>함께 만드는 C++ 개발자</p>
+    {% endif %}
+    <div class="nav">
+      {% if article %}
+        {% if toc %}
+          {% for item in toc %}<a href="#{{ item.id }}"><span class="led" aria-hidden="true"></span><span>{{ item.label }}</span></a>{% endfor %}
+        {% else %}
+          <a href="#overview"><span class="led" aria-hidden="true"></span><span>개요</span></a>
+          <a href="#links"><span class="led" aria-hidden="true"></span><span>관련 자료</span></a>
+        {% endif %}
+      {% else %}
+        <a href="#who"><span class="led" aria-hidden="true"></span><span>소개</span></a>
+        <a href="#work"><span class="led" aria-hidden="true"></span><span>대표 프로젝트</span></a>
+        <a href="#thinking"><span class="led" aria-hidden="true"></span><span>기술 문서</span></a>
+        <a href="#experience"><span class="led" aria-hidden="true"></span><span>학력 · 활동 · 수상</span></a>
+        <a href="#all-projects"><span class="led" aria-hidden="true"></span><span>전체 프로젝트</span></a>
+        <a href="#personal"><span class="led" aria-hidden="true"></span><span>연락처 · 소셜</span></a>
+      {% endif %}
+    </div>
+    <div class="foot">
+      {% if article %}<a href="/#all-projects">전체 프로젝트 ↗</a>
+      {% else %}<p class="sidebar-social-label">소셜</p><div class="sidebar-socials"><a href="{{ profile.github }}">GitHub ↗</a><a href="{{ profile.blog }}">블로그 ↗</a></div>{% endif %}
+    </div>
+  </nav>
+  <main id="main">{{ content | safe }}</main>
+  {% if not article or page.url == '/projects/' %}
+  <dialog class="project-dialog" aria-label="프로젝트 상세 페이지">
+    <div class="project-dialog-bar"><span>프로젝트</span><a class="project-expand" href="/projects/" target="_blank" rel="noopener">새 페이지로 보기 ↗</a><button class="project-close" type="button" aria-label="프로젝트 닫기">닫기 <span aria-hidden="true">×</span></button></div>
+    <iframe class="project-frame" title="프로젝트 상세 내용"></iframe>
+  </dialog>
+  {% endif %}
+  <footer class="site-footer">
+    <div class="inner footer-inner">
+      <p>© 2026 {{ profile.name }}</p>
+      <div class="footer-links"><a href="/#home">맨 위로 ↑</a><a href="/credits/">제작 정보</a></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "intervalMs": 6500,
+  "slides": [
+    { "src": "/assets/media/framework.png", "label": "Juggernaut · 게임 개발 프레임워크", "href": "/projects/juggernaut/", "position": "60% center" },
+    { "src": "/assets/media/raytracing.png", "label": "C++로 그린 소프트웨어 레이트레이싱", "href": "/projects/raytracinginoneweekend/", "position": "62% center" },
+    { "src": "/assets/media/metalslug.jpg", "label": "메탈슬러그 2 모작 · 게임과 런타임 에디터", "href": "/projects/metalslug2-clone/", "position": "65% center" },
+    { "src": "/assets/media/deferred.png", "label": "Deferred Rendering · 렌더링 최적화", "href": "/projects/deferred-rendering-gdc2025/", "position": "62% center" }
+  ]
+}

@@ -1,0 +1,9 @@
+<div data-project-archive>
+  <div class="archive-tabs" aria-label="프로젝트 분류">
+    <button type="button" data-filter="all" aria-pressed="true">전체</button>
+    {% for key, label in projectCatalog.labels %}<button type="button" data-filter="{{ key }}" aria-pressed="false">{{ label }}</button>{% endfor %}
+  </div>
+  <div class="archive-grid">
+    {% for record in projectCatalog.items %}{% set entry = collections.projects | projectFor(record.slug) %}<a class="card" href="{{ entry.url }}" data-project-categories="{{ record.categories | join(' ') }}" data-notion-id="{{ record.id }}"><div class="archive-tags">{% for category in record.categories %}<span data-category="{{ category }}">{{ projectCatalog.labels[category] }}</span>{% endfor %}</div><h3>{{ record.title | escape }}</h3><p class="desc">{{ entry.data.description }}</p><span class="go">자세히 보기 ↗</span></a>{% endfor %}
+  </div>
+</div>

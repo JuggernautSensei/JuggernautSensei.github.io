@@ -1,0 +1,26 @@
+<section id="overview" class="reveal">
+  <h2>GPU 리소스를 다루는 하나의 인터페이스.</h2>
+  <p>JugGfx는 <b>Direct3D 11 기반 C++20 그래픽스 라이브러리</b>입니다. 버퍼·텍스처·셰이더 생성, 드로우·컴퓨트 실행, 렌더 패스 구성과 이미지·모델 임포트를 제공합니다.</p>
+  <p>애플리케이션은 <code>Graphics</code>를 통해 GPU 리소스를 다룹니다. 핸들, 컨테이너, 수학과 오류 타입은 JugX를 사용합니다.</p>
+  <div class="refrain">공통 상태는 Graphics에.<br>API 객체와 실행은 백엔드에.</div>
+</section>
+<section id="architecture" class="reveal">
+  <h2>구조 설계</h2>
+  <p><code>Graphics</code>는 리소스 생성 조건, 핸들 발급, descriptor와 바인딩 상태를 관리합니다. API 의존 작업은 백엔드로 위임합니다.</p>
+  <pre aria-label="JugGfx 구성도"><code>Application
+ ├─ RenderGraph ──────────┐
+ ├─ ImGuiRenderer ────────┤
+ └─ Resource import ─────┤
+                        ▼
+                     Graphics
+                   /          \
+       Graphics_D3D11        Graphics_Noop
+       GPU objects          CPU call flow</code></pre>
+  <p><code>Graphics_D3D11</code>은 D3D 버퍼·텍스처·뷰·셰이더를 보관합니다. <code>Graphics_Noop</code>은 GPU 명령을 실행하지 않고 공통 호출 흐름을 확인하는 백엔드입니다.</p>
+</section>
+<section id="implementation" class="reveal">
+  <h2>리소스에서 한 프레임까지</h2>
+  <table><thead><tr><th>모듈</th><th>주요 역할</th></tr></thead><tbody><tr><td>Graphics</td><td>버퍼·텍스처·상태·드로우·컴퓨트</td></tr><tr><td>RenderGraph</td><td>렌더·컴퓨트 패스, 리소스 연결과 패스 컬링</td></tr><tr><td>Resource</td><td>Slang 셰이더, 이미지와 모델 임포트</td></tr><tr><td>ImGui</td><td>SDL3 입력, 렌더링, docking과 다중 viewport</td></tr></tbody></table>
+  <p>현재 공개 README의 빌드 대상은 Windows x64입니다. 실제 픽셀 결과는 D3D11 백엔드에서 확인해야 하며, Noop의 호출 흐름 검증과 구분합니다.</p>
+  <p class="source-line">출처: JugGfx 공개 README. 이 페이지는 상세 레이아웃 확인을 위한 일부 내용입니다.</p>
+</section>

@@ -1,0 +1,18 @@
+---
+layout: layouts/page.njk
+title: 기술 문서
+permalink: /notes/index.html
+visibility: public
+publish: true
+---
+<p>발표 자료와 구현 기록을 모았습니다. 더 많은 개발 기록은 <a href="{{ profile.blog }}">노션 기술 블로그</a>에서 확인할 수 있습니다.</p>
+<div class="archive-grid">
+  <a class="card" href="/projects/juggfx/#architecture"><span class="meta meta--pop">그래픽스 / 구조 설계</span><h3>JugGfx의 계층과 리소스</h3><p class="desc">공개 README에서 확인한 설계.</p><span class="go">읽어보기 →</span></a>
+  <a class="card" href="/projects/deferred-rendering-gdc2025/"><span class="meta meta--pop">렌더링 / 발표 자료</span><h3>Deferred Rendering 최적화</h3><span class="go">자세히 보기 →</span></a>
+  <a class="card" href="/projects/research-report-on-multilayer-perceptrons/"><span class="meta meta--pop">발표 자료</span><h3>다층 퍼셉트론 조사 보고서</h3><span class="go">자세히 보기 →</span></a>
+</div>
+<ul>
+{% for entry in collections.documents %}
+  <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+{% endfor %}
+</ul>
