@@ -168,8 +168,11 @@ html:not(.js) .reveal { opacity:1; transform:none; }
   body:not(.article-page) .inner { max-width:var(--content-w); padding-left:56px; margin-left:calc(var(--inner-left) - var(--nav-w)); margin-right:0; }
   body:not(.article-page) .sidebar { left:max(22px,calc(var(--inner-left) - 240px)); }
   body:not(.article-page) .hero .inner { max-width:none; margin-left:0; padding-left:calc(var(--inner-left) + 56px); }
-  /* Sidebar gutter: slightly recessed, fading out toward the content. */
-  body:not(.article-page)::before { content:""; position:fixed; top:0; bottom:0; left:0; width:calc(var(--inner-left) + 20px); pointer-events:none; z-index:-1; background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,.5) calc(100% - 200px),transparent); }
+  /* Sidebar gutter: slightly recessed, fading out toward the content.
+     The fine noise dithers the fade so the dark gradient does not band. */
+  body:not(.article-page)::before { content:""; position:fixed; top:0; bottom:0; left:0; width:calc(var(--inner-left) + 40px); pointer-events:none; z-index:-1;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 260px),rgba(0,0,0,.5) calc(100% - 130px),transparent); mask-image:linear-gradient(90deg,#000 calc(100% - 260px),rgba(0,0,0,.5) calc(100% - 130px),transparent); }
 }
 @media (min-width:1280px) { .archive-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (max-width:1100px) and (min-width:901px) { .about-layout { gap:24px; grid-template-columns:1fr 190px; } }
