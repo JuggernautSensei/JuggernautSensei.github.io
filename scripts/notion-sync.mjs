@@ -21,7 +21,7 @@ export function catalogItems(ids, map, catalog, collectionId, categoryKey, host)
   });
 }
 
-function history(blocks, columnId) {
+async function history(blocks, columnId, media) {
   const column = blocks.get(columnId);
   if (!column) throw new Error("Notion experience column moved; review config");
   const output = { education: [], activities: [], awards: [] };
@@ -39,14 +39,16 @@ function history(blocks, columnId) {
       walk(block);
       const texts = group.filter(b => b.type === "text" && blockText(b).trim()).map(blockText);
       const details = group.filter(b => b.type === "bulleted_list").map(blockText);
+      const image = group.find(b => b.type === "image");
+      const logo = image ? await media(image.format?.display_source || plain(image.properties?.source), image.id) : "";
       if (section === "awards") {
         if (texts.length < 2) throw new Error(`Incomplete Notion award: ${id}`);
         const org = texts[0].split("|").at(-1).trim();
-        output.awards.push({ period: "", title: texts.slice(1).join(" "), organization: translations[org] || org });
+        output.awards.push({ period: "", title: texts.slice(1).join(" "), organization: translations[org] || org, logo });
       } else {
         if (texts.length < 3) throw new Error(`Incomplete Notion experience: ${id}`);
         const title = texts[1].split("|").at(-1).trim();
-        output[section].push({ period: texts[0], title: translations[title] || title, description: texts.slice(2).join(" "), details });
+        output[section].push({ period: texts[0], title: translations[title] || title, description: texts.slice(2).join(" "), details, logo });
       }
     }
   }
@@ -65,7 +67,7 @@ export async function collectPortfolio(config, profile, catalog, client, media) 
   };
   const nextProfile = { ...profile, headline: blockText(selected(config.headlineBlockId)),
     introduction: blockText(selected(config.introductionBlockId)).replace(/\n{2,}더 자세한 프로젝트와 개발 기록은[\s\S]*$/, "").trim(),
-    ...history(blocks, config.experienceColumnId) };
+    ...await history(blocks, config.experienceColumnId, media) };
   if (!nextProfile.headline || !nextProfile.introduction) throw new Error("Notion profile is empty");
   const portrait = selected(config.portraitBlockId);
   if (portrait.type !== "image") throw new Error("Notion portrait block changed type");
@@ -127,7 +129,7 @@ export async function sync() {
     const response = await fetch(url, { signal: AbortSignal.timeout(120000) });
     if (!response.ok) throw new Error(`Notion media HTTP ${response.status}: ${id}`);
     const type = response.headers.get("content-type")?.split(";")[0];
-    const extensions = { "image/png": "png", "image/jpeg": "jpg", "image/gif": "gif", "image/webp": "webp", "application/pdf": "pdf", "video/mp4": "mp4", "audio/mpeg": "mp3" };
+    const extensions = { "image/png": "png", "image/jpeg": "jpg", "image/gif": "gif", "image/webp": "webp", "image/svg+xml": "svg", "application/pdf": "pdf", "video/mp4": "mp4", "audio/mpeg": "mp3" };
     if (!extensions[type]) throw new Error(`Unsupported Notion media type ${type}: ${id}`);
     const data = Buffer.from(await response.arrayBuffer());
     const hash = createHash("sha256").update(data).digest("hex").slice(0, 24);

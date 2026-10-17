@@ -38,15 +38,18 @@
       <div class="exp-row reveal"><h3 class="experience-label">{{ group.label }}</h3>
         <div class="exp-entries">{% for item in group.items %}{% set parts = item.details | experienceDetails(item.period) %}
           <article class="exp-entry">
-            <div class="exp-head"><h4>{{ item.title }}</h4><p class="timeline-period">{{ item.period }}{% if parts.duration %} · {{ parts.duration }}{% endif %}</p></div>
-            <p class="exp-desc">{{ item.description }}</p>
-            {% if parts.stats.length %}<dl class="exp-stats">{% for stat in parts.stats %}<div><dt>{{ stat.label }}</dt><dd>{{ stat.value }}{% if stat.suffix %} <span>{{ stat.suffix }}</span>{% endif %}</dd></div>{% endfor %}</dl>{% endif %}
-            {% if parts.notes.length %}<ul class="exp-notes">{% for note in parts.notes %}<li>{{ note }}</li>{% endfor %}</ul>{% endif %}
+            {% if item.logo %}<span class="exp-logo"><img src="{{ item.logo }}" alt="" width="72" height="72" loading="lazy"></span>{% endif %}
+            <div class="exp-body">
+              <div class="exp-head"><h4>{{ item.title }}</h4><p class="timeline-period">{{ item.period }}{% if parts.duration %} · {{ parts.duration }}{% endif %}</p></div>
+              <p class="exp-desc">{{ item.description }}</p>
+              {% if parts.stats.length %}<dl class="exp-stats">{% for stat in parts.stats %}<div><dt>{{ stat.label }}</dt><dd>{{ stat.value }}{% if stat.suffix %} <span>{{ stat.suffix }}</span>{% endif %}</dd></div>{% endfor %}</dl>{% endif %}
+              {% if parts.notes.length %}<ul class="exp-notes">{% for note in parts.notes %}<li>{{ note }}</li>{% endfor %}</ul>{% endif %}
+            </div>
           </article>
         {% endfor %}</div>
       </div>
       {% endfor %}
-      {# Awards from the school listed under 학력 are already marked 교내, so only other organizations are named. #}
+      {# Awards from the school listed under 학력 are already marked 교내 and its logo shows above, so only other organizations are named. #}
       <div class="exp-row reveal"><h3 class="experience-label">수상</h3>
         <ul class="award-list">{% for item in profile.awards %}{% set award = item.title | awardParts %}
           <li><span class="award-prize">{{ award.prize }}{% if award.rank %} <small>{{ award.rank }}</small>{% endif %}</span><span class="award-event">{{ award.event }}{% if item.organization != profile.education[0].title %} <small>· {{ item.organization }}</small>{% endif %}</span>{% if item.period %}<span class="timeline-period">{{ item.period }}</span>{% endif %}</li>
