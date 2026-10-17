@@ -50,18 +50,11 @@ export default function (config) {
     return dates.length ? dates.join(" — ") : period;
   });
   // "교내 캡스톤 경진대회 동상 (6등)" -> { event: "교내 캡스톤 경진대회", prize: "동상", rank: "(6등)", tier: "bronze" }
-  const awardParts = title => {
+  config.addFilter("awardParts", title => {
     const match = title.match(/^(.+?)\s+(\S+상)(?:\s*(\(.+\)))?$/);
     if (!match) return { event: title, prize: "", rank: "", tier: "" };
     const tier = /대상|최우수|우수|금상/.test(match[2]) ? "gold" : /은상/.test(match[2]) ? "silver" : /동상/.test(match[2]) ? "bronze" : "";
     return { event: match[1], prize: match[2], rank: match[3] || "", tier };
-  };
-  config.addFilter("awardParts", awardParts);
-  // Apply site-only titles, then list the highest prize first; prizes without a tier (장려상 …) keep their order last.
-  config.addFilter("byPrize", (awards = [], titles = {}) => {
-    const order = ["gold", "silver", "bronze", ""];
-    return awards.map(item => ({ ...item, title: titles[item.title] || item.title }))
-      .sort((a, b) => order.indexOf(awardParts(a.title).tier) - order.indexOf(awardParts(b.title).tier));
   });
   config.addCollection("documents", api => api.getFilteredByGlob("src/documents/**/*.md"));
   return {
