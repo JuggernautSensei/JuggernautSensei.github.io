@@ -18,7 +18,8 @@
         "전체학점 4.28 / 4.5",
         "총 6학기 성적우수자 선정",
         "소프트웨어 인재 선정"
-      ]
+      ],
+      "logo": "/assets/notion/635183d726d96e6b4ae82845.svg"
     }
   ],
   "activities": [
@@ -29,24 +30,28 @@
       "details": [
         "부산지역 초·중·고교생 대상 코딩 교육 담당",
         "부산지역 코딩 교육 사업 담당"
-      ]
+      ],
+      "logo": "/assets/notion/1e0eb601164d39e504144ecd.png"
     }
   ],
   "awards": [
     {
       "period": "",
       "title": "2023년도 2학기 교내 프로그래밍 경진대회 장려상",
-      "organization": "부경대학교"
+      "organization": "부경대학교",
+      "logo": "/assets/notion/635183d726d96e6b4ae82845.svg"
     },
     {
       "period": "",
       "title": "2025년도 1학기 교내 프로그래밍 경진대회 우수상",
-      "organization": "부경대학교"
+      "organization": "부경대학교",
+      "logo": "/assets/notion/635183d726d96e6b4ae82845.svg"
     },
     {
       "period": "",
       "title": "교내 캡스톤 경진대회 동상 (6등)",
-      "organization": "부경대학교"
+      "organization": "부경대학교",
+      "logo": "/assets/notion/635183d726d96e6b4ae82845.svg"
     }
   ]
 }

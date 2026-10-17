@@ -46,6 +46,24 @@ test("social links remain configured when Notion bookmarks are replaced by an em
   assert.equal(result.profile.blog, profile.blog);
 });
 
+test("experience entries carry their column image as a downloaded logo", async () => {
+  const f = fixture();
+  Object.assign(f.root.block, {
+    history: row({ id: "history", type: "column", content: ["edu", "school"] }),
+    edu: row({ id: "edu", type: "header", properties: title("Education") }),
+    school: row({ id: "school", type: "column_list", content: ["left", "right"] }),
+    left: row({ id: "left", type: "column", content: ["period", "logo"] }),
+    period: row({ id: "period", type: "text", properties: title("2020. 03. 02 – 2026. 02. 20") }),
+    logo: row({ id: "logo", type: "image", format: { display_source: "attachment:logo" } }),
+    right: row({ id: "right", type: "column", content: ["name", "desc"] }),
+    name: row({ id: "name", type: "text", properties: title("Graduate | Pukyuong National University") }),
+    desc: row({ id: "desc", type: "text", properties: title("학사 졸업") })
+  });
+  const result = await collectPortfolio(f.config, {}, catalog, f.client, async (source, id) => `/assets/${id}-${source}.svg`);
+  assert.equal(result.profile.education[0].title, "부경대학교");
+  assert.equal(result.profile.education[0].logo, "/assets/logo-attachment:logo.svg");
+});
+
 test("catalog preserves source order and overlapping tags; new IDs get stable URLs", () => {
   const page = (id, tags) => row({ id, type: "page", parent_id: "c", parent_table: "collection", properties: { ...title(id), tags: [[tags]] } });
   const map = { block: { old: page("old", "Project,Library"), newer: page("newer", "Study,Game"), removed: row({ id: "removed", alive: false }) } };
