@@ -33,23 +33,24 @@
 
 <section id="experience" aria-labelledby="experience-h" data-accent="#f4cd7c">
   <div class="inner"><div class="sec-head reveal"><div><p class="eyebrow">02 / 학력 · 활동 · 수상</p><h2 class="sec-title" id="experience-h">배우고, 가르치고, 함께 쌓은 경험.</h2></div></div>
+    {# Wording that differs from Notion lives in experienceCopy.json, so a Notion sync does not overwrite it. #}
     <div class="exp-groups">
       {% for group in [{ label: "학력", items: profile.education }, { label: "활동", items: profile.activities }] %}
       <div class="exp-group reveal"><h3 class="experience-label">{{ group.label }}</h3>
-        <ul class="exp-list">{% for item in group.items %}{% set parts = item.details | experienceDetails(item.period) %}
+        <ul class="exp-list">{% for item in group.items %}{% set parts = (experienceCopy.details[item.title] or item.details) | experienceDetails(item.period) %}
           <li class="exp-item">
             <p class="exp-period">{{ item.period | shortPeriod }}{% if parts.duration %} · {{ parts.duration }}{% endif %}</p>
             <div class="exp-body">
               <h4 class="exp-title">{% if item.logo %}<img class="exp-logo" src="{{ item.logo }}" alt="" width="28" height="28" loading="lazy">{% endif %}{{ item.title }}</h4>
               <p class="exp-desc">{{ item.description }}</p>
-              {% if parts.stats.length or parts.notes.length %}<p class="exp-meta">{% for stat in parts.stats %}<span>{{ stat.label }} <b>{{ stat.value }}</b>{% if stat.suffix %} {{ stat.suffix }}{% endif %}</span>{% endfor %}{% for note in parts.notes %}<span>{{ note }}</span>{% endfor %}</p>{% endif %}
+              {% if parts.scores.length or parts.stats.length or parts.notes.length %}<p class="exp-meta">{% if parts.scores.length %}<span>{% for score in parts.scores %}{{ score.label }} <b>{{ score.value }}</b> {{ score.suffix }}{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}{% for stat in parts.stats %}<span>{{ stat.label }} <b>{{ stat.value }}</b>{% if stat.suffix %} {{ stat.suffix }}{% endif %}</span>{% endfor %}{% for note in parts.notes %}<span>{{ note }}</span>{% endfor %}</p>{% endif %}
             </div>
           </li>
         {% endfor %}</ul>
       </div>
       {% endfor %}
       <div class="exp-group reveal"><h3 class="experience-label">수상</h3>
-        <ul class="exp-list">{% for item in profile.awards %}{% set award = item.title | awardParts %}
+        <ul class="exp-list">{% for item in profile.awards | byPrize(experienceCopy.awardTitles) %}{% set award = item.title | awardParts %}
           <li class="exp-item exp-award">
             <p class="exp-period award-prize{% if award.tier %} award-prize--{{ award.tier }}{% endif %}">{{ award.prize }}{% if award.rank %} <small>{{ award.rank }}</small>{% endif %}</p>
             <div class="exp-body"><h4 class="exp-title">{{ award.event }}{% if item.organization %} <small>· {{ item.organization }}</small>{% endif %}{% if item.period %} <small>· {{ item.period }}</small>{% endif %}</h4></div>

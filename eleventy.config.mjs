@@ -24,23 +24,25 @@ export default function (config) {
     ...items.filter(item => item.pinned),
     ...items.filter(item => !item.pinned)
   ]);
-  // Split experience bullets into figures ("전공학점 4.29 / 4.5", "총 6학기 …") and plain notes; entries without figures get their duration.
+  // Split experience bullets into grades ("전공학점 4.29 / 4.5"), term counts ("총 6학기 …", "… 6학기") and plain notes; entries without figures get their duration.
   config.addFilter("experienceDetails", (details = [], period = "") => {
-    const stats = [], notes = [];
+    const scores = [], stats = [], notes = [];
     for (const detail of details) {
       const score = detail.match(/^(.+?)\s+([\d.]+)\s*\/\s*([\d.]+)$/);
-      const terms = detail.match(/^(?:총\s*)?(\d+\s*학기)\s+(.+)$/);
-      if (score) stats.push({ label: score[1], value: score[2], suffix: `/ ${score[3]}` });
-      else if (terms) stats.push({ label: terms[2], value: terms[1] });
+      const leading = detail.match(/^(?:총\s*)?(\d+\s*학기)\s+(.+)$/);
+      const trailing = detail.match(/^(.+?)\s+(\d+\s*학기)$/);
+      if (score) scores.push({ label: score[1], value: score[2], suffix: `/ ${score[3]}` });
+      else if (leading) stats.push({ label: leading[2], value: leading[1] });
+      else if (trailing) stats.push({ label: trailing[1], value: trailing[2] });
       else notes.push(detail);
     }
     let duration = "";
     const dates = [...period.matchAll(/(\d{4})\.\s*(\d{1,2})\./g)];
-    if (!stats.length && dates.length === 2) {
+    if (!scores.length && !stats.length && dates.length === 2) {
       const months = (dates[1][1] - dates[0][1]) * 12 + (dates[1][2] - dates[0][2]);
       if (months > 0) duration = `${months}개월`;
     }
-    return { stats, notes, duration };
+    return { scores, stats, notes, duration };
   });
   // "2020. 03. 02 – 2026. 02. 20" -> "2020.03 — 2026.02"
   config.addFilter("shortPeriod", (period = "") => {
@@ -48,11 +50,18 @@ export default function (config) {
     return dates.length ? dates.join(" — ") : period;
   });
   // "교내 캡스톤 경진대회 동상 (6등)" -> { event: "교내 캡스톤 경진대회", prize: "동상", rank: "(6등)", tier: "bronze" }
-  config.addFilter("awardParts", title => {
+  const awardParts = title => {
     const match = title.match(/^(.+?)\s+(\S+상)(?:\s*(\(.+\)))?$/);
     if (!match) return { event: title, prize: "", rank: "", tier: "" };
     const tier = /대상|최우수|우수|금상/.test(match[2]) ? "gold" : /은상/.test(match[2]) ? "silver" : /동상/.test(match[2]) ? "bronze" : "";
     return { event: match[1], prize: match[2], rank: match[3] || "", tier };
+  };
+  config.addFilter("awardParts", awardParts);
+  // Apply site-only titles, then list the highest prize first; prizes without a tier (장려상 …) keep their order last.
+  config.addFilter("byPrize", (awards = [], titles = {}) => {
+    const order = ["gold", "silver", "bronze", ""];
+    return awards.map(item => ({ ...item, title: titles[item.title] || item.title }))
+      .sort((a, b) => order.indexOf(awardParts(a.title).tier) - order.indexOf(awardParts(b.title).tier));
   });
   config.addCollection("documents", api => api.getFilteredByGlob("src/documents/**/*.md"));
   return {
