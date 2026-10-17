@@ -38,7 +38,7 @@
       <div class="exp-row reveal"><h3 class="experience-label">{{ group.label }}</h3>
         <div class="exp-entries">{% for item in group.items %}{% set parts = item.details | experienceDetails(item.period) %}
           <article class="exp-entry">
-            {% if item.logo %}<span class="exp-logo"><img src="{{ item.logo }}" alt="" width="72" height="72" loading="lazy"></span>{% endif %}
+            {% if item.logo %}<span class="exp-logo"><img src="{{ item.logo }}" alt="" width="64" height="64" loading="lazy"></span>{% endif %}
             <div class="exp-body">
               <div class="exp-head"><h4>{{ item.title }}</h4><p class="timeline-period">{{ item.period }}{% if parts.duration %} · {{ parts.duration }}{% endif %}</p></div>
               <p class="exp-desc">{{ item.description }}</p>
@@ -52,7 +52,7 @@
       {# Awards from the school listed under 학력 are already marked 교내 and its logo shows above, so only other organizations are named. #}
       <div class="exp-row reveal"><h3 class="experience-label">수상</h3>
         <ul class="award-list">{% for item in profile.awards %}{% set award = item.title | awardParts %}
-          <li><span class="award-prize">{{ award.prize }}{% if award.rank %} <small>{{ award.rank }}</small>{% endif %}</span><span class="award-event">{{ award.event }}{% if item.organization != profile.education[0].title %} <small>· {{ item.organization }}</small>{% endif %}</span>{% if item.period %}<span class="timeline-period">{{ item.period }}</span>{% endif %}</li>
+          <li><span class="award-prize{% if award.tier %} award-prize--{{ award.tier }}{% endif %}">{{ award.prize }}{% if award.rank %} <small>{{ award.rank }}</small>{% endif %}</span><span class="award-event">{{ award.event }}{% if item.organization != profile.education[0].title %} <small>· {{ item.organization }}</small>{% endif %}</span>{% if item.period %}<span class="timeline-period">{{ item.period }}</span>{% endif %}</li>
         {% endfor %}</ul>
       </div>
     </div>

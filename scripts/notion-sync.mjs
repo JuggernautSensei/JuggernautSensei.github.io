@@ -144,6 +144,10 @@ export async function sync() {
     assert(/^[a-z0-9-]+\.png$/.test(cover.target));
     downloads.set(`/assets/media/${cover.target}`, await sharp(downloads.get(cover.source)).rotate().png().toBuffer());
   }
+  // Experience logos are tinted on a dark tile, so trim the plain margin around raster logos.
+  for (const { logo } of [...result.profile.education, ...result.profile.activities, ...result.profile.awards]) {
+    if (/\.(png|jpg|webp)$/.test(logo || "")) downloads.set(logo, await sharp(downloads.get(logo)).trim({ threshold: 12 }).toBuffer());
+  }
   for (const [file, data] of downloads) {
     const target = resolve("src", "." + file);
     await mkdir(resolve(target, ".."), { recursive: true }); await writeFile(target, data);

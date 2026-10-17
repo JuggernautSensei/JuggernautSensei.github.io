@@ -42,10 +42,12 @@ export default function (config) {
     }
     return { stats, notes, duration };
   });
-  // "교내 캡스톤 경진대회 동상 (6등)" -> { event: "교내 캡스톤 경진대회", prize: "동상", rank: "(6등)" }
+  // "교내 캡스톤 경진대회 동상 (6등)" -> { event: "교내 캡스톤 경진대회", prize: "동상", rank: "(6등)", tier: "bronze" }
   config.addFilter("awardParts", title => {
     const match = title.match(/^(.+?)\s+(\S+상)(?:\s*(\(.+\)))?$/);
-    return match ? { event: match[1], prize: match[2], rank: match[3] || "" } : { event: title, prize: "", rank: "" };
+    if (!match) return { event: title, prize: "", rank: "", tier: "" };
+    const tier = /대상|최우수|우수|금상/.test(match[2]) ? "gold" : /은상/.test(match[2]) ? "silver" : /동상/.test(match[2]) ? "bronze" : "";
+    return { event: match[1], prize: match[2], rank: match[3] || "", tier };
   });
   config.addCollection("documents", api => api.getFilteredByGlob("src/documents/**/*.md"));
   return {

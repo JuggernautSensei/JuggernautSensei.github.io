@@ -49,8 +49,13 @@ img { max-width:100%; }
 .experience-label { color:var(--pop); font-size:13px; margin:0; padding-top:5px; }
 .exp-entry { display:flex; align-items:flex-start; gap:22px; }
 .exp-entry+.exp-entry { margin-top:28px; }
-.exp-logo { flex:none; box-sizing:border-box; display:grid; place-items:center; width:72px; height:72px; padding:7px; border-radius:18px; background:#f5f6f8; box-shadow:0 0 0 1px rgba(255,255,255,.1),0 8px 24px rgba(0,0,0,.4); }
-.exp-logo img { display:block; width:100%; height:100%; object-fit:contain; }
+/* Logos come with white backgrounds: invert them to a light mark that screens away the white on a dark glass tile, then tint with the accent on hover. */
+.exp-logo { flex:none; position:relative; isolation:isolate; box-sizing:border-box; display:grid; place-items:center; width:64px; height:64px; padding:9px; border-radius:18px; background:linear-gradient(150deg,rgba(255,255,255,.08),rgba(255,255,255,.015) 60%),var(--panel); border:1px solid rgba(255,255,255,.09); box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 12px 28px rgba(0,0,0,.35); transition:border-color .35s,box-shadow .35s; }
+.exp-logo img { display:block; width:100%; height:100%; object-fit:contain; filter:grayscale(1) invert(1) contrast(1.5) brightness(1.1); mix-blend-mode:screen; opacity:.82; transition:opacity .35s; }
+.exp-logo::after { content:""; position:absolute; inset:0; border-radius:inherit; background:var(--pop); mix-blend-mode:multiply; opacity:0; transition:opacity .35s; pointer-events:none; }
+.exp-entry:hover .exp-logo { border-color:color-mix(in srgb,var(--pop) 45%,transparent); box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 0 0 4px color-mix(in srgb,var(--pop) 8%,transparent),0 12px 28px rgba(0,0,0,.35); }
+.exp-entry:hover .exp-logo img { opacity:1; }
+.exp-entry:hover .exp-logo::after { opacity:1; }
 .exp-body { flex:1; min-width:0; }
 .exp-head { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:4px 24px; }
 .exp-head h4 { font-size:21px; }
@@ -64,9 +69,12 @@ img { max-width:100%; }
 .exp-notes { margin-top:12px; padding-left:18px; }
 .exp-notes li { font-size:14px; color:#d0d6de; line-height:1.85; }
 .award-list { list-style:none; margin:0; padding:0; }
-.award-list li { display:grid; grid-template-columns:88px minmax(0,1fr) auto; align-items:baseline; gap:16px; }
-.award-list li+li { margin-top:12px; }
-.award-prize { color:var(--pop); font-size:14px; font-weight:600; white-space:nowrap; }
+.award-list li { display:grid; grid-template-columns:96px minmax(0,1fr) auto; align-items:center; gap:16px; }
+.award-list li+li { margin-top:14px; }
+.award-prize { --tier:#aab2bd; justify-self:start; padding:3px 11px; border:1px solid color-mix(in srgb,var(--tier) 38%,transparent); border-radius:999px; background:color-mix(in srgb,var(--tier) 10%,transparent); color:var(--tier); font-size:13px; font-weight:700; white-space:nowrap; }
+.award-prize--gold { --tier:#f4cd7c; }
+.award-prize--silver { --tier:#d5dbe3; }
+.award-prize--bronze { --tier:#e2a982; }
 .award-prize small { font-size:11px; opacity:.8; }
 .award-event { font-size:16px; line-height:1.5; }
 .award-event small { color:#a3abb7; font-size:13px; }
@@ -243,8 +251,8 @@ html:not(.js) .reveal { opacity:1; transform:none; }
   .experience-label { padding-top:0; }
   .exp-head h4 { font-size:19px; }
   .exp-entry { gap:16px; }
-  .exp-logo { width:54px; height:54px; padding:5px; border-radius:14px; }
-  .award-list li { grid-template-columns:64px minmax(0,1fr); gap:12px; }
+  .exp-logo { width:52px; height:52px; padding:7px; border-radius:15px; }
+  .award-list li { grid-template-columns:80px minmax(0,1fr); gap:10px; }
   .award-list .timeline-period { grid-column:2; }
   .knowledge-links { grid-template-columns:1fr; }
   .knowledge-card { min-height:240px; padding:26px; }
