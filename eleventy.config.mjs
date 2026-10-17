@@ -42,6 +42,11 @@ export default function (config) {
     }
     return { stats, notes, duration };
   });
+  // "2020. 03. 02 – 2026. 02. 20" -> "2020.03 — 2026.02"
+  config.addFilter("shortPeriod", (period = "") => {
+    const dates = [...period.matchAll(/(\d{4})\.\s*(\d{1,2})\./g)].map(date => `${date[1]}.${date[2].padStart(2, "0")}`);
+    return dates.length ? dates.join(" — ") : period;
+  });
   // "교내 캡스톤 경진대회 동상 (6등)" -> { event: "교내 캡스톤 경진대회", prize: "동상", rank: "(6등)", tier: "bronze" }
   config.addFilter("awardParts", title => {
     const match = title.match(/^(.+?)\s+(\S+상)(?:\s*(\(.+\)))?$/);

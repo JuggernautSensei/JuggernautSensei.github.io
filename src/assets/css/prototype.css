@@ -44,37 +44,27 @@ img { max-width:100%; }
 .profile-portrait { margin:0; position:sticky; top:40px; }
 .profile-portrait img { display:block; width:100%; height:auto; border-radius:16px; border:1px solid var(--line); }
 .intro-name { margin:0 .06em; color:var(--ink); font-size:1.3em; font-weight:800; letter-spacing:-.02em; }
-.exp-rows { border-top:1px solid var(--line); }
-.exp-row { display:grid; grid-template-columns:96px minmax(0,1fr); align-items:start; gap:14px 32px; padding:30px 0; border-bottom:1px solid var(--line); }
-.experience-label { color:var(--pop); font-size:13px; margin:0; padding-top:5px; }
-.exp-entry { display:flex; align-items:flex-start; gap:22px; }
-.exp-entry+.exp-entry { margin-top:28px; }
-/* Logos keep their colors and white backgrounds, so each sits on a white plate set in a dark glass bezel. */
-.exp-logo { flex:none; box-sizing:border-box; display:grid; width:64px; height:64px; padding:4px; border-radius:18px; background:linear-gradient(150deg,rgba(255,255,255,.1),rgba(255,255,255,.02) 60%),var(--panel); border:1px solid rgba(255,255,255,.1); box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 28px rgba(0,0,0,.4); transition:border-color .35s,box-shadow .35s,transform .35s; }
-.exp-logo img { box-sizing:border-box; display:block; width:100%; height:100%; padding:6px; border-radius:13px; background:#fff; object-fit:contain; }
-.exp-entry:hover .exp-logo { transform:translateY(-2px); border-color:color-mix(in srgb,var(--pop) 50%,transparent); box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 4px color-mix(in srgb,var(--pop) 10%,transparent),0 16px 32px rgba(0,0,0,.45); }
-.exp-body { flex:1; min-width:0; }
-.exp-head { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:4px 24px; }
-.exp-head h4 { font-size:21px; }
-.timeline-period { color:#a3abb7; font-size:13px; font-variant-numeric:tabular-nums; white-space:nowrap; }
-.exp-desc { margin-top:6px; font-size:15px; color:#d0d6de; line-height:1.8; }
-.exp-stats { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-.exp-stats>div { display:flex; align-items:baseline; gap:6px; padding:4px 12px; border:1px solid var(--line); border-radius:999px; font-size:13px; }
-.exp-stats dt { color:#aab2bd; }
-.exp-stats dd { margin:0; color:var(--ink); font-weight:700; }
-.exp-stats dd span { color:#a3abb7; font-weight:500; }
-.exp-notes { margin-top:12px; padding-left:18px; }
-.exp-notes li { font-size:14px; color:#d0d6de; line-height:1.85; }
-.award-list { list-style:none; margin:0; padding:0; }
-.award-list li { display:grid; grid-template-columns:96px minmax(0,1fr) auto; align-items:center; gap:16px; }
-.award-list li+li { margin-top:14px; }
-.award-prize { --tier:#aab2bd; justify-self:start; padding:3px 11px; border:1px solid color-mix(in srgb,var(--tier) 38%,transparent); border-radius:999px; background:color-mix(in srgb,var(--tier) 10%,transparent); color:var(--tier); font-size:13px; font-weight:700; white-space:nowrap; }
+.exp-group+.exp-group { margin-top:48px; }
+.experience-label { color:var(--pop); font-size:13px; font-weight:600; margin:0 0 18px; }
+.exp-list { list-style:none; margin:0; padding:0; }
+.exp-item { display:grid; grid-template-columns:220px minmax(0,1fr); gap:6px 32px; }
+.exp-item+.exp-item { margin-top:22px; }
+.exp-award+.exp-award { margin-top:14px; }
+.exp-period { padding-top:4px; color:#a3abb7; font-size:13px; font-variant-numeric:tabular-nums; }
+.exp-title { display:flex; align-items:center; gap:12px; font-size:20px; font-weight:700; line-height:1.4; }
+.exp-title small { color:#a3abb7; font-size:13px; font-weight:400; }
+.exp-logo { flex:none; width:28px; height:28px; padding:3px; border-radius:8px; background:#fff; object-fit:contain; }
+.exp-desc { margin-top:6px; font-size:15px; color:#d0d6de; line-height:1.75; }
+.exp-meta { margin-top:8px; color:#a3abb7; font-size:14px; line-height:1.75; }
+.exp-meta b { color:var(--ink); font-weight:600; }
+.exp-meta span+span::before { content:"·"; margin:0 8px; }
+.exp-award .exp-period { padding-top:2px; }
+.exp-award .exp-title { display:block; font-size:16px; font-weight:500; }
+.award-prize { --tier:#aab2bd; color:var(--tier); font-size:14px; font-weight:700; }
 .award-prize--gold { --tier:#f4cd7c; }
 .award-prize--silver { --tier:#d5dbe3; }
 .award-prize--bronze { --tier:#e2a982; }
-.award-prize small { font-size:11px; opacity:.8; }
-.award-event { font-size:16px; line-height:1.5; }
-.award-event small { color:#a3abb7; font-size:13px; }
+.award-prize small { font-size:12px; font-weight:500; opacity:.8; }
 .about-copy .text-action { margin-top:24px; }
 .sec-title { font-size:32px; line-height:1.35; letter-spacing:-.02em; }
 .knowledge-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
@@ -244,14 +234,10 @@ html:not(.js) .reveal { opacity:1; transform:none; }
   .showcase-title p:not(.eyebrow) { font-size:12px; }
   .about-layout { grid-template-columns:1fr; gap:28px; }
   .profile-portrait { grid-row:2; position:static; width:220px; }
-  .exp-row { grid-template-columns:1fr; gap:14px; padding:26px 0; }
-  .experience-label { padding-top:0; }
-  .exp-head h4 { font-size:19px; }
-  .exp-entry { gap:16px; }
-  .exp-logo { width:52px; height:52px; padding:3px; border-radius:15px; }
-  .exp-logo img { padding:4px; border-radius:11px; }
-  .award-list li { grid-template-columns:80px minmax(0,1fr); gap:10px; }
-  .award-list .timeline-period { grid-column:2; }
+  .exp-item { grid-template-columns:1fr; }
+  .exp-period { padding-top:0; }
+  .exp-title { font-size:18px; }
+  .exp-award { grid-template-columns:80px minmax(0,1fr); gap:10px; }
   .knowledge-links { grid-template-columns:1fr; }
   .knowledge-card { min-height:240px; padding:26px; }
   .contact-groups { grid-template-columns:1fr; gap:32px; }
