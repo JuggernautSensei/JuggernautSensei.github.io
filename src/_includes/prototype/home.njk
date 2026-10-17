@@ -48,12 +48,11 @@
         {% endfor %}</ul>
       </div>
       {% endfor %}
-      {# Awards from the school listed under 학력 are already marked 교내, so only other organizations are named. #}
       <div class="exp-group reveal"><h3 class="experience-label">수상</h3>
         <ul class="exp-list">{% for item in profile.awards %}{% set award = item.title | awardParts %}
           <li class="exp-item exp-award">
             <p class="exp-period award-prize{% if award.tier %} award-prize--{{ award.tier }}{% endif %}">{{ award.prize }}{% if award.rank %} <small>{{ award.rank }}</small>{% endif %}</p>
-            <div class="exp-body"><h4 class="exp-title">{{ award.event }}{% if item.organization != profile.education[0].title %} <small>· {{ item.organization }}</small>{% endif %}{% if item.period %} <small>· {{ item.period }}</small>{% endif %}</h4></div>
+            <div class="exp-body"><h4 class="exp-title">{{ award.event }}{% if item.organization %} <small>· {{ item.organization }}</small>{% endif %}{% if item.period %} <small>· {{ item.period }}</small>{% endif %}</h4></div>
           </li>
         {% endfor %}</ul>
       </div>

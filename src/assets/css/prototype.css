@@ -57,7 +57,7 @@ img { max-width:100%; }
 .exp-desc { margin-top:6px; font-size:15px; color:#d0d6de; line-height:1.75; }
 .exp-meta { margin-top:8px; color:#a3abb7; font-size:14px; line-height:1.75; }
 .exp-meta b { color:var(--ink); font-weight:600; }
-.exp-meta span+span::before { content:"·"; margin:0 8px; }
+.exp-meta span { display:block; }
 .exp-award .exp-period { padding-top:2px; }
 .exp-award .exp-title { display:block; font-size:16px; font-weight:500; }
 .award-prize { --tier:#aab2bd; color:var(--tier); font-size:14px; font-weight:700; }
