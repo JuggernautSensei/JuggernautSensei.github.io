@@ -28,7 +28,6 @@
   {% if article %}<link rel="stylesheet" href="/assets/css/starter-article.css">{% endif %}
   <link rel="stylesheet" href="/assets/css/prototype.css">
   <script src="/assets/js/prototype.js" defer></script>
-  <script src="/assets/js/project-preview.js" defer></script>
 </head>
 <body class="prototype{% if article %} article-page{% endif %}">
   <a class="skip" href="#main">본문으로 건너뛰기</a>
@@ -71,12 +70,6 @@
     </div>
   </nav>
   <main id="main">{{ content | safe }}</main>
-  {% if not article or page.url == '/projects/' %}
-  <dialog class="project-dialog" aria-label="프로젝트 상세 페이지">
-    <div class="project-dialog-bar"><span>프로젝트</span><a class="project-expand" href="/projects/" target="_blank" rel="noopener">새 페이지로 보기 ↗</a><button class="project-close" type="button" aria-label="프로젝트 닫기">닫기 <span aria-hidden="true">×</span></button></div>
-    <iframe class="project-frame" title="프로젝트 상세 내용"></iframe>
-  </dialog>
-  {% endif %}
   <footer class="site-footer">
     <div class="inner footer-inner">
       <p>© 2026 {{ profile.name }}</p>

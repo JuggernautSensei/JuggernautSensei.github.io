@@ -2,7 +2,7 @@
   {
     "label": "GITHUB",
     "title": "JuggernautSensei",
-    "description": "진행한 프로젝트와 소스코드",
+    "description": "진행한 프로젝트의 소스 코드",
     "url": "https://github.com/JuggernautSensei",
     "domain": "github.com",
     "image": "/assets/media/portrait.png",
@@ -22,7 +22,7 @@
   {
     "label": "PORTFOLIO",
     "title": "프로그래머 안지우",
-    "description": "포트올리오",
+    "description": "직접 만든 프로젝트와 기술 문서",
     "url": "https://juggernautsensei.github.io/",
     "domain": "juggernautsensei.github.io",
     "image": "/assets/media/raytracing.png",

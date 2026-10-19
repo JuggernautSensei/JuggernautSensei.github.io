@@ -8,7 +8,7 @@
       {% set entry = collections.projects | projectFor(record.slug) %}
       {% set thumbnail = entry.data.cover %}
       {% if record.slug in projectThumbnails %}{% set thumbnail = projectThumbnails[record.slug] %}{% endif %}
-      <a class="card project-card" href="{{ entry.url }}" data-project-categories="{{ record.categories | join(' ') }}" data-notion-id="{{ record.id }}">
+      <article class="card project-card" data-project-categories="{{ record.categories | join(' ') }}" data-notion-id="{{ record.id }}">
         {% if thumbnail %}
           <img class="project-thumbnail" src="{{ thumbnail }}" alt="{{ entry.data.coverAlt or record.title }}" width="960" height="540" loading="lazy" decoding="async">
         {% else %}
@@ -17,8 +17,15 @@
         <div class="project-card-copy">
           <h3>{{ record.title }}</h3>
           <p class="desc">{{ entry.data.description }}</p>
+          {% if entry.data.highlights.length %}<ul class="project-highlights">{% for highlight in entry.data.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>{% endif %}
+          <div class="archive-tags" aria-label="프로젝트 태그">{% for category in record.categories %}<span data-category="{{ category }}">{{ projectCatalog.labels[category] }}</span>{% endfor %}</div>
+          <div class="project-links">
+            <a class="project-notion" href="{{ record.notionUrl }}" target="_blank" rel="noopener noreferrer" aria-label="{{ record.title }} Notion에서 자세히 보기">Notion <span aria-hidden="true">↗</span></a>
+            {% if entry.data.repository %}<a href="{{ entry.data.repository }}" target="_blank" rel="noopener noreferrer" aria-label="{{ record.title }} GitHub">GitHub <span aria-hidden="true">↗</span></a>{% endif %}
+            {% if entry.data.video %}<a href="{{ entry.data.video }}" target="_blank" rel="noopener noreferrer" aria-label="{{ record.title }} 영상 보기">YouTube <span aria-hidden="true">↗</span></a>{% endif %}
+          </div>
         </div>
-      </a>
+      </article>
     {% endfor %}
   </div>
 </div>

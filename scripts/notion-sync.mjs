@@ -85,9 +85,13 @@ export async function collectPortfolio(config, profile, catalog, client, media) 
   if (!collectionId || !view) throw new Error("Public Notion collection/view missing");
   const query = await client.query(collectionId, view);
   const collection = value(query.map.collection?.[collectionId]);
-  const categoryKey = Object.entries(collection?.schema || {}).find(([, s]) => s.name === "Expertise" && s.type === "multi_select")?.[0];
-  const repoKey = Object.entries(collection?.schema || {}).find(([, s]) => s.name === "Github")?.[0];
+  const schema = Object.entries(collection?.schema || {});
+  const categoryKey = schema.find(([, s]) => ["Filter", "Expertise"].includes(s.name) && s.type === "multi_select")?.[0];
+  const repoKey = schema.find(([, s]) => s.name === "Github")?.[0];
+  const descriptionKey = schema.find(([, s]) => ["Description", "설명"].includes(s.name))?.[0];
+  const videoKey = schema.find(([, s]) => s.name === "Video")?.[0];
   if (!categoryKey) throw new Error("Notion category schema changed");
+  if (!descriptionKey) throw new Error("Notion card description schema changed");
   let items = catalogItems(query.ids, query.map, catalog, collectionId, categoryKey, config.publicHost);
   const pages = {}, covers = [], warnings = [];
   for (const [index, item] of items.entries()) {
@@ -99,10 +103,14 @@ export async function collectPortfolio(config, profile, catalog, client, media) 
     const cover = page.format?.page_cover ? await media(page.format.page_cover, item.id) : undefined;
     const group = item.categories.includes("Library") ? "library" : item.categories.includes("Game") ? "game" : undefined;
     const repository = plain(page.properties?.[repoKey]);
+    const [description = "", ...highlights] = plain(page.properties?.[descriptionKey]).split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+    const video = plain(page.properties?.[videoKey]).trim();
     pages[item.slug] = { id: item.id, title: item.title.match(/^\[([^\]]+)\]/)?.[1] || item.title,
       displayTitle: item.title, categories: item.categories, category: item.categories.map(key => catalog.labels[key] || key).join(" · "),
       pinned: item.pinned, featuredGroup: group || null, featuredOrder: index,
       repository: repository ? link(repository, config.publicHost) : null,
+      description, highlights: highlights.map(line => line.replace(/^[•·\-]\s*/, "")),
+      video: /^https:\/\//.test(video) ? link(video, config.publicHost) : null,
       ...(cover ? { cover, coverAlt: item.title } : {}),
       notionUrl: item.notionUrl, notionHtml: rendered.html,
       ...(rendered.html ? { toc: [{ id: "overview", label: "개요" }, ...rendered.toc, { id: "links", label: "관련 자료" }] } : {}) };
@@ -128,10 +136,16 @@ export async function sync() {
     if (!url.startsWith("https://")) throw new Error("Notion downloads require HTTPS");
     const response = await fetch(url, { signal: AbortSignal.timeout(120000) });
     if (!response.ok) throw new Error(`Notion media HTTP ${response.status}: ${id}`);
-    const type = response.headers.get("content-type")?.split(";")[0];
-    const extensions = { "image/png": "png", "image/jpeg": "jpg", "image/gif": "gif", "image/webp": "webp", "image/svg+xml": "svg", "application/pdf": "pdf", "video/mp4": "mp4", "audio/mpeg": "mp3" };
-    if (!extensions[type]) throw new Error(`Unsupported Notion media type ${type}: ${id}`);
+    let type = response.headers.get("content-type")?.split(";")[0];
+    const extensions = { "image/png": "png", "image/jpeg": "jpg", "image/gif": "gif", "image/webp": "webp", "image/avif": "avif", "image/svg+xml": "svg", "application/pdf": "pdf", "video/mp4": "mp4", "audio/mpeg": "mp3" };
     const data = Buffer.from(await response.arrayBuffer());
+    // GitHub raw downloads can send image bytes as application/octet-stream.
+    if (type === "application/octet-stream") {
+      const sharp = (await import("sharp")).default;
+      const { format } = await sharp(data).metadata();
+      type = `image/${format}`;
+    }
+    if (!extensions[type]) throw new Error(`Unsupported Notion media type ${type}: ${id}`);
     const hash = createHash("sha256").update(data).digest("hex").slice(0, 24);
     const file = `/assets/notion/${hash}.${extensions[type]}`;
     downloads.set(file, data); bySource.set(key, file);

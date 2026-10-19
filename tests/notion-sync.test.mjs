@@ -21,7 +21,7 @@ function fixture() {
     db: row({ id: "db", type: "collection_view", collection_id: "collection" })
   }, collection_view: { view: row({ id: "view" }) } };
   const page = { id: "old", type: "page", parent_id: "collection", parent_table: "collection", properties: { ...title("새 제목"), tags: [["Project,Game,Pinned"]] }, content: ["paragraph"] };
-  const query = { ids: ["old"], map: { block: { old: row(page) }, collection: { collection: row({ schema: { tags: { name: "Expertise", type: "multi_select" } } }) } } };
+  const query = { ids: ["old"], map: { block: { old: row(page) }, collection: { collection: row({ schema: { tags: { name: "Expertise", type: "multi_select" }, desc: { name: "설명", type: "text" } } }) } } };
   const detail = { block: { old: row(page), paragraph: row({ id: "paragraph", type: "text", properties: title("새 본문") }) } };
   return { config, root, query, detail, client: { page: async id => id === "root" ? root : detail, query: async () => query } };
 }
@@ -44,6 +44,33 @@ test("social links remain configured when Notion bookmarks are replaced by an em
   const result = await collectPortfolio(f.config, profile, catalog, f.client, async () => "/assets/face.png");
   assert.equal(result.profile.github, profile.github);
   assert.equal(result.profile.blog, profile.blog);
+});
+
+test("current Filter schema updates card descriptions, bullets, covers and external links", async () => {
+  const f = fixture();
+  f.query.map.collection.collection.value.value.schema = {
+    tags: { name: "Filter", type: "multi_select" },
+    desc: { name: "Description", type: "text" },
+    repo: { name: "Github", type: "text" },
+    video: { name: "Video", type: "text" }
+  };
+  const page = f.detail.block.old.value.value;
+  Object.assign(page.properties, {
+    desc: [["새 소개\n  • 첫 번째 구현\n• 두 번째 구현"]],
+    repo: [["https://github.com/example/project"]],
+    video: [["https://youtu.be/example"]]
+  });
+  page.format = { page_cover: "https://example.com/current-cover.png" };
+  const result = await collectPortfolio(f.config, {}, catalog, f.client, async (source, id) => `/assets/${id}.png`);
+  const card = result.snapshot.pages.stable;
+  assert.equal(card.description, "새 소개");
+  assert.deepEqual(card.highlights, ["첫 번째 구현", "두 번째 구현"]);
+  assert.equal(card.repository, "https://github.com/example/project");
+  assert.equal(card.video, "https://youtu.be/example");
+  assert.equal(card.cover, "/assets/old.png");
+  page.properties.video = [["깃허브 문서 참조"]];
+  const textVideo = await collectPortfolio(f.config, {}, catalog, f.client, async () => "/assets/cover.png");
+  assert.equal(textVideo.snapshot.pages.stable.video, null);
 });
 
 test("experience entries carry their column image as a downloaded logo", async () => {
@@ -81,6 +108,8 @@ test("private root, moved profile blocks, and media failure abort collection", a
   await assert.rejects(collectPortfolio(f.config, {}, catalog, f.client, async () => assert.fail()), /outside the public root/);
   f = fixture();
   await assert.rejects(collectPortfolio(f.config, {}, catalog, f.client, async () => { throw new Error("network offline"); }), /network offline/);
+  f = fixture(); delete f.query.map.collection.collection.value.value.schema.desc;
+  await assert.rejects(collectPortfolio(f.config, {}, catalog, f.client, async () => "/assets/face.png"), /description schema changed/);
 });
 
 test("renderer escapes text/URLs, keeps nested lists, local images, tables, and stable TOC", async () => {

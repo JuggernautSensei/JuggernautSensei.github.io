@@ -16,7 +16,7 @@
     {
       "id": "3fac3fb6-c02f-8074-8985-e4e3b5a18414",
       "slug": "jugx",
-      "title": "[JugX] C++20 스탠다드 라이브러리",
+      "title": "[JugX] C++20 범용 라이브러리",
       "categories": [
         "Project",
         "Library"
@@ -27,7 +27,7 @@
     {
       "id": "3fac3fb6-c02f-80ce-9da6-dadcb80ffe3f",
       "slug": "juggfx",
-      "title": "[JugGfx] D3D11 기반 그래픽스 라이브러리",
+      "title": "[JugGfx] 그래픽스 라이브러리",
       "categories": [
         "Project",
         "Library"
@@ -38,35 +38,13 @@
     {
       "id": "3ccc3fb6-c02f-80d2-b932-c71bdd2055ca",
       "slug": "jugnet",
-      "title": "[JugNet] WinSock 기반 네트워크 라이브러리 ",
+      "title": "[JugNet] 네트워크 라이브러리 ",
       "categories": [
         "Project",
         "Library"
       ],
       "pinned": true,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80d2b932c71bdd2055ca"
-    },
-    {
-      "id": "3ccc3fb6-c02f-80f8-a0a9-deccac0ef845",
-      "slug": "juggernaut",
-      "title": "[Juggernaut] 게임 개발 프레임워크",
-      "categories": [
-        "Project",
-        "Library"
-      ],
-      "pinned": true,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80f8a0a9deccac0ef845"
-    },
-    {
-      "id": "3ccc3fb6-c02f-80e6-a6e6-f4f385766241",
-      "slug": "textgradius",
-      "title": "Text Gradius",
-      "categories": [
-        "Project",
-        "Game"
-      ],
-      "pinned": true,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e6a6e6f4f385766241"
     },
     {
       "id": "3ccc3fb6-c02f-800f-bba1-ed14ecb2cb97",
@@ -80,24 +58,15 @@
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f800fbba1ed14ecb2cb97"
     },
     {
-      "id": "3ccc3fb6-c02f-806c-98ff-eccc0c5c3175",
-      "slug": "deferred-rendering-gdc2025",
-      "title": "Deferred Rendering을 이용한 렌더링 최적화",
+      "id": "3ccc3fb6-c02f-80e6-a6e6-f4f385766241",
+      "slug": "textgradius",
+      "title": "Text Gradius",
       "categories": [
-        "Presentation"
+        "Project",
+        "Game"
       ],
-      "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806c98ffeccc0c5c3175"
-    },
-    {
-      "id": "3ccc3fb6-c02f-806b-940a-ff6f542b0639",
-      "slug": "research-report-on-multilayer-perceptrons",
-      "title": "다층 퍼셉트론 조사 보고서",
-      "categories": [
-        "Presentation"
-      ],
-      "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806b940aff6f542b0639"
+      "pinned": true,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e6a6e6f4f385766241"
     },
     {
       "id": "3f6c3fb6-c02f-8091-ab34-cdf9b2d6384e",
@@ -108,6 +77,36 @@
       ],
       "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3f6c3fb6c02f8091ab34cdf9b2d6384e"
+    },
+    {
+      "id": "3ccc3fb6-c02f-80b8-9021-c00bc20935a9",
+      "slug": "solarsystemrendering",
+      "title": "OpenGL을 이용한 3D 태양계 시뮬레이션",
+      "categories": [
+        "Study"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80b89021c00bc20935a9"
+    },
+    {
+      "id": "3ccc3fb6-c02f-80e2-85cd-da7f05718cdc",
+      "slug": "software-rasterizer",
+      "title": "Software Rasterizer",
+      "categories": [
+        "Study"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e285cdda7f05718cdc"
+    },
+    {
+      "id": "3ccc3fb6-c02f-806c-98ff-eccc0c5c3175",
+      "slug": "deferred-rendering-gdc2025",
+      "title": "Deferred Rendering을 이용한 렌더링 최적화",
+      "categories": [
+        "Presentation"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806c98ffeccc0c5c3175"
     },
     {
       "id": "3ccc3fb6-c02f-80c0-af3f-d41364bb08a4",
@@ -130,6 +129,26 @@
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80588961fc9ce62565bf"
     },
     {
+      "id": "3ccc3fb6-c02f-809d-848f-c4401558ee91",
+      "slug": "diary",
+      "title": "오늘하루는",
+      "categories": [
+        "Study"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f809d848fc4401558ee91"
+    },
+    {
+      "id": "3ccc3fb6-c02f-806b-940a-ff6f542b0639",
+      "slug": "research-report-on-multilayer-perceptrons",
+      "title": "다층 퍼셉트론 조사 보고서",
+      "categories": [
+        "Presentation"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806b940aff6f542b0639"
+    },
+    {
       "id": "3ccc3fb6-c02f-806a-a626-f7ee1deb32e0",
       "slug": "digital-signal-processing",
       "title": "디지털신호처리",
@@ -140,65 +159,14 @@
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806aa626f7ee1deb32e0"
     },
     {
-      "id": "3ccc3fb6-c02f-80e2-85cd-da7f05718cdc",
-      "slug": "software-rasterizer",
-      "title": "소프트웨어 레스터라이저",
-      "categories": [
-        "Study"
-      ],
-      "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e285cdda7f05718cdc"
-    },
-    {
-      "id": "3ccc3fb6-c02f-8094-bc76-d4d782b88458",
-      "slug": "super-mario-online",
-      "title": "슈퍼마리오 온라인 데모",
-      "categories": [
-        "Study",
-        "Game"
-      ],
-      "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f8094bc76d4d782b88458"
-    },
-    {
-      "id": "3ccc3fb6-c02f-80e6-bd8c-dd32b8c0a56c",
-      "slug": "oracle-sql-demo",
-      "title": "오라클 SQL로 간단한 데모 작성 (자료가 부족)",
-      "categories": [
-        "Study"
-      ],
-      "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e6bd8cdd32b8c0a56c"
-    },
-    {
       "id": "3ccc3fb6-c02f-8042-a51d-d40d2fff8e90",
       "slug": "titanic",
-      "title": "타이타닉 사망자 예측",
+      "title": "머신러닝을 이용한 타이타닉 생존 여부 예측",
       "categories": [
         "Study"
       ],
       "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f8042a51dd40d2fff8e90"
-    },
-    {
-      "id": "3ccc3fb6-c02f-809d-848f-c4401558ee91",
-      "slug": "diary",
-      "title": "매일일기",
-      "categories": [
-        "Study"
-      ],
-      "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f809d848fc4401558ee91"
-    },
-    {
-      "id": "3ccc3fb6-c02f-80b8-9021-c00bc20935a9",
-      "slug": "solarsystemrendering",
-      "title": "OpenGL을 이용한 태양계 공전 시뮬레이션",
-      "categories": [
-        "Study"
-      ],
-      "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80b89021c00bc20935a9"
     }
   ]
 }

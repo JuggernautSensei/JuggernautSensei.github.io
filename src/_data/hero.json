@@ -5,24 +5,24 @@
       "src": "/assets/media/raytracing.png",
       "label": "C++로 그린 소프트웨어 레이트레이싱",
       "href": "/projects/raytracinginoneweekend/",
-      "position": "62% center"
+      "position": "62% 42%"
     },
     {
-      "src": "/assets/media/framework.png",
-      "label": "Juggernaut · 게임 개발 프레임워크",
-      "href": "/projects/juggernaut/",
+      "src": "/assets/media/juggfx.png",
+      "label": "JugGfx · 그래픽스 라이브러리",
+      "href": "/projects/juggfx/",
       "position": "60% center"
     },
     {
-      "src": "/assets/media/metalslug.jpg",
+      "src": "/assets/media/metalslug-gameplay.png",
       "label": "메탈슬러그 2 모작 · 게임과 런타임 에디터",
       "href": "/projects/metalslug2-clone/",
-      "position": "65% center"
+      "position": "65% 40%"
     },
     {
-      "src": "/assets/media/deferred.png",
-      "label": "Deferred Rendering · 렌더링 최적화",
-      "href": "/projects/deferred-rendering-gdc2025/",
+      "src": "/assets/media/solar-system.png",
+      "label": "OpenGL · 3D 태양계 시뮬레이션",
+      "href": "/projects/solarsystemrendering/",
       "position": "62% center"
     }
   ]
