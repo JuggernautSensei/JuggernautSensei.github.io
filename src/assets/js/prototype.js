@@ -1,6 +1,5 @@
 document.documentElement.classList.add("js");
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-const root = document.documentElement;
 const sidebar = document.getElementById("primary-nav");
 const toggle = document.querySelector(".navtoggle");
 
@@ -33,8 +32,6 @@ const links = [...sidebar.querySelectorAll('.nav a[href^="#"]')];
 const sections = links.map(link => document.getElementById(link.hash.slice(1)));
 const hero = document.getElementById("home");
 const heroBackdrop = document.querySelector(".hero-backgrounds");
-const accents = ["#79d6c3", "#79a7ff", "#b39afa"];
-let accentIndex = 0;
 let ticking = false;
 
 function updateScroll() {
@@ -50,9 +47,6 @@ function updateScroll() {
     if (index === current && !(hero && window.scrollY < hero.offsetHeight * 0.65)) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
   });
-  const onHero = hero && window.scrollY < hero.offsetHeight * 0.65;
-  const activeAccent = onHero ? accents[accentIndex] : sections[current]?.dataset.accent;
-  if (activeAccent) root.style.setProperty("--pop", activeAccent);
   if (heroBackdrop && !reduce.matches && window.innerWidth > 900) {
     heroBackdrop.style.transform = `translateY(${Math.min(window.scrollY, window.innerHeight) * 0.10}px)`;
   }
@@ -64,43 +58,6 @@ window.addEventListener("scroll", () => {
 window.addEventListener("resize", updateScroll);
 updateScroll();
 
-function makeRoll(id, words) {
-  const element = document.getElementById(id);
-  if (!element) return null;
-  const track = element.querySelector(".roll__track");
-  let index = 0;
-  function fitWord(item) {
-    const range = document.createRange();
-    range.selectNodeContents(item);
-    const fontSize = parseFloat(getComputedStyle(element).fontSize);
-    element.style.width = `${range.getBoundingClientRect().width / fontSize}em`;
-  }
-  function paint() {
-    track.children[0].textContent = words[index];
-    track.children[1].textContent = words[(index + 1) % words.length];
-    fitWord(track.children[0]);
-  }
-  paint();
-  document.fonts.ready.then(() => fitWord(track.children[0]));
-  return () => {
-    fitWord(track.children[1]);
-    track.style.transition = "transform .42s cubic-bezier(.16,.86,.26,1)";
-    track.style.transform = "translateY(-50%)";
-    window.setTimeout(() => {
-      index = (index + 1) % words.length;
-      track.style.transition = "none";
-      track.style.transform = "translateY(0)";
-      paint();
-    }, 460);
-  };
-}
-const wordRoll = makeRoll("wordroll", ["구현하며", "검증하며", "디버깅하며", "소통하며 함께"]);
-window.setInterval(() => {
-  if (reduce.matches || document.hidden || sidebar.matches(":hover, :focus-within")) return;
-  wordRoll?.();
-  accentIndex = (accentIndex + 1) % accents.length;
-  updateScroll();
-}, 3800);
 reduce.addEventListener("change", () => {
   if (reduce.matches && heroBackdrop) heroBackdrop.style.transform = "none";
   updateScroll();
