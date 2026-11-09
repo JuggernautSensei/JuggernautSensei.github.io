@@ -1,12 +1,9 @@
 [
   {
-    "period": "동아리 · 학회",
+    "period": "2025. 02. – 2025. 08.",
     "title": "Google Developer Group On Campus",
     "description": "국립부경대학교 · 게임 개발 정기 회의 주최 및 기술 발표",
-    "details": [
-      "매주 1~3회 개발일지, 문제 해결 방법, 학습한 기술 공유",
-      "『디퍼드 렌더링을 이용한 렌더링 최적화』 기술 발표"
-    ],
+    "details": [],
     "logo": "/assets/media/gdg-logo.png"
   }
 ]

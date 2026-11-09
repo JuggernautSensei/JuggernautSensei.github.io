@@ -28,9 +28,9 @@
     <div class="exp-groups">
       {% for group in [{ label: "학력", items: profile.education }, { label: "활동", items: profile.activities | concat(localActivities) }] %}
       <div class="exp-group reveal"><h3 class="experience-label">{{ group.label }}</h3>
-        <ul class="exp-list">{% for item in group.items %}{% set parts = (experienceCopy.details[item.title] or item.details) | experienceDetails(item.period) %}
+        <ul class="exp-list">{% for item in group.items %}{% set period = experienceCopy.periods[item.title] or item.period %}{% set parts = (experienceCopy.details[item.title] or item.details) | experienceDetails(period) %}
           <li class="exp-item">
-            <p class="exp-period">{{ item.period | shortPeriod }}{% if parts.duration %} · {{ parts.duration }}{% endif %}</p>
+            <p class="exp-period">{{ period | shortPeriod }}{% if parts.duration %} · {{ parts.duration }}{% endif %}</p>
             <div class="exp-body">
               <h4 class="exp-title">{% if item.logo %}<img class="exp-logo" src="{{ item.logo }}" alt="" width="28" height="28" loading="lazy">{% endif %}{{ item.title }}</h4>
               <p class="exp-desc">{{ item.description }}</p>
