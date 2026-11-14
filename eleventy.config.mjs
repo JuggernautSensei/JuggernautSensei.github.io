@@ -44,7 +44,10 @@ export default function (config) {
     }
     return { scores, stats, notes, duration };
   });
-  config.addFilter("concat", (first = [], second = []) => [...first, ...second]);
+  config.addFilter("withLocalActivities", (activities = [], localActivities = []) => {
+    const syncedTitles = new Set(activities.map(activity => activity.title));
+    return [...activities, ...localActivities.filter(activity => !syncedTitles.has(activity.title))];
+  });
   // "2020. 03. 02 – 2026. 02. 20" -> "2020.03 — 2026.02"
   config.addFilter("shortPeriod", (period = "") => {
     const dates = [...period.matchAll(/(\d{4})\.\s*(\d{1,2})\./g)].map(date => `${date[1]}.${date[2].padStart(2, "0")}`);

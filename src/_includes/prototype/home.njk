@@ -23,10 +23,10 @@
 
 <section id="experience" aria-labelledby="experience-h">
   <div class="inner"><div class="sec-head reveal"><h2 class="eyebrow sec-label" id="experience-h">02 / 학력 · 활동 · 수상</h2></div>
-    {# localActivities.json holds activities that are not in Notion, so a Notion sync does not remove them. #}
+    {# Use localActivities.json as a fallback for activities missing from Notion. #}
     {# Wording that differs from Notion lives in experienceCopy.json, so a Notion sync does not overwrite it. #}
     <div class="exp-groups">
-      {% for group in [{ label: "학력", items: profile.education }, { label: "활동", items: profile.activities | concat(localActivities) }] %}
+      {% for group in [{ label: "학력", items: profile.education }, { label: "활동", items: profile.activities | withLocalActivities(localActivities) }] %}
       <div class="exp-group reveal"><h3 class="experience-label">{{ group.label }}</h3>
         <ul class="exp-list">{% for item in group.items %}{% set period = experienceCopy.periods[item.title] or item.period %}{% set parts = (experienceCopy.details[item.title] or item.details) | experienceDetails(period) %}
           <li class="exp-item">
