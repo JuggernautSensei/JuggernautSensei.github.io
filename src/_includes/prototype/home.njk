@@ -61,12 +61,6 @@
 <section id="thinking" aria-labelledby="thinking-h">
   <div class="inner">
     <div class="sec-head reveal"><h2 class="eyebrow sec-label" id="thinking-h">04 / 기술 문서와 학습</h2></div>
-    {% if profile.skills.length %}
-    <div class="skills reveal">
-      <h3 class="experience-label">기술 스택 · 도구</h3>
-      <ul class="skills-list">{% for skill in profile.skills %}<li>{{ skill }}</li>{% endfor %}</ul>
-    </div>
-    {% endif %}
     <div class="knowledge-links">
       {% for entry in collections.presentations %}<a class="card knowledge-card reveal" href="{{ entry.data.notionUrl }}" target="_blank" rel="noopener noreferrer"><span class="meta meta--pop">발표 자료 / {{ loop.index }}</span><h3>{{ entry.data.displayTitle or entry.data.title }}</h3><p class="desc">{{ entry.data.description }}</p><span class="go">Notion에서 자료 보기 <span class="ar" aria-hidden="true">↗</span></span></a>{% endfor %}
       <a class="card knowledge-card reveal" href="{{ profile.blog }}"><span class="meta meta--pop">직접 배우고 남긴 기록</span><h3>노션 기술 블로그</h3><p class="desc">구현하며 배운 것과 문제를 해결한 과정.<br>개발과 학습의 기록을 이어갑니다.</p><span class="go">블로그 방문하기 <span class="ar" aria-hidden="true">↗</span></span></a>

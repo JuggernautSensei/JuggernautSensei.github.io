@@ -55,32 +55,6 @@ async function history(blocks, columnId, media) {
   return output;
 }
 
-function skillsFromSection(blocks, rootPage, headingId) {
-  const headingIndex = rootPage.content.indexOf(headingId);
-  const heading = blocks.get(headingId);
-  if (headingIndex < 0 || !["header", "sub_header", "sub_sub_header"].includes(heading?.type)) {
-    throw new Error("Notion skills heading moved or changed type; review config");
-  }
-  const skills = [];
-  for (const id of rootPage.content.slice(headingIndex + 1)) {
-    const block = blocks.get(id);
-    if (block?.type === "divider") continue;
-    if (block?.type !== "column_list") break;
-    for (const columnId of block.content || []) {
-      const column = blocks.get(columnId);
-      if (column?.type !== "column") continue;
-      for (const itemId of column.content || []) {
-        const item = blocks.get(itemId);
-        if (!["text", "bulleted_list"].includes(item?.type)) continue;
-        const parts = (item.properties?.title || []).filter(([, marks]) => !marks?.some(([type]) => type === "ce"));
-        const label = plain(parts).trim();
-        if (label) skills.push(label);
-      }
-    }
-  }
-  return skills;
-}
-
 export async function collectPortfolio(config, profile, catalog, client, media) {
   const root = await client.page(config.rootPageId);
   const rootPage = value(root.block[config.rootPageId]);
@@ -94,7 +68,6 @@ export async function collectPortfolio(config, profile, catalog, client, media) 
   const nextProfile = { ...profile, headline: blockText(selected(config.headlineBlockId)),
     introduction: blockText(selected(config.introductionBlockId)).replace(/\n{2,}더 자세한 프로젝트와 개발 기록은[\s\S]*$/, "").trim(),
     ...await history(blocks, config.experienceColumnId, media) };
-  if (config.skillsHeadingBlockId) nextProfile.skills = skillsFromSection(blocks, rootPage, config.skillsHeadingBlockId);
   if (!nextProfile.headline || !nextProfile.introduction) throw new Error("Notion profile is empty");
   const portrait = selected(config.portraitBlockId);
   if (portrait.type !== "image") throw new Error("Notion portrait block changed type");
