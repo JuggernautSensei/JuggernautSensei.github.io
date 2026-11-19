@@ -46,6 +46,25 @@ test("social links remain configured when Notion bookmarks are replaced by an em
   assert.equal(result.profile.blog, profile.blog);
 });
 
+test("sync reads skills in column order without copying emoji placeholders or unrelated text", async () => {
+  const f = fixture();
+  f.config.skillsHeadingBlockId = "skills";
+  f.root.block.root.value.value.content.push("skills", "divider", "row", "other");
+  Object.assign(f.root.block, {
+    skills: row({ id: "skills", type: "sub_header" }),
+    divider: row({ id: "divider", type: "divider" }),
+    row: row({ id: "row", type: "column_list", content: ["first", "empty", "second"] }),
+    first: row({ id: "first", type: "column", content: ["cpp"] }),
+    empty: row({ id: "empty", type: "column", content: [] }),
+    second: row({ id: "second", type: "column", content: ["git"] }),
+    cpp: row({ id: "cpp", type: "text", properties: { title: [["‣", [["ce", "cpp-icon"]]], ["  C / C++"]] } }),
+    git: row({ id: "git", type: "text", properties: title("Git") }),
+    other: row({ id: "other", type: "text", properties: title("다른 구역의 텍스트") })
+  });
+  const result = await collectPortfolio(f.config, { skills: ["이전 기술"] }, catalog, f.client, async () => "/assets/face.png");
+  assert.deepEqual(result.profile.skills, ["C / C++", "Git"]);
+});
+
 test("current Filter schema updates card descriptions, bullets, covers and external links", async () => {
   const f = fixture();
   f.query.map.collection.collection.value.value.schema = {
