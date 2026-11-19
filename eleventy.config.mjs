@@ -20,10 +20,6 @@ export default function (config) {
     assert(entry, `Missing project page: ${slug}`);
     return entry;
   });
-  config.addFilter("prioritizePinned", items => [
-    ...items.filter(item => item.pinned),
-    ...items.filter(item => !item.pinned)
-  ]);
   // Split experience bullets into grades ("전공학점 4.29 / 4.5"), term counts ("총 6학기 …", "… 6학기") and plain notes; entries without figures get their duration.
   config.addFilter("experienceDetails", (details = [], period = "") => {
     const scores = [], stats = [], notes = [];
