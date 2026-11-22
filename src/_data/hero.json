@@ -8,16 +8,16 @@
       "position": "62% 42%"
     },
     {
-      "src": "/assets/media/juggfx.png",
-      "label": "JugGfx · 그래픽스 라이브러리",
-      "href": "/projects/juggfx/",
-      "position": "60% center"
+      "src": "/assets/media/jamengine-pbr.png",
+      "label": "JamEngine · PBR 렌더링 샘플",
+      "href": "/projects/jamengine/",
+      "position": "55% 55%"
     },
     {
-      "src": "/assets/media/metalslug-gameplay.png",
-      "label": "메탈슬러그 2 모작 · 게임과 런타임 에디터",
+      "src": "/assets/media/metalslug-battle.png",
+      "label": "메탈슬러그 2 모작 · 적과 폭발이 뒤섞인 전투 장면",
       "href": "/projects/metalslug2-clone/",
-      "position": "65% 40%"
+      "position": "center 46%"
     },
     {
       "src": "/assets/media/solar-system.png",
