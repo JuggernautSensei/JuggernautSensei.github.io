@@ -1,5 +1,7 @@
 # Notion 자동 갱신
 
+> **현재 꺼져 있음.** 배포 워크플로에서 예약 실행과 `npm run sync:notion` 단계를 제거했습니다. 사이트 내용은 저장소의 `src/_data/*.json`만으로 만들어집니다. 다시 켜려면 `.github/workflows/pages.yml`에 두 부분을 되돌리세요.
+
 공개 Notion 포트폴리오를 **15분 간격**으로 읽고 검증한 뒤 GitHub Pages에 배포합니다. GitHub 예약 실행은 지연될 수 있습니다. 즉시 반영하려면 Actions의 `Verify and publish Pages`를 `publish: true`로 실행합니다.
 
 ## 반영되는 내용
