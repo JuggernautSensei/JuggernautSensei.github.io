@@ -5,6 +5,7 @@ description: 공개 저장소 확인 · 상세 콘텐츠 이전 예정
 category: 기타 프로젝트
 archiveKind: Project
 repository: https://github.com/JuggernautSensei/JamEngine
+notionUrl: https://juggernautsensei.notion.site/418c3fb6c02f80ad965de265b5bf04ca
 permalink: /projects/jamengine/index.html
 visibility: public
 publish: true

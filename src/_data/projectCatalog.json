@@ -14,37 +14,15 @@
   },
   "items": [
     {
-      "id": "3fac3fb6-c02f-8074-8985-e4e3b5a18414",
-      "slug": "jugx",
-      "title": "[JugX] C++20 범용 라이브러리",
+      "id": "418c3fb6-c02f-80ad-965d-e265b5bf04ca",
+      "slug": "jamengine",
+      "title": "JamEngine",
       "categories": [
         "Project",
         "Library"
       ],
-      "pinned": true,
-      "notionUrl": "https://juggernautsensei.notion.site/3fac3fb6c02f80748985e4e3b5a18414"
-    },
-    {
-      "id": "3fac3fb6-c02f-80ce-9da6-dadcb80ffe3f",
-      "slug": "juggfx",
-      "title": "[JugGfx] 그래픽스 라이브러리",
-      "categories": [
-        "Project",
-        "Library"
-      ],
-      "pinned": true,
-      "notionUrl": "https://juggernautsensei.notion.site/3fac3fb6c02f80ce9da6dadcb80ffe3f"
-    },
-    {
-      "id": "3ccc3fb6-c02f-80d2-b932-c71bdd2055ca",
-      "slug": "jugnet",
-      "title": "[JugNet] 네트워크 라이브러리 ",
-      "categories": [
-        "Project",
-        "Library"
-      ],
-      "pinned": true,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80d2b932c71bdd2055ca"
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/418c3fb6c02f80ad965de265b5bf04ca"
     },
     {
       "id": "3ccc3fb6-c02f-800f-bba1-ed14ecb2cb97",
@@ -54,7 +32,7 @@
         "Project",
         "Game"
       ],
-      "pinned": true,
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f800fbba1ed14ecb2cb97"
     },
     {
@@ -65,8 +43,18 @@
         "Project",
         "Game"
       ],
-      "pinned": true,
+      "pinned": false,
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e6a6e6f4f385766241"
+    },
+    {
+      "id": "3ccc3fb6-c02f-806c-98ff-eccc0c5c3175",
+      "slug": "deferred-rendering-gdc2025",
+      "title": "Deferred Rendering 발표 자료",
+      "categories": [
+        "Presentation"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806c98ffeccc0c5c3175"
     },
     {
       "id": "3f6c3fb6-c02f-8091-ab34-cdf9b2d6384e",
@@ -79,34 +67,14 @@
       "notionUrl": "https://juggernautsensei.notion.site/3f6c3fb6c02f8091ab34cdf9b2d6384e"
     },
     {
-      "id": "3ccc3fb6-c02f-80b8-9021-c00bc20935a9",
-      "slug": "solarsystemrendering",
-      "title": "OpenGL을 이용한 3D 태양계 시뮬레이션",
+      "id": "3ccc3fb6-c02f-8058-8961-fc9ce62565bf",
+      "slug": "cuda",
+      "title": "CUDA",
       "categories": [
         "Study"
       ],
       "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80b89021c00bc20935a9"
-    },
-    {
-      "id": "3ccc3fb6-c02f-80e2-85cd-da7f05718cdc",
-      "slug": "software-rasterizer",
-      "title": "Software Rasterizer",
-      "categories": [
-        "Study"
-      ],
-      "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e285cdda7f05718cdc"
-    },
-    {
-      "id": "3ccc3fb6-c02f-806c-98ff-eccc0c5c3175",
-      "slug": "deferred-rendering-gdc2025",
-      "title": "Deferred Rendering을 이용한 렌더링 최적화",
-      "categories": [
-        "Presentation"
-      ],
-      "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806c98ffeccc0c5c3175"
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80588961fc9ce62565bf"
     },
     {
       "id": "3ccc3fb6-c02f-80c0-af3f-d41364bb08a4",
@@ -119,24 +87,67 @@
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80c0af3fd41364bb08a4"
     },
     {
-      "id": "3ccc3fb6-c02f-8058-8961-fc9ce62565bf",
-      "slug": "cuda",
-      "title": "CUDA",
+      "id": "3ccc3fb6-c02f-80e2-85cd-da7f05718cdc",
+      "slug": "software-rasterizer",
+      "title": "Software Rasterizer",
       "categories": [
         "Study"
       ],
       "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80588961fc9ce62565bf"
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80e285cdda7f05718cdc"
     },
     {
-      "id": "3ccc3fb6-c02f-809d-848f-c4401558ee91",
-      "slug": "diary",
-      "title": "오늘하루는",
+      "id": "3ccc3fb6-c02f-80b8-9021-c00bc20935a9",
+      "slug": "solarsystemrendering",
+      "title": "OpenGL을 이용한 3D 태양계 시뮬레이션",
       "categories": [
         "Study"
       ],
       "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f809d848fc4401558ee91"
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80b89021c00bc20935a9"
+    },
+    {
+      "id": "3fac3fb6-c02f-8074-8985-e4e3b5a18414",
+      "slug": "jugx",
+      "title": "[JugX] C++20 범용 라이브러리",
+      "categories": [
+        "Project",
+        "Library"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3fac3fb6c02f80748985e4e3b5a18414"
+    },
+    {
+      "id": "3fac3fb6-c02f-80ce-9da6-dadcb80ffe3f",
+      "slug": "juggfx",
+      "title": "[JugGfx] 그래픽스 라이브러리",
+      "categories": [
+        "Project",
+        "Library"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3fac3fb6c02f80ce9da6dadcb80ffe3f"
+    },
+    {
+      "id": "3ccc3fb6-c02f-80d2-b932-c71bdd2055ca",
+      "slug": "jugnet",
+      "title": "[JugNet] 네트워크 라이브러리 ",
+      "categories": [
+        "Project",
+        "Library"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f80d2b932c71bdd2055ca"
+    },
+    {
+      "id": "3ccc3fb6-c02f-8042-a51d-d40d2fff8e90",
+      "slug": "titanic",
+      "title": "머신러닝을 이용한 타이타닉 생존 여부 예측",
+      "categories": [
+        "Study"
+      ],
+      "pinned": false,
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f8042a51dd40d2fff8e90"
     },
     {
       "id": "3ccc3fb6-c02f-806b-940a-ff6f542b0639",
@@ -159,14 +170,14 @@
       "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f806aa626f7ee1deb32e0"
     },
     {
-      "id": "3ccc3fb6-c02f-8042-a51d-d40d2fff8e90",
-      "slug": "titanic",
-      "title": "머신러닝을 이용한 타이타닉 생존 여부 예측",
+      "id": "3ccc3fb6-c02f-809d-848f-c4401558ee91",
+      "slug": "diary",
+      "title": "오늘하루는",
       "categories": [
         "Study"
       ],
       "pinned": false,
-      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f8042a51dd40d2fff8e90"
+      "notionUrl": "https://juggernautsensei.notion.site/3ccc3fb6c02f809d848fc4401558ee91"
     }
   ]
 }
