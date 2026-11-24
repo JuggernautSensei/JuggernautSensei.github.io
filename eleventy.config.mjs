@@ -52,11 +52,11 @@ export default function (config) {
   config.addFilter("awardsByMonth", (awards = [], periods = {}) => {
     const byMonth = period => {
       const match = period.match(/^(\d{4})\.\s*(\d{1,2})(?:\.|$)/);
-      return match ? Number(match[1]) * 12 + Number(match[2]) : 0;
+      return match ? Number(match[1]) * 12 + Number(match[2]) : Infinity;
     };
     return awards
       .map(item => ({ ...item, period: periods[item.title] || item.period || "" }))
-      .sort((a, b) => byMonth(b.period) - byMonth(a.period));
+      .sort((a, b) => byMonth(a.period) - byMonth(b.period));
   });
   // "교내 캡스톤 경진대회 동상 (6등)" -> { event: "교내 캡스톤 경진대회", prize: "동상", rank: "(6등)", tier: "bronze" }
   config.addFilter("awardParts", title => {
