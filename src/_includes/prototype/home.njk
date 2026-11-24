@@ -41,10 +41,10 @@
       </div>
       {% endfor %}
       <div class="exp-group reveal"><h3 class="experience-label">수상</h3>
-        <ul class="exp-list">{% for item in profile.awards %}{% set award = (experienceCopy.awardTitles[item.title] or item.title) | awardParts %}
+        <ul class="exp-list">{% for item in profile.awards | awardsByMonth(experienceCopy.awardPeriods) %}{% set award = (experienceCopy.awardTitles[item.title] or item.title) | awardParts %}
           <li class="exp-item exp-award">
-            <p class="exp-period award-prize{% if award.tier %} award-prize--{{ award.tier }}{% endif %}">{{ award.prize }}{% if award.rank %} <small>{{ award.rank }}</small>{% endif %}</p>
-            <div class="exp-body"><h4 class="exp-title">{{ award.event }}{% if item.organization %} <small>· {{ item.organization }}</small>{% endif %}{% if item.period %} <small>· {{ item.period }}</small>{% endif %}</h4></div>
+            <p class="exp-period">{{ item.period }}</p>
+            <div class="exp-body"><h4 class="exp-title">{% if item.organization %}{{ item.organization }} {% endif %}{{ award.event }}{% if award.prize %} · <span class="award-prize{% if award.tier %} award-prize--{{ award.tier }}{% endif %}">{{ award.prize }}{% if award.rank %} <small>{{ award.rank }}</small>{% endif %}</span>{% endif %}</h4></div>
           </li>
         {% endfor %}</ul>
       </div>

@@ -49,6 +49,15 @@ export default function (config) {
     const dates = [...period.matchAll(/(\d{4})\.\s*(\d{1,2})\./g)].map(date => `${date[1]}.${date[2].padStart(2, "0")}`);
     return dates.length ? dates.join(" — ") : period;
   });
+  config.addFilter("awardsByMonth", (awards = [], periods = {}) => {
+    const byMonth = period => {
+      const match = period.match(/^(\d{4})\.\s*(\d{1,2})(?:\.|$)/);
+      return match ? Number(match[1]) * 12 + Number(match[2]) : 0;
+    };
+    return awards
+      .map(item => ({ ...item, period: periods[item.title] || item.period || "" }))
+      .sort((a, b) => byMonth(b.period) - byMonth(a.period));
+  });
   // "교내 캡스톤 경진대회 동상 (6등)" -> { event: "교내 캡스톤 경진대회", prize: "동상", rank: "(6등)", tier: "bronze" }
   config.addFilter("awardParts", title => {
     const match = title.match(/^(.+?)\s+(\S+상)(?:\s*(\(.+\)))?$/);
